@@ -1,18 +1,16 @@
-# Elevate Audiology — Proof Site Notes
+# Elevate Audiology — v2 Proof (Phase 1)
 
-This is a **static clone** of https://elevateaudiology.com captured on April 23, 2026 and deployed to GitHub Pages.
+This is the rebuilt static proof site for elevateaudiology.com.
 
-## What works
-- All main pages (Home, About, Team bios, Services, Tinnitus, Hearing Aids, APD, Locations, Contact, Policies, Lenire, Blog)
-- All images, logo, fonts, CSS
-- Internal navigation
+**Phase 1 includes:**
+- New IA + nav + footer (purple/teal palette, complete-hearing inspired)
+- Home page (no banners, GatherUp homepage widget, affiliations strip)
+- About Us with new welcome copy mentioning Dr. Capece
+- Our Team page with grouped sections (Audiologists / Assistants / PCCs) and click-to-popup bios
+- "What is an Audiologist" standalone page
 
-## What's disabled (expected — requires a live WP backend)
-- Contact form submission (Gravity Forms)
-- Online shop / cart / checkout (WooCommerce)
-- Customer login / My Account
-- Search (WP query-based)
-- Blog post links to articles not captured in the clone
+**Phase 2 (next):** Hearing Loss, Hearing Testing (Elevate Hearing Pathway), Hearing Aids consolidation, Manufacturers (Oticon Intent SEO), Financing, Repair w/ Redux + Elevate 180.
 
-## Recommendations
-See the Slack channel for the "what we'd change" list.
+**Phase 3 (final):** Tinnitus + Lenire, APD consolidation, full QA.
+
+Live at: https://kinggavint.github.io/elevate-audiology-proof/
