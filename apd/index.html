@@ -3,15 +3,176 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Auditory Processing Disorder — Elevate Audiology</title>
-<meta name="description" content="Evaluations and therapy for ages 7 through adulthood, including the Bellis &amp; Ferre model.">
+<title>Auditory Processing Disorder (APD) Evaluations &amp; Therapy · Elevate Audiology</title>
+<meta name="description" content="Comprehensive APD evaluations and therapy for children and adults in Easley and Greenville, SC. The only clinic in the Upstate offering a full APD test battery.">
 <meta name="theme-color" content="#2b1747">
 <link rel="icon" type="image/png" href="/elevate-audiology-proof/images/logo.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/elevate-audiology-proof/css/base.css">
+<style>
+  /* shared Phase 3 styles */
+  .two-col-grid { display: grid; grid-template-columns: 1fr 1fr; gap: var(--sp-7); align-items: start; }
+  @media (max-width: 820px) { .two-col-grid { grid-template-columns: 1fr; } }
 
+  .three-col-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: var(--sp-5); }
+
+  .step-card {
+    background: var(--c-white);
+    border: 1px solid var(--c-border);
+    border-radius: var(--radius-lg);
+    padding: var(--sp-6);
+    transition: all .2s var(--ease);
+  }
+  .step-card:hover { border-color: var(--c-purple-500); box-shadow: var(--shadow); transform: translateY(-2px); }
+  .step-card .step-num {
+    display: inline-block;
+    font-family: var(--font-display);
+    font-size: var(--text-xs);
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--c-accent-2);
+    font-weight: 700;
+    margin-bottom: var(--sp-3);
+  }
+  .step-card h3 { font-size: var(--text-lg); margin-bottom: var(--sp-2); }
+  .step-card p { color: var(--c-text-soft); font-size: var(--text-sm); }
+
+  .callout {
+    border-radius: var(--radius-lg);
+    padding: var(--sp-7);
+    margin-block: var(--sp-6);
+    position: relative;
+    overflow: hidden;
+  }
+  .callout-purple {
+    background: linear-gradient(135deg, var(--c-purple-700), var(--c-purple-900));
+    color: var(--c-white);
+  }
+  .callout-purple::after {
+    content: '';
+    position: absolute; inset: 0;
+    background: radial-gradient(ellipse at 80% 20%, rgba(26,154,163,0.30), transparent 60%);
+    pointer-events: none;
+  }
+  .callout-purple * { position: relative; z-index: 1; }
+  .callout-purple h2, .callout-purple h3 { color: var(--c-white); }
+  .callout-purple .eyebrow { color: var(--c-teal-100); }
+  .callout-purple a { color: var(--c-teal-100); }
+  .callout-purple a.btn { /* preserve button color tokens inside callouts */ }
+  .callout-purple a.btn-on-dark { color: var(--c-purple-700); }
+  .callout-purple a.btn-on-dark:hover { color: var(--c-purple-900); }
+  .callout-teal a { color: var(--c-accent-2); }
+  .callout-teal a.btn-on-dark { color: var(--c-purple-700); }
+
+  .callout-teal {
+    background: var(--c-purple-50);
+    border-left: 4px solid var(--c-accent-2);
+  }
+  .callout-teal h2, .callout-teal h3 { color: var(--c-purple-900); }
+  .callout-teal .eyebrow { color: var(--c-accent-2); }
+
+  /* FAQ accordion */
+  .faq-list { max-width: 880px; }
+  .faq-item {
+    border: 1px solid var(--c-border);
+    border-radius: var(--radius-md);
+    margin-bottom: var(--sp-3);
+    background: var(--c-white);
+    transition: border-color .15s var(--ease), box-shadow .15s var(--ease);
+  }
+  .faq-item[open] { border-color: var(--c-purple-500); box-shadow: 0 4px 14px rgba(43,23,71,0.06); }
+  .faq-item summary {
+    list-style: none;
+    cursor: pointer;
+    padding: var(--sp-5) var(--sp-6);
+    font-weight: 600;
+    color: var(--c-purple-900);
+    font-size: var(--text-base);
+    display: flex; align-items: center; justify-content: space-between;
+    gap: var(--sp-4);
+  }
+  .faq-item summary::-webkit-details-marker { display: none; }
+  .faq-item summary::after {
+    content: '+';
+    font-family: var(--font-display);
+    font-weight: 400;
+    color: var(--c-accent-2);
+    font-size: 1.5rem;
+    line-height: 1;
+    transition: transform .2s var(--ease);
+  }
+  .faq-item[open] summary::after { content: '–'; transform: rotate(0); }
+  .faq-item .faq-body {
+    padding: 0 var(--sp-6) var(--sp-6);
+    color: var(--c-text-soft);
+  }
+  .faq-item .faq-body p { margin-bottom: var(--sp-3); }
+  .faq-item .faq-body p:last-child { margin-bottom: 0; }
+  .faq-item .faq-body ul { margin-block: var(--sp-3); padding-left: 1.25rem; }
+  .faq-item .faq-body ul li { margin-bottom: 0.4rem; }
+  .faq-item .faq-body .meta { font-size: var(--text-xs); color: var(--c-text-muted); margin-top: var(--sp-3); }
+
+  /* stat band for Lenire */
+  .stat-row {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: var(--sp-4);
+  }
+  .stat-cell { text-align: center; padding: var(--sp-5); }
+  .stat-cell .num {
+    font-family: var(--font-display);
+    font-size: clamp(2.25rem, 4vw, 3rem);
+    color: var(--c-teal-100);
+    font-weight: 700;
+    line-height: 1; margin-bottom: var(--sp-2);
+  }
+  .stat-cell .label { font-size: var(--text-sm); opacity: .92; }
+
+  /* simple feature checklist already exists, but a 2-col variant: */
+  .check-list { list-style: none; padding: 0; margin: 0; }
+  .check-list li {
+    padding-left: 28px; position: relative; margin-bottom: 0.6rem;
+  }
+  .check-list li::before {
+    content: '✓';
+    position: absolute; left: 0; top: 0;
+    color: var(--c-accent-2);
+    font-weight: 700;
+  }
+  .check-list.cols-2 {
+    column-count: 2; column-gap: var(--sp-7);
+  }
+  @media (max-width: 720px) { .check-list.cols-2 { column-count: 1; } }
+  .check-list.cols-2 li { break-inside: avoid; }
+
+  /* Patient story blockquote */
+  .patient-quote blockquote {
+    margin: 0;
+    padding: 0;
+    font-size: var(--text-base);
+    line-height: 1.7;
+  }
+  .patient-quote blockquote p { margin-bottom: var(--sp-3); }
+  .patient-quote cite {
+    display: block;
+    margin-top: var(--sp-3);
+    font-style: normal;
+    font-size: var(--text-sm);
+    color: var(--c-teal-100);
+    font-weight: 600;
+  }
+
+  /* hero CTAs on dark */
+  .hero .btn.btn-on-dark { background: var(--c-white); color: var(--c-purple-700); }
+  .hero .btn.btn-ghost-light {
+    background: transparent;
+    color: var(--c-white);
+    border: 1px solid rgba(255,255,255,0.4);
+  }
+  .hero .btn.btn-ghost-light:hover { background: rgba(255,255,255,0.1); }
+</style>
 </head>
 <body>
 <a class="sr-only" href="#main">Skip to main content</a>
@@ -81,17 +242,224 @@
 
 <main id="main">
 
-<section class="hero" style="padding-block: clamp(3rem, 6vw, 5rem);">
+<section class="hero">
   <div class="container">
-    <span class="eyebrow">APD evaluations &amp; therapy</span>
-    <h1 style="max-width: 24ch;">Comprehensive auditory processing care.</h1>
-    <p class="lead">Evaluations and therapy for ages 7 through adulthood, including the Bellis &amp; Ferre model.</p>
+    <span class="eyebrow">Auditory Processing Disorder (APD)</span>
+    <h1>Hearing is fine &mdash; but understanding is hard. We can help.</h1>
+    <p class="lead">Auditory Processing Disorder is what happens when the ears hear sound but the brain has trouble making sense of it. Elevate Audiology is one of the only providers in South Carolina &mdash; and the only clinic in the Upstate &mdash; offering a comprehensive APD test battery.</p>
+    <div class="hero-actions">
+      <a class="btn btn-on-dark" href="/elevate-audiology-proof/contact/">Schedule an APD Evaluation</a>
+      <a class="btn btn-ghost-light" href="#faq">Read the FAQ</a>
+    </div>
   </div>
 </section>
+
 <section class="section">
-  <div class="container" style="text-align:center;">
-    <p style="color:var(--c-text-muted); font-style: italic;">This page is being redesigned. Phase 3 of the Elevate Audiology website refresh will bring detailed content here. In the meantime, please <a href="/elevate-audiology-proof/contact/">contact us</a> with any questions.</p>
-    <p style="margin-top: var(--sp-5);"><a href="/elevate-audiology-proof/contact/" class="btn btn-primary">Schedule an Appointment</a></p>
+  <div class="container">
+    <div class="two-col-grid">
+      <div>
+        <span class="eyebrow">What is APD?</span>
+        <h2>A breakdown between the ear and the brain.</h2>
+        <p>APD describes a group of conditions in which the auditory system &mdash; from the inner ear through the auditory nerve and into the parts of the brain that interpret sound &mdash; doesn&rsquo;t process information the way it should. Hearing tests can look completely normal, yet listening still feels exhausting, especially in noise.</p>
+        <p>Common signs include trouble following directions, difficulty understanding speech in background noise, frequently asking people to repeat themselves, struggling in school or meetings, and finding listening genuinely tiring.</p>
+      </div>
+      <div class="callout callout-teal">
+        <span class="eyebrow">Who we evaluate</span>
+        <h3 style="margin-top:var(--sp-2)">Children &amp; adults.</h3>
+        <ul class="check-list">
+          <li><strong>Children:</strong> age 7 and older</li>
+          <li><strong>Adults:</strong> up to age 64</li>
+          <li>No referral required</li>
+          <li>Recent hearing test (within 6 months) helpful but not required</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section-alt" id="evaluations">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">APD Evaluations</span>
+      <h2>A thorough, evidence-based evaluation &mdash; not a quick screening.</h2>
+      <p>Since no two cases of APD are exactly alike, we conduct a thorough hearing evaluation followed by a carefully selected battery of <strong>6 to 9 evidence-based tests</strong>. The result: a detailed profile of both strengths and challenges that guides accurate diagnosis and targeted intervention.</p>
+    </div>
+    <div class="three-col-grid">
+      <div class="step-card">
+        <span class="step-num">01</span>
+        <h3>Case history &amp; intake call</h3>
+        <p>A detailed phone intake plus questionnaires to understand symptoms, history, school or work demands, and goals.</p>
+      </div>
+      <div class="step-card">
+        <span class="step-num">02</span>
+        <h3>Hearing health diagnostics</h3>
+        <p>Baseline audiological testing to rule out hearing loss as a contributing factor (if not recently completed).</p>
+      </div>
+      <div class="step-card">
+        <span class="step-num">03</span>
+        <h3>Customized APD test battery</h3>
+        <p>6&ndash;9 tests selected by age, cognitive level, and presenting symptoms. May include auditory attention, sound discrimination, binaural integration and separation, auditory closure, and pattern recognition.</p>
+      </div>
+    </div>
+    <p style="margin-top:var(--sp-7);max-width:780px;color:var(--c-text-soft)">After testing, we compile a comprehensive written report outlining diagnostic impressions, clinical observations, and personalized recommendations &mdash; including therapy options, school or workplace accommodations, and home strategies. A follow-up consultation by phone or telehealth walks you through everything.</p>
+  </div>
+</section>
+
+<section class="section" id="therapy">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">APD Therapy &amp; Management</span>
+      <h2>A three-pronged management model.</h2>
+      <p>Managing APD requires a structured, individualized approach that targets both the underlying auditory deficits and their real-world impact. We follow a three-pronged management model based on the work of Dr. Ferre and Dr. Bellis &mdash; combining environmental modifications, direct therapy, and compensatory strategies.</p>
+    </div>
+    <div class="three-col-grid">
+      <div class="step-card">
+        <h3>1. Environmental Modifications</h3>
+        <p>We work closely with families, educators, and clients to recommend listening environments that support auditory success: preferential classroom seating, reducing background noise, visual supports, and (when appropriate) assistive listening devices like personal FM or remote microphone systems. These reduce cognitive load and improve access to spoken information.</p>
+      </div>
+      <div class="step-card">
+        <h3>2. Direct Auditory Therapy</h3>
+        <p>One-on-one therapy sessions based on the <strong>Buffalo Model of Auditory Therapy</strong>, plus access to guided online therapy programs that can be completed at home. These evidence-based exercises strengthen specific aspects of auditory processing where an individual is struggling.</p>
+      </div>
+      <div class="step-card">
+        <h3>3. Compensatory Strategies</h3>
+        <p>Practical techniques to compensate for auditory weaknesses &mdash; active listening, self-advocacy skills, note-taking strategies, and routines that support follow-through at school, at work, and at home.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section-alt" id="faq">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Frequently Asked Questions</span>
+      <h2>APD evaluations &amp; therapy &mdash; common questions.</h2>
+    </div>
+
+    <div class="faq-list">
+      <details class="faq-item" open>
+        <summary>1. How much does an evaluation cost?</summary>
+        <div class="faq-body">
+          <p>The APD evaluation package is typically <strong>$699&ndash;$769</strong>, depending on whether you are an adult or a child and which hearing diagnostics are required. A <strong>$350 deposit is due at the time of scheduling</strong>, with the remainder due on the day of your evaluation.</p>
+          <p>This cost includes:</p>
+          <ul>
+            <li>Comprehensive hearing and middle-ear testing (if not recently completed)</li>
+            <li>Auditory processing test battery (6&ndash;9 specialized tests)</li>
+            <li>Case history and intake call</li>
+            <li>Full written report</li>
+            <li>Follow-up consultation by phone or telehealth</li>
+          </ul>
+          <p>Re-evaluations (if recommended) are <strong>$270</strong>.</p>
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary>2. Do you accept insurance (including Medicaid)?</summary>
+        <div class="faq-body">
+          <p>We are <strong>out of network</strong> with Medicaid and other commercial insurance providers. Upon request, we can file claims to your insurance as a courtesy or provide billing codes so you may file independently.</p>
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary>3. What does the APD evaluation involve?</summary>
+        <div class="faq-body">
+          <p>We complete a comprehensive evaluation that looks at both <strong>hearing</strong> and how the <strong>brain processes sound</strong>. The process includes:</p>
+          <ul>
+            <li>Intake call and detailed questionnaires</li>
+            <li>Hearing health diagnostics (to rule out hearing loss)</li>
+            <li>A customized test battery (based on age, history, and symptoms) that may include auditory attention, sound discrimination, binaural integration and separation, auditory closure, and pattern recognition</li>
+          </ul>
+          <p>After testing, you&rsquo;ll receive a comprehensive report and a review call to discuss results, diagnosis (if applicable), and personalized recommendations.</p>
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary>4. What therapy or treatment options are available?</summary>
+        <div class="faq-body">
+          <p>Therapy recommendations are tailored to the individual and may include:</p>
+          <ul>
+            <li>In-office one-on-one therapy sessions</li>
+            <li>Virtual one-on-one therapy sessions</li>
+            <li>Home-based, online therapy programs</li>
+            <li>Environmental modifications (home, school, or workplace)</li>
+            <li>Compensatory listening strategies</li>
+          </ul>
+          <p>Dr. Ooms will discuss the best approach based on evaluation results.</p>
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary>5. What is the cost of therapy for APD?</summary>
+        <div class="faq-body">
+          <p>Therapy costs vary depending on the <strong>type and number of programs</strong> recommended. Pricing will be reviewed in detail after the evaluation and your individualized treatment plan are created.</p>
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary>6. What ages do you test?</summary>
+        <div class="faq-body">
+          <ul>
+            <li><strong>Children:</strong> age 7 and older</li>
+            <li><strong>Adults:</strong> up to age 64</li>
+          </ul>
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary>7. Do I need a referral?</summary>
+        <div class="faq-body">
+          <p>No referral is required. If you have had a recent hearing evaluation (within the last 6 months), please share it with us before your appointment.</p>
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary>8. I don&rsquo;t live near your office. Can I still be tested?</summary>
+        <div class="faq-body">
+          <p>If you already have a recent hearing evaluation from an audiologist or ENT, we can review it to determine whether additional diagnostics are needed. Some tests may need to be repeated to ensure accuracy and completeness &mdash; that maximizes our time together in the office. Many treatment options are available virtually.</p>
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary>9. Why choose Elevate Audiology for APD testing?</summary>
+        <div class="faq-body">
+          <p>We are one of the <strong>only providers in South Carolina</strong> specializing in advanced APD testing &mdash; and the <strong>only clinic in the Upstate</strong> offering a comprehensive test battery. Our goal is to provide accurate answers and practical solutions that help children and adults thrive at home, school, and work.</p>
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary>10. How do I get started?</summary>
+        <div class="faq-body">
+          <p>The evaluation process includes three steps, typically scheduled about one week apart.</p>
+          <p><strong>Adults</strong></p>
+          <ul>
+            <li>Case history call (15 min)</li>
+            <li>In-office evaluation (90 min)</li>
+            <li>Consultation call (60 min)</li>
+          </ul>
+          <p><strong>Children</strong></p>
+          <ul>
+            <li>Case history call (15 min)</li>
+            <li>In-office evaluation (2 hours)</li>
+            <li>Consultation call (60 min)</li>
+          </ul>
+          <p>A $350 deposit is required to confirm all appointments.</p>
+        </div>
+      </details>
+    </div>
+
+    <div class="callout callout-teal" style="margin-top:var(--sp-7)">
+      <span class="eyebrow">Free APD Guide</span>
+      <h3 style="margin-top:var(--sp-2)">Want to learn more first?</h3>
+      <p>Request a complimentary copy of our <strong>Auditory Processing Disorder Guide</strong> by Dr. Katelyn Ooms. Email <a href="mailto:info@elevateaudiology.com">info@elevateaudiology.com</a> or call us and we&rsquo;ll send it to you.</p>
+    </div>
+  </div>
+</section>
+
+<section class="cta-band">
+  <div class="container">
+    <h2>Still have questions?</h2>
+    <p>We&rsquo;d be happy to help. Call <a href="tel:+18644425555" style="color:#fff;text-decoration:underline">(864) 442-5555</a> or email <a href="mailto:info@elevateaudiology.com" style="color:#fff;text-decoration:underline">info@elevateaudiology.com</a> to begin scheduling.</p>
+    <a class="btn btn-on-dark" href="/elevate-audiology-proof/contact/">Request a Discovery Call</a>
   </div>
 </section>
 
