@@ -1,17 +1,22 @@
 /* ===========================================================
    Elevate Audiology v2 — Base Stylesheet
-   Palette: purple + white + gray + black, darker teal accent
+   Brand palette (Alex Tarvin spec):
+     Dark:  #4a0055   RGB 73,0,85    CMYK 13,100,0,67
+     Mid:   #680d77   RGB 104,13,119 CMYK 13,89,0,53
+     Light: #871f99   RGB 135,31,154 CMYK 12,80,0,40
+   With white, black, grays, and teal as accent only.
    =========================================================== */
 
 :root {
-  /* Brand palette */
-  --c-purple-900: #2b1747;
-  --c-purple-700: #4a2980;
-  --c-purple-600: #5e3aa4;
-  --c-purple-500: #6f47b8;
-  --c-purple-100: #efe9f7;
-  --c-purple-50:  #f8f5fc;
+  /* Brand palette — exact spec from Alex Tarvin */
+  --c-purple-900: #4a0055;   /* Dark   */
+  --c-purple-700: #680d77;   /* Mid    */
+  --c-purple-600: #871f99;   /* Light  */
+  --c-purple-500: #9c34ad;   /* Light + 8% (hover/active states) */
+  --c-purple-100: #f3e6f5;   /* Tint   */
+  --c-purple-50:  #faf3fb;   /* Wash   */
 
+  /* Teal — accent only (sparingly) */
   --c-teal-700: #0d6a6f;
   --c-teal-600: #128088;
   --c-teal-500: #1a9aa3;
@@ -40,8 +45,8 @@
   --c-text-muted: var(--c-gray-500);
   --c-text-on-dark: var(--c-white);
   --c-border: var(--c-gray-200);
-  --c-accent: var(--c-purple-600);
-  --c-accent-hover: var(--c-purple-700);
+  --c-accent: var(--c-purple-700);       /* Mid purple — primary brand */
+  --c-accent-hover: var(--c-purple-900); /* Dark purple — hover */
   --c-accent-2: var(--c-teal-600);
   --c-accent-2-hover: var(--c-teal-700);
 
@@ -396,7 +401,7 @@ p  { margin: 0 0 var(--sp-4); }
   position: absolute;
   left: -1rem;
   top: 1.5rem;
-  background: var(--c-accent-2, #d4af37);
+  background: var(--c-accent-2);
   color: var(--c-purple-900);
   border-radius: 16px;
   padding: 1rem 1.25rem;
@@ -479,6 +484,13 @@ p  { margin: 0 0 var(--sp-4); }
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
   gap: var(--sp-5);
+}
+.team-grid-centered {
+  grid-template-columns: repeat(2, minmax(240px, 280px));
+  justify-content: center;
+}
+@media (max-width: 600px) {
+  .team-grid-centered { grid-template-columns: minmax(240px, 320px); }
 }
 .team-card {
   background: var(--c-white);
