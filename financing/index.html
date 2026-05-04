@@ -3,14 +3,290 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Financing — Elevate Audiology</title>
-<meta name="description" content="Medicare in-network. Out-of-network for most other plans. Flexible financing options available.">
+<title>Financing &amp; Insurance · Elevate Audiology</title>
+<meta name="description" content="How Elevate Audiology works with Medicare and other insurance, plus our two transparent care models (itemized and service plan).">
 <meta name="theme-color" content="#2b1747">
 <link rel="icon" type="image/png" href="/elevate-audiology-proof/images/logo.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/elevate-audiology-proof/css/base.css">
+
+<style>
+  .stat-row {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: var(--sp-5);
+    margin-block: var(--sp-7);
+  }
+  .stat {
+    text-align: center;
+    padding: var(--sp-5);
+    background: var(--c-white);
+    border: 1px solid var(--c-border);
+    border-radius: var(--radius-lg);
+  }
+  .stat .num {
+    font-family: var(--font-display);
+    font-size: clamp(2rem, 4vw, 3rem);
+    color: var(--c-purple-700);
+    line-height: 1;
+    margin-bottom: var(--sp-2);
+    font-weight: 700;
+  }
+  .stat .label { font-size: var(--text-sm); color: var(--c-text-soft); }
+
+  .pathway-step {
+    display: grid;
+    grid-template-columns: 80px 1fr;
+    gap: var(--sp-5);
+    align-items: start;
+    padding-block: var(--sp-6);
+    border-bottom: 1px solid var(--c-border);
+  }
+  .pathway-step:last-child { border-bottom: none; }
+  .pathway-step .step-num {
+    font-family: var(--font-display);
+    font-size: 3.5rem;
+    line-height: 1;
+    color: var(--c-purple-500);
+    font-weight: 700;
+  }
+  .pathway-step h3 {
+    margin-bottom: var(--sp-2);
+    display: flex;
+    align-items: baseline;
+    gap: var(--sp-3);
+    flex-wrap: wrap;
+  }
+  .pathway-step .trade { color: var(--c-accent-2); font-size: var(--text-sm); font-weight: 600; font-family: var(--font-sans); }
+  .pathway-step ul { padding-left: 0; list-style: none; }
+  .pathway-step ul li {
+    padding-left: 28px; position: relative; margin-bottom: var(--sp-2); color: var(--c-text-soft);
+  }
+  .pathway-step ul li::before {
+    content: '→'; position: absolute; left: 0; top: 0;
+    color: var(--c-accent-2); font-weight: 700;
+  }
+
+  .price-feature-card {
+    background: linear-gradient(135deg, var(--c-purple-700), var(--c-purple-900));
+    color: var(--c-white);
+    border-radius: var(--radius-lg);
+    padding: var(--sp-7);
+    text-align: center;
+    margin-bottom: var(--sp-7);
+    position: relative;
+    overflow: hidden;
+  }
+  .price-feature-card::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse at 80% 20%, rgba(26,154,163,0.3), transparent 60%);
+    pointer-events: none;
+  }
+  .price-feature-card * { position: relative; z-index: 1; }
+  .price-feature-card .price {
+    font-family: var(--font-display);
+    font-size: clamp(3rem, 6vw, 4.5rem);
+    font-weight: 700;
+    line-height: 1;
+    color: var(--c-teal-100);
+  }
+  .price-feature-card .valued {
+    font-size: var(--text-sm);
+    color: rgba(255,255,255,0.75);
+    text-decoration: line-through;
+    margin-top: var(--sp-2);
+  }
+
+  .style-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: var(--sp-5);
+  }
+  .style-card {
+    background: var(--c-white);
+    border: 1px solid var(--c-border);
+    border-radius: var(--radius-lg);
+    padding: var(--sp-6);
+    transition: all .2s var(--ease);
+  }
+  .style-card:hover { border-color: var(--c-purple-500); box-shadow: var(--shadow); transform: translateY(-2px); }
+  .style-card .acronym {
+    display: inline-block;
+    background: var(--c-purple-50);
+    color: var(--c-purple-700);
+    font-weight: 700;
+    font-size: var(--text-xs);
+    letter-spacing: 0.08em;
+    padding: 4px 10px;
+    border-radius: var(--radius-pill);
+    margin-bottom: var(--sp-3);
+  }
+  .style-card h3 { font-size: var(--text-lg); margin-bottom: var(--sp-3); }
+  .style-card p { color: var(--c-text-soft); font-size: var(--text-sm); }
+  .style-card .severity {
+    margin-top: var(--sp-3);
+    font-size: var(--text-xs);
+    color: var(--c-accent-2);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+  }
+
+  .mfg-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: var(--sp-5);
+  }
+  .mfg-card {
+    background: var(--c-white);
+    border: 1px solid var(--c-border);
+    border-radius: var(--radius-lg);
+    padding: var(--sp-6);
+    transition: all .2s var(--ease);
+  }
+  .mfg-card:hover { border-color: var(--c-purple-500); box-shadow: var(--shadow); }
+  .mfg-card.featured {
+    background: linear-gradient(135deg, var(--c-purple-50), var(--c-white));
+    border-color: var(--c-purple-500);
+  }
+  .mfg-card .badge {
+    display: inline-block;
+    background: var(--c-purple-700);
+    color: var(--c-white);
+    font-size: var(--text-xs);
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 4px 10px;
+    border-radius: var(--radius-pill);
+    margin-bottom: var(--sp-3);
+  }
+  .mfg-card h3 { margin-bottom: var(--sp-2); display: flex; align-items: baseline; gap: var(--sp-3); flex-wrap: wrap; }
+  .mfg-card h3 .country { font-size: var(--text-sm); color: var(--c-text-muted); font-weight: 400; font-family: var(--font-sans); }
+  .mfg-card .models { font-size: var(--text-sm); color: var(--c-text-soft); margin-bottom: var(--sp-3); }
+  .mfg-card .models strong { color: var(--c-text); }
+  .mfg-card .tech { font-size: var(--text-sm); color: var(--c-text-soft); }
+
+  .checklist {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: var(--sp-3) var(--sp-5);
+    margin-top: var(--sp-5);
+  }
+  .checklist .feature-list { margin: 0; }
+
+  .signs-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: var(--sp-4);
+  }
+  .sign-card {
+    background: var(--c-white);
+    border: 1px solid var(--c-border);
+    border-radius: var(--radius);
+    padding: var(--sp-4) var(--sp-5);
+    display: flex;
+    align-items: flex-start;
+    gap: var(--sp-3);
+  }
+  .sign-card .num {
+    font-family: var(--font-display);
+    font-weight: 700;
+    color: var(--c-accent-2);
+    font-size: var(--text-lg);
+    flex-shrink: 0;
+    width: 32px;
+  }
+  .sign-card p { margin: 0; font-size: var(--text-sm); color: var(--c-text-soft); }
+
+  .battery-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-block: var(--sp-5);
+    background: var(--c-white);
+    border-radius: var(--radius);
+    overflow: hidden;
+    border: 1px solid var(--c-border);
+  }
+  .battery-table th, .battery-table td {
+    padding: var(--sp-4);
+    text-align: left;
+    border-bottom: 1px solid var(--c-border);
+  }
+  .battery-table th { background: var(--c-purple-50); color: var(--c-purple-900); font-weight: 600; font-size: var(--text-sm); letter-spacing: 0.04em; text-transform: uppercase; }
+  .battery-table tr:last-child td { border-bottom: none; }
+  .color-dot { display: inline-block; width: 14px; height: 14px; border-radius: 50%; margin-right: 8px; vertical-align: middle; border: 1px solid rgba(0,0,0,.1); }
+
+  .three-col-process {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: var(--sp-5);
+  }
+  .process-step {
+    background: var(--c-white);
+    border: 1px solid var(--c-border);
+    border-radius: var(--radius-lg);
+    padding: var(--sp-6);
+    position: relative;
+  }
+  .process-step .step-tag {
+    display: inline-block;
+    background: var(--c-purple-700);
+    color: var(--c-white);
+    font-size: var(--text-xs);
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    padding: 4px 10px;
+    border-radius: var(--radius-pill);
+    margin-bottom: var(--sp-3);
+  }
+  .process-step h3 { margin-bottom: var(--sp-3); font-size: var(--text-xl); }
+  .process-step p { color: var(--c-text-soft); font-size: var(--text-sm); margin: 0; }
+
+  .outcome-card {
+    background: var(--c-white);
+    border-left: 4px solid var(--c-accent-2);
+    border-radius: var(--radius);
+    padding: var(--sp-5) var(--sp-6);
+    margin-bottom: var(--sp-4);
+  }
+  .outcome-card .outcome-num {
+    font-family: var(--font-display);
+    color: var(--c-purple-700);
+    font-weight: 700;
+    font-size: var(--text-sm);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+  .outcome-card h3 { margin: var(--sp-2) 0 var(--sp-3); font-size: var(--text-lg); }
+
+  .troubleshoot {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: var(--sp-5);
+    margin-top: var(--sp-6);
+  }
+  .troubleshoot .ts-card {
+    background: var(--c-white);
+    border: 1px solid var(--c-border);
+    border-radius: var(--radius-lg);
+    padding: var(--sp-6);
+  }
+  .ts-card h3 { font-size: var(--text-lg); color: var(--c-purple-700); margin-bottom: var(--sp-3); }
+  .ts-card ul { list-style: none; padding: 0; margin: 0; }
+  .ts-card ul li {
+    padding-left: 24px; position: relative; margin-bottom: var(--sp-2);
+    font-size: var(--text-sm); color: var(--c-text-soft);
+  }
+  .ts-card ul li::before {
+    content: '✓'; position: absolute; left: 0; top: 0;
+    color: var(--c-accent-2); font-weight: 700;
+  }
+</style>
 
 </head>
 <body>
@@ -84,14 +360,89 @@
 <section class="hero" style="padding-block: clamp(3rem, 6vw, 5rem);">
   <div class="container">
     <span class="eyebrow">Financing &amp; insurance</span>
-    <h1 style="max-width: 24ch;">Making hearing care accessible.</h1>
-    <p class="lead">Medicare in-network. Out-of-network for most other plans. Flexible financing options available.</p>
+    <h1 style="max-width: 26ch;">Transparent, patient-centered hearing care.</h1>
+    <p class="lead">We believe in evidence-based care without cutting corners. You pay for the services you need to get to a thorough diagnosis and the right plan — and we tell you exactly what those services are.</p>
   </div>
 </section>
+
 <section class="section">
-  <div class="container" style="text-align:center;">
-    <p style="color:var(--c-text-muted); font-style: italic;">This page is being redesigned. Phase 2 of the Elevate Audiology website refresh will bring detailed content here. In the meantime, please <a href="/elevate-audiology-proof/contact/">contact us</a> with any questions.</p>
-    <p style="margin-top: var(--sp-5);"><a href="/elevate-audiology-proof/contact/" class="btn btn-primary">Schedule an Appointment</a></p>
+  <div class="container">
+    <div class="two-col">
+      <div>
+        <span class="eyebrow">Insurance</span>
+        <h2>How we work with insurance.</h2>
+        <p>We are <strong>in-network with Medicare</strong>. We are <strong>out-of-network with all other insurance plans</strong>.</p>
+        <p>Other than medically-necessary Medicare submissions, payment is due at the time of service. As a courtesy, we'll file with your insurance on your behalf so you can pursue any out-of-network reimbursement available to you.</p>
+        <p style="margin-top: var(--sp-5);"><a href="/elevate-audiology-proof/contact/" class="btn btn-outline">Have insurance questions? Contact us</a></p>
+      </div>
+      <div>
+        <ul class="feature-list">
+          <li><strong>In-network</strong> with Medicare</li>
+          <li><strong>Out-of-network</strong> with all other insurance</li>
+          <li>Courtesy filing on your behalf</li>
+          <li>Payment due at time of service</li>
+          <li>Transparent, itemized fees</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section-alt">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Two ways to pay</span>
+      <h2>Choose the model that fits your life.</h2>
+      <p>We offer both itemized (unbundled) and service-plan (bundled) options. Both come with full transparency — you'll always see exactly what you're paying for.</p>
+    </div>
+    <div class="three-col-process" style="grid-template-columns: 1fr 1fr;">
+      <div class="process-step">
+        <span class="step-tag">Option 1</span>
+        <h3>Itemized (Unbundled)</h3>
+        <p style="margin-bottom: var(--sp-4);">Invest in your hearing aids and your initial month of professional services up front. After your adjustment period, you pay for service appointments and supplies as you need them.</p>
+        <p style="font-size: var(--text-sm); color: var(--c-text-muted);"><strong>Best for:</strong> Patients with stable hearing loss who are comfortable maintaining their own hearing aids between appointments.</p>
+      </div>
+      <div class="process-step">
+        <span class="step-tag">Option 2</span>
+        <h3>Service Plan (Bundled)</h3>
+        <p style="margin-bottom: var(--sp-4);">Your total investment includes the hearing aids, professional services, batteries, warranties, and supplies for a defined period. You'll still see itemized costs so you know what's included.</p>
+        <p style="font-size: var(--text-sm); color: var(--c-text-muted);"><strong>Best for:</strong> Patients who want predictable costs, need more frequent appointments, or need regular earwax removal.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">What's always included</span>
+      <h2>Every patient receives proper care.</h2>
+      <p>Whichever payment model you choose, every hearing aid plan at Elevate Audiology comes with the following.</p>
+    </div>
+    <div class="checklist">
+      <ul class="feature-list">
+        <li>Professional fitting with <strong>Real Ear Measurement</strong></li>
+        <li>Hearing aid maintenance and counseling</li>
+        <li>Bluetooth connectivity setup (when applicable)</li>
+        <li>30 days of follow-up</li>
+      </ul>
+      <ul class="feature-list">
+        <li>Rechargeable option (when applicable)</li>
+        <li>Cleaning and care kit</li>
+        <li>Manufacturer repair warranty</li>
+        <li>Loss &amp; damage protection insurance</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="section section-alt">
+  <div class="container">
+    <div class="cta-band">
+      <h2>Have a question about cost or insurance?</h2>
+      <p>We're happy to walk through how Medicare or your insurance plan applies before you schedule.</p>
+      <a href="/elevate-audiology-proof/contact/" class="btn btn-on-dark">Contact Us</a>
+    </div>
   </div>
 </section>
 

@@ -3,14 +3,290 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Hearing Testing — Elevate Audiology</title>
-<meta name="description" content="A six-component diagnostic process designed to reveal exactly how you hear in real life.">
+<title>Hearing Testing &amp; The Elevate Hearing Pathway™ · Elevate Audiology</title>
+<meta name="description" content="The Elevate Hearing Pathway™ — six advanced hearing assessments for $99 (valued at $394). Comprehensive testing in Easley and Greenville, SC.">
 <meta name="theme-color" content="#2b1747">
 <link rel="icon" type="image/png" href="/elevate-audiology-proof/images/logo.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/elevate-audiology-proof/css/base.css">
+
+<style>
+  .stat-row {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: var(--sp-5);
+    margin-block: var(--sp-7);
+  }
+  .stat {
+    text-align: center;
+    padding: var(--sp-5);
+    background: var(--c-white);
+    border: 1px solid var(--c-border);
+    border-radius: var(--radius-lg);
+  }
+  .stat .num {
+    font-family: var(--font-display);
+    font-size: clamp(2rem, 4vw, 3rem);
+    color: var(--c-purple-700);
+    line-height: 1;
+    margin-bottom: var(--sp-2);
+    font-weight: 700;
+  }
+  .stat .label { font-size: var(--text-sm); color: var(--c-text-soft); }
+
+  .pathway-step {
+    display: grid;
+    grid-template-columns: 80px 1fr;
+    gap: var(--sp-5);
+    align-items: start;
+    padding-block: var(--sp-6);
+    border-bottom: 1px solid var(--c-border);
+  }
+  .pathway-step:last-child { border-bottom: none; }
+  .pathway-step .step-num {
+    font-family: var(--font-display);
+    font-size: 3.5rem;
+    line-height: 1;
+    color: var(--c-purple-500);
+    font-weight: 700;
+  }
+  .pathway-step h3 {
+    margin-bottom: var(--sp-2);
+    display: flex;
+    align-items: baseline;
+    gap: var(--sp-3);
+    flex-wrap: wrap;
+  }
+  .pathway-step .trade { color: var(--c-accent-2); font-size: var(--text-sm); font-weight: 600; font-family: var(--font-sans); }
+  .pathway-step ul { padding-left: 0; list-style: none; }
+  .pathway-step ul li {
+    padding-left: 28px; position: relative; margin-bottom: var(--sp-2); color: var(--c-text-soft);
+  }
+  .pathway-step ul li::before {
+    content: '→'; position: absolute; left: 0; top: 0;
+    color: var(--c-accent-2); font-weight: 700;
+  }
+
+  .price-feature-card {
+    background: linear-gradient(135deg, var(--c-purple-700), var(--c-purple-900));
+    color: var(--c-white);
+    border-radius: var(--radius-lg);
+    padding: var(--sp-7);
+    text-align: center;
+    margin-bottom: var(--sp-7);
+    position: relative;
+    overflow: hidden;
+  }
+  .price-feature-card::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse at 80% 20%, rgba(26,154,163,0.3), transparent 60%);
+    pointer-events: none;
+  }
+  .price-feature-card * { position: relative; z-index: 1; }
+  .price-feature-card .price {
+    font-family: var(--font-display);
+    font-size: clamp(3rem, 6vw, 4.5rem);
+    font-weight: 700;
+    line-height: 1;
+    color: var(--c-teal-100);
+  }
+  .price-feature-card .valued {
+    font-size: var(--text-sm);
+    color: rgba(255,255,255,0.75);
+    text-decoration: line-through;
+    margin-top: var(--sp-2);
+  }
+
+  .style-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: var(--sp-5);
+  }
+  .style-card {
+    background: var(--c-white);
+    border: 1px solid var(--c-border);
+    border-radius: var(--radius-lg);
+    padding: var(--sp-6);
+    transition: all .2s var(--ease);
+  }
+  .style-card:hover { border-color: var(--c-purple-500); box-shadow: var(--shadow); transform: translateY(-2px); }
+  .style-card .acronym {
+    display: inline-block;
+    background: var(--c-purple-50);
+    color: var(--c-purple-700);
+    font-weight: 700;
+    font-size: var(--text-xs);
+    letter-spacing: 0.08em;
+    padding: 4px 10px;
+    border-radius: var(--radius-pill);
+    margin-bottom: var(--sp-3);
+  }
+  .style-card h3 { font-size: var(--text-lg); margin-bottom: var(--sp-3); }
+  .style-card p { color: var(--c-text-soft); font-size: var(--text-sm); }
+  .style-card .severity {
+    margin-top: var(--sp-3);
+    font-size: var(--text-xs);
+    color: var(--c-accent-2);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+  }
+
+  .mfg-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: var(--sp-5);
+  }
+  .mfg-card {
+    background: var(--c-white);
+    border: 1px solid var(--c-border);
+    border-radius: var(--radius-lg);
+    padding: var(--sp-6);
+    transition: all .2s var(--ease);
+  }
+  .mfg-card:hover { border-color: var(--c-purple-500); box-shadow: var(--shadow); }
+  .mfg-card.featured {
+    background: linear-gradient(135deg, var(--c-purple-50), var(--c-white));
+    border-color: var(--c-purple-500);
+  }
+  .mfg-card .badge {
+    display: inline-block;
+    background: var(--c-purple-700);
+    color: var(--c-white);
+    font-size: var(--text-xs);
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 4px 10px;
+    border-radius: var(--radius-pill);
+    margin-bottom: var(--sp-3);
+  }
+  .mfg-card h3 { margin-bottom: var(--sp-2); display: flex; align-items: baseline; gap: var(--sp-3); flex-wrap: wrap; }
+  .mfg-card h3 .country { font-size: var(--text-sm); color: var(--c-text-muted); font-weight: 400; font-family: var(--font-sans); }
+  .mfg-card .models { font-size: var(--text-sm); color: var(--c-text-soft); margin-bottom: var(--sp-3); }
+  .mfg-card .models strong { color: var(--c-text); }
+  .mfg-card .tech { font-size: var(--text-sm); color: var(--c-text-soft); }
+
+  .checklist {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: var(--sp-3) var(--sp-5);
+    margin-top: var(--sp-5);
+  }
+  .checklist .feature-list { margin: 0; }
+
+  .signs-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: var(--sp-4);
+  }
+  .sign-card {
+    background: var(--c-white);
+    border: 1px solid var(--c-border);
+    border-radius: var(--radius);
+    padding: var(--sp-4) var(--sp-5);
+    display: flex;
+    align-items: flex-start;
+    gap: var(--sp-3);
+  }
+  .sign-card .num {
+    font-family: var(--font-display);
+    font-weight: 700;
+    color: var(--c-accent-2);
+    font-size: var(--text-lg);
+    flex-shrink: 0;
+    width: 32px;
+  }
+  .sign-card p { margin: 0; font-size: var(--text-sm); color: var(--c-text-soft); }
+
+  .battery-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-block: var(--sp-5);
+    background: var(--c-white);
+    border-radius: var(--radius);
+    overflow: hidden;
+    border: 1px solid var(--c-border);
+  }
+  .battery-table th, .battery-table td {
+    padding: var(--sp-4);
+    text-align: left;
+    border-bottom: 1px solid var(--c-border);
+  }
+  .battery-table th { background: var(--c-purple-50); color: var(--c-purple-900); font-weight: 600; font-size: var(--text-sm); letter-spacing: 0.04em; text-transform: uppercase; }
+  .battery-table tr:last-child td { border-bottom: none; }
+  .color-dot { display: inline-block; width: 14px; height: 14px; border-radius: 50%; margin-right: 8px; vertical-align: middle; border: 1px solid rgba(0,0,0,.1); }
+
+  .three-col-process {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: var(--sp-5);
+  }
+  .process-step {
+    background: var(--c-white);
+    border: 1px solid var(--c-border);
+    border-radius: var(--radius-lg);
+    padding: var(--sp-6);
+    position: relative;
+  }
+  .process-step .step-tag {
+    display: inline-block;
+    background: var(--c-purple-700);
+    color: var(--c-white);
+    font-size: var(--text-xs);
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    padding: 4px 10px;
+    border-radius: var(--radius-pill);
+    margin-bottom: var(--sp-3);
+  }
+  .process-step h3 { margin-bottom: var(--sp-3); font-size: var(--text-xl); }
+  .process-step p { color: var(--c-text-soft); font-size: var(--text-sm); margin: 0; }
+
+  .outcome-card {
+    background: var(--c-white);
+    border-left: 4px solid var(--c-accent-2);
+    border-radius: var(--radius);
+    padding: var(--sp-5) var(--sp-6);
+    margin-bottom: var(--sp-4);
+  }
+  .outcome-card .outcome-num {
+    font-family: var(--font-display);
+    color: var(--c-purple-700);
+    font-weight: 700;
+    font-size: var(--text-sm);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+  .outcome-card h3 { margin: var(--sp-2) 0 var(--sp-3); font-size: var(--text-lg); }
+
+  .troubleshoot {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: var(--sp-5);
+    margin-top: var(--sp-6);
+  }
+  .troubleshoot .ts-card {
+    background: var(--c-white);
+    border: 1px solid var(--c-border);
+    border-radius: var(--radius-lg);
+    padding: var(--sp-6);
+  }
+  .ts-card h3 { font-size: var(--text-lg); color: var(--c-purple-700); margin-bottom: var(--sp-3); }
+  .ts-card ul { list-style: none; padding: 0; margin: 0; }
+  .ts-card ul li {
+    padding-left: 24px; position: relative; margin-bottom: var(--sp-2);
+    font-size: var(--text-sm); color: var(--c-text-soft);
+  }
+  .ts-card ul li::before {
+    content: '✓'; position: absolute; left: 0; top: 0;
+    color: var(--c-accent-2); font-weight: 700;
+  }
+</style>
 
 </head>
 <body>
@@ -84,14 +360,155 @@
 <section class="hero" style="padding-block: clamp(3rem, 6vw, 5rem);">
   <div class="container">
     <span class="eyebrow">The Elevate Hearing Pathway™</span>
-    <h1 style="max-width: 24ch;">Hearing testing that goes beyond beeps and tones.</h1>
-    <p class="lead">A six-component diagnostic process designed to reveal exactly how you hear in real life.</p>
+    <h1 style="max-width: 26ch;">Hearing testing that goes beyond beeps and tones.</h1>
+    <p class="lead">The Elevate Hearing Pathway™ is a six-component diagnostic protocol designed to reveal exactly how you hear in real life — at home, at work, in noise, with family.</p>
+    <div class="hero-actions">
+      <a href="/elevate-audiology-proof/contact/" class="btn btn-on-dark">Schedule the Pathway</a>
+      <a href="#components" class="btn btn-outline" style="color:#fff;border-color:rgba(255,255,255,.5);">See What's Included</a>
+    </div>
   </div>
 </section>
+
 <section class="section">
-  <div class="container" style="text-align:center;">
-    <p style="color:var(--c-text-muted); font-style: italic;">This page is being redesigned. Phase 2 of the Elevate Audiology website refresh will bring detailed content here. In the meantime, please <a href="/elevate-audiology-proof/contact/">contact us</a> with any questions.</p>
-    <p style="margin-top: var(--sp-5);"><a href="/elevate-audiology-proof/contact/" class="btn btn-primary">Schedule an Appointment</a></p>
+  <div class="container">
+    <div class="price-feature-card">
+      <span class="eyebrow" style="color: var(--c-teal-100);">The Elevate Hearing Pathway™</span>
+      <h2 style="color:#fff;">Six advanced assessments — all in one visit.</h2>
+      <div class="price">$99</div>
+      <p class="valued">Valued at $394</p>
+      <p style="margin-top: var(--sp-4); max-width: 56ch; margin-inline: auto;">A full suite of advanced assessment and conversation, in addition to your diagnostic hearing exam — designed to give you a complete, real-life picture of your hearing.</p>
+      <a href="/elevate-audiology-proof/contact/" class="btn btn-on-dark" style="margin-top: var(--sp-5);">Schedule an Appointment</a>
+    </div>
+  </div>
+</section>
+
+<section class="section section-alt" id="components">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Six components</span>
+      <h2>Inside the Elevate Hearing Pathway™</h2>
+      <p>Every component is designed to answer a different real-life question — together they paint a complete picture of how you hear.</p>
+    </div>
+
+    <div class="pathway-step">
+      <div class="step-num">01</div>
+      <div>
+        <h3>Personalized Hearing Status Questionnaires™ <span class="trade">Valued at $50</span></h3>
+        <ul>
+          <li>Connects your experience to real-life situations — family, work, and social conversations.</li>
+          <li>Reviewed by your audiologist before your appointment so we can personalize your care from the start.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="pathway-step">
+      <div class="step-num">02</div>
+      <div>
+        <h3>Speech-in-Noise Reality Check™ <span class="trade">Valued at $75</span></h3>
+        <ul>
+          <li>Reveals why you may hear but struggle to understand in noisy settings.</li>
+          <li>Guides tailored recommendations for the right technology or strategies to improve real-world listening.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="pathway-step">
+      <div class="step-num">03</div>
+      <div>
+        <h3>Binaural Brainpower Testing™ <span class="trade">Valued at $50</span></h3>
+        <ul>
+          <li>Measures how well your brain uses both ears together to follow conversations.</li>
+          <li>Provides a more complete picture of your auditory system than standard single-ear testing.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="pathway-step">
+      <div class="step-num">04</div>
+      <div>
+        <h3>Comfort Zone Hearing Profile™ <span class="trade">Valued at $70</span></h3>
+        <ul>
+          <li>Finds your safe and comfortable listening range.</li>
+          <li>Identifies how your personality influences your abilities in background noise.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="pathway-step">
+      <div class="step-num">05</div>
+      <div>
+        <h3>Clarity Review™ <span class="trade">Valued at $100</span></h3>
+        <ul>
+          <li>A clear, step-by-step explanation of your results in everyday language.</li>
+          <li>Personalized recommendations: whether hearing aids, monitoring, further testing, or other solutions are best.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="pathway-step">
+      <div class="step-num">06</div>
+      <div>
+        <h3>Family Communication Toolkit™ <span class="trade">Valued at $49</span></h3>
+        <ul>
+          <li>Simple, practical tools to improve conversations at home — with or without hearing technology.</li>
+          <li>Reduces frustration and misunderstandings for you and your loved ones right away.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="two-col">
+      <div>
+        <span class="eyebrow">Bring someone you love</span>
+        <h2>The diagnostic hearing exam</h2>
+        <p>Beyond the Pathway, every appointment includes a thorough diagnostic hearing examination — otoscopy, audiometry, speech evaluation, and (when indicated) immittance testing.</p>
+        <p><em>Please bring a close relative — spouse, adult child, or close friend — to your appointment. A support network is invaluable when making decisions about your hearing.</em></p>
+      </div>
+      <div>
+        <ul class="feature-list">
+          <li><strong>Otoscopy</strong> — visualize the ear canal, remove wax if needed</li>
+          <li><strong>Audiometry</strong> — identify type, shape, and degree of loss</li>
+          <li><strong>Speech evaluation</strong> — quiet and noise testing at varied volumes</li>
+          <li><strong>Immittance evaluation</strong> — eardrum movement and acoustic reflexes when indicated</li>
+          <li><strong>Education &amp; recommendations</strong> — the conversation that turns results into a plan</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section-alt">
+  <div class="container">
+    <div class="section-head center text-center">
+      <span class="eyebrow">Why test regularly</span>
+      <h2>Hearing tests aren't just for emergencies.</h2>
+      <p>Experts recommend a hearing test every 10 years until age 50 — and every 3 years after.</p>
+    </div>
+    <div class="checklist" style="max-width: 800px; margin-inline: auto;">
+      <ul class="feature-list">
+        <li>Hearing aids decrease listening-related fatigue.</li>
+        <li>Untreated mild hearing loss is linked to a 2–3× increased risk of falls.</li>
+        <li>Hearing aid use can improve working memory in adults.</li>
+      </ul>
+      <ul class="feature-list">
+        <li>Untreated hearing loss correlates with emotional loneliness.</li>
+        <li>Hearing aids improve social engagement and activity.</li>
+        <li>Early detection means more options — for you and your loved ones.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="cta-band">
+      <h2>Ready to start the Elevate Hearing Pathway™?</h2>
+      <p>One visit. Six advanced assessments. A real plan for how you hear in real life.</p>
+      <a href="/elevate-audiology-proof/contact/" class="btn btn-on-dark">Schedule for $99</a>
+    </div>
   </div>
 </section>
 

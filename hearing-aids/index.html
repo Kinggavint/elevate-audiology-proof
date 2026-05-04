@@ -3,14 +3,290 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Hearing Aids — Elevate Audiology</title>
-<meta name="description" content="Eight major manufacturers, every style — chosen and verified for your real-world hearing prescription.">
+<title>Hearing Aids — Styles &amp; Real-Ear Fitting · Elevate Audiology</title>
+<meta name="description" content="Five hearing aid styles (RIC, BTE, CIC, ITC, ITE) and Real-Ear Measurement fitting from Doctors of Audiology in Easley and Greenville, SC.">
 <meta name="theme-color" content="#2b1747">
 <link rel="icon" type="image/png" href="/elevate-audiology-proof/images/logo.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/elevate-audiology-proof/css/base.css">
+
+<style>
+  .stat-row {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: var(--sp-5);
+    margin-block: var(--sp-7);
+  }
+  .stat {
+    text-align: center;
+    padding: var(--sp-5);
+    background: var(--c-white);
+    border: 1px solid var(--c-border);
+    border-radius: var(--radius-lg);
+  }
+  .stat .num {
+    font-family: var(--font-display);
+    font-size: clamp(2rem, 4vw, 3rem);
+    color: var(--c-purple-700);
+    line-height: 1;
+    margin-bottom: var(--sp-2);
+    font-weight: 700;
+  }
+  .stat .label { font-size: var(--text-sm); color: var(--c-text-soft); }
+
+  .pathway-step {
+    display: grid;
+    grid-template-columns: 80px 1fr;
+    gap: var(--sp-5);
+    align-items: start;
+    padding-block: var(--sp-6);
+    border-bottom: 1px solid var(--c-border);
+  }
+  .pathway-step:last-child { border-bottom: none; }
+  .pathway-step .step-num {
+    font-family: var(--font-display);
+    font-size: 3.5rem;
+    line-height: 1;
+    color: var(--c-purple-500);
+    font-weight: 700;
+  }
+  .pathway-step h3 {
+    margin-bottom: var(--sp-2);
+    display: flex;
+    align-items: baseline;
+    gap: var(--sp-3);
+    flex-wrap: wrap;
+  }
+  .pathway-step .trade { color: var(--c-accent-2); font-size: var(--text-sm); font-weight: 600; font-family: var(--font-sans); }
+  .pathway-step ul { padding-left: 0; list-style: none; }
+  .pathway-step ul li {
+    padding-left: 28px; position: relative; margin-bottom: var(--sp-2); color: var(--c-text-soft);
+  }
+  .pathway-step ul li::before {
+    content: '→'; position: absolute; left: 0; top: 0;
+    color: var(--c-accent-2); font-weight: 700;
+  }
+
+  .price-feature-card {
+    background: linear-gradient(135deg, var(--c-purple-700), var(--c-purple-900));
+    color: var(--c-white);
+    border-radius: var(--radius-lg);
+    padding: var(--sp-7);
+    text-align: center;
+    margin-bottom: var(--sp-7);
+    position: relative;
+    overflow: hidden;
+  }
+  .price-feature-card::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse at 80% 20%, rgba(26,154,163,0.3), transparent 60%);
+    pointer-events: none;
+  }
+  .price-feature-card * { position: relative; z-index: 1; }
+  .price-feature-card .price {
+    font-family: var(--font-display);
+    font-size: clamp(3rem, 6vw, 4.5rem);
+    font-weight: 700;
+    line-height: 1;
+    color: var(--c-teal-100);
+  }
+  .price-feature-card .valued {
+    font-size: var(--text-sm);
+    color: rgba(255,255,255,0.75);
+    text-decoration: line-through;
+    margin-top: var(--sp-2);
+  }
+
+  .style-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: var(--sp-5);
+  }
+  .style-card {
+    background: var(--c-white);
+    border: 1px solid var(--c-border);
+    border-radius: var(--radius-lg);
+    padding: var(--sp-6);
+    transition: all .2s var(--ease);
+  }
+  .style-card:hover { border-color: var(--c-purple-500); box-shadow: var(--shadow); transform: translateY(-2px); }
+  .style-card .acronym {
+    display: inline-block;
+    background: var(--c-purple-50);
+    color: var(--c-purple-700);
+    font-weight: 700;
+    font-size: var(--text-xs);
+    letter-spacing: 0.08em;
+    padding: 4px 10px;
+    border-radius: var(--radius-pill);
+    margin-bottom: var(--sp-3);
+  }
+  .style-card h3 { font-size: var(--text-lg); margin-bottom: var(--sp-3); }
+  .style-card p { color: var(--c-text-soft); font-size: var(--text-sm); }
+  .style-card .severity {
+    margin-top: var(--sp-3);
+    font-size: var(--text-xs);
+    color: var(--c-accent-2);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+  }
+
+  .mfg-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: var(--sp-5);
+  }
+  .mfg-card {
+    background: var(--c-white);
+    border: 1px solid var(--c-border);
+    border-radius: var(--radius-lg);
+    padding: var(--sp-6);
+    transition: all .2s var(--ease);
+  }
+  .mfg-card:hover { border-color: var(--c-purple-500); box-shadow: var(--shadow); }
+  .mfg-card.featured {
+    background: linear-gradient(135deg, var(--c-purple-50), var(--c-white));
+    border-color: var(--c-purple-500);
+  }
+  .mfg-card .badge {
+    display: inline-block;
+    background: var(--c-purple-700);
+    color: var(--c-white);
+    font-size: var(--text-xs);
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 4px 10px;
+    border-radius: var(--radius-pill);
+    margin-bottom: var(--sp-3);
+  }
+  .mfg-card h3 { margin-bottom: var(--sp-2); display: flex; align-items: baseline; gap: var(--sp-3); flex-wrap: wrap; }
+  .mfg-card h3 .country { font-size: var(--text-sm); color: var(--c-text-muted); font-weight: 400; font-family: var(--font-sans); }
+  .mfg-card .models { font-size: var(--text-sm); color: var(--c-text-soft); margin-bottom: var(--sp-3); }
+  .mfg-card .models strong { color: var(--c-text); }
+  .mfg-card .tech { font-size: var(--text-sm); color: var(--c-text-soft); }
+
+  .checklist {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: var(--sp-3) var(--sp-5);
+    margin-top: var(--sp-5);
+  }
+  .checklist .feature-list { margin: 0; }
+
+  .signs-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: var(--sp-4);
+  }
+  .sign-card {
+    background: var(--c-white);
+    border: 1px solid var(--c-border);
+    border-radius: var(--radius);
+    padding: var(--sp-4) var(--sp-5);
+    display: flex;
+    align-items: flex-start;
+    gap: var(--sp-3);
+  }
+  .sign-card .num {
+    font-family: var(--font-display);
+    font-weight: 700;
+    color: var(--c-accent-2);
+    font-size: var(--text-lg);
+    flex-shrink: 0;
+    width: 32px;
+  }
+  .sign-card p { margin: 0; font-size: var(--text-sm); color: var(--c-text-soft); }
+
+  .battery-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-block: var(--sp-5);
+    background: var(--c-white);
+    border-radius: var(--radius);
+    overflow: hidden;
+    border: 1px solid var(--c-border);
+  }
+  .battery-table th, .battery-table td {
+    padding: var(--sp-4);
+    text-align: left;
+    border-bottom: 1px solid var(--c-border);
+  }
+  .battery-table th { background: var(--c-purple-50); color: var(--c-purple-900); font-weight: 600; font-size: var(--text-sm); letter-spacing: 0.04em; text-transform: uppercase; }
+  .battery-table tr:last-child td { border-bottom: none; }
+  .color-dot { display: inline-block; width: 14px; height: 14px; border-radius: 50%; margin-right: 8px; vertical-align: middle; border: 1px solid rgba(0,0,0,.1); }
+
+  .three-col-process {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: var(--sp-5);
+  }
+  .process-step {
+    background: var(--c-white);
+    border: 1px solid var(--c-border);
+    border-radius: var(--radius-lg);
+    padding: var(--sp-6);
+    position: relative;
+  }
+  .process-step .step-tag {
+    display: inline-block;
+    background: var(--c-purple-700);
+    color: var(--c-white);
+    font-size: var(--text-xs);
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    padding: 4px 10px;
+    border-radius: var(--radius-pill);
+    margin-bottom: var(--sp-3);
+  }
+  .process-step h3 { margin-bottom: var(--sp-3); font-size: var(--text-xl); }
+  .process-step p { color: var(--c-text-soft); font-size: var(--text-sm); margin: 0; }
+
+  .outcome-card {
+    background: var(--c-white);
+    border-left: 4px solid var(--c-accent-2);
+    border-radius: var(--radius);
+    padding: var(--sp-5) var(--sp-6);
+    margin-bottom: var(--sp-4);
+  }
+  .outcome-card .outcome-num {
+    font-family: var(--font-display);
+    color: var(--c-purple-700);
+    font-weight: 700;
+    font-size: var(--text-sm);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+  .outcome-card h3 { margin: var(--sp-2) 0 var(--sp-3); font-size: var(--text-lg); }
+
+  .troubleshoot {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: var(--sp-5);
+    margin-top: var(--sp-6);
+  }
+  .troubleshoot .ts-card {
+    background: var(--c-white);
+    border: 1px solid var(--c-border);
+    border-radius: var(--radius-lg);
+    padding: var(--sp-6);
+  }
+  .ts-card h3 { font-size: var(--text-lg); color: var(--c-purple-700); margin-bottom: var(--sp-3); }
+  .ts-card ul { list-style: none; padding: 0; margin: 0; }
+  .ts-card ul li {
+    padding-left: 24px; position: relative; margin-bottom: var(--sp-2);
+    font-size: var(--text-sm); color: var(--c-text-soft);
+  }
+  .ts-card ul li::before {
+    content: '✓'; position: absolute; left: 0; top: 0;
+    color: var(--c-accent-2); font-weight: 700;
+  }
+</style>
 
 </head>
 <body>
@@ -84,14 +360,126 @@
 <section class="hero" style="padding-block: clamp(3rem, 6vw, 5rem);">
   <div class="container">
     <span class="eyebrow">Hearing aids</span>
-    <h1 style="max-width: 24ch;">Hearing aids fit the way they should be fit.</h1>
-    <p class="lead">Eight major manufacturers, every style — chosen and verified for your real-world hearing prescription.</p>
+    <h1 style="max-width: 26ch;">Hearing aids fit the way they should be fit.</h1>
+    <p class="lead">Modern hearing aids are smaller, smarter, and more natural-sounding than ever — but the device matters less than how it's fit. We use Real-Ear Measurement to verify yours work to your prescription.</p>
+    <div class="hero-actions">
+      <a href="/elevate-audiology-proof/contact/" class="btn btn-on-dark">Schedule a Consultation</a>
+      <a href="/elevate-audiology-proof/manufacturers/" class="btn btn-outline" style="color:#fff;border-color:rgba(255,255,255,.5);">Browse Manufacturers</a>
+    </div>
   </div>
 </section>
+
 <section class="section">
-  <div class="container" style="text-align:center;">
-    <p style="color:var(--c-text-muted); font-style: italic;">This page is being redesigned. Phase 2 of the Elevate Audiology website refresh will bring detailed content here. In the meantime, please <a href="/elevate-audiology-proof/contact/">contact us</a> with any questions.</p>
-    <p style="margin-top: var(--sp-5);"><a href="/elevate-audiology-proof/contact/" class="btn btn-primary">Schedule an Appointment</a></p>
+  <div class="container">
+    <div class="section-head center text-center">
+      <span class="eyebrow">Five styles</span>
+      <h2>What style is right for you?</h2>
+      <p>Your audiologist will help match a style to your hearing loss, anatomy, lifestyle, and aesthetic preferences.</p>
+    </div>
+    <div class="style-grid">
+      <div class="style-card">
+        <span class="acronym">RIC</span>
+        <h3>Receiver-in-the-Canal</h3>
+        <p>The most common style worldwide. The speaker sits inside the ear canal for natural sound, while electronics rest behind the ear. Small, discreet, versatile — and powerful enough for significant loss.</p>
+        <div class="severity">Mild · Moderate · Severe</div>
+      </div>
+      <div class="style-card">
+        <span class="acronym">BTE</span>
+        <h3>Behind-the-Ear</h3>
+        <p>Curved housing rests behind the ear and connects to the canal via a custom earmold. More visible, but powerful enough for severe-to-profound losses.</p>
+        <div class="severity">Severe · Profound</div>
+      </div>
+      <div class="style-card">
+        <span class="acronym">CIC</span>
+        <h3>Completely-in-the-Canal</h3>
+        <p>Sits deep in the ear canal — virtually invisible. Trades a smaller battery for discretion and is best for milder losses.</p>
+        <div class="severity">Mild · Moderate</div>
+      </div>
+      <div class="style-card">
+        <span class="acronym">ITC</span>
+        <h3>In-the-Canal</h3>
+        <p>Larger than CIC and sits in the lower portion of the canal — easier to insert with a longer battery life. Now available rechargeable.</p>
+        <div class="severity">Mild · Moderate</div>
+      </div>
+      <div class="style-card">
+        <span class="acronym">ITE</span>
+        <h3>In-the-Ear</h3>
+        <p>Fills the outer portion of the ear. Less discreet, but room for more features and a bigger battery — supporting more severe losses.</p>
+        <div class="severity">Moderate · Severe · Profound</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section-alt">
+  <div class="container">
+    <div class="two-col">
+      <div>
+        <span class="eyebrow">Why we Real-Ear Measure</span>
+        <h2>Over 70% of hearing aids aren't programmed correctly.</h2>
+        <p>Most people don't know that the hearing aid's manufacturer settings are an estimate — they assume the size and shape of an "average" ear canal. <strong>Your ear isn't average.</strong></p>
+        <p>At Elevate, every fitting includes Real-Ear Measurement: a tiny probe-tube microphone in your canal that confirms your hearing aid is delivering exactly the volume and clarity your hearing loss prescription requires. It's the gold standard — and most clinics still skip it.</p>
+      </div>
+      <div>
+        <ul class="feature-list">
+          <li>Verified to your <strong>actual</strong> ear, not an average</li>
+          <li>Validated to your <strong>hearing loss prescription</strong></li>
+          <li>Measured in <strong>both quiet and noise</strong></li>
+          <li>Adjusted in <strong>your real-life environment</strong></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-head center text-center">
+      <span class="eyebrow">Explore further</span>
+      <h2>Continue learning about hearing aids</h2>
+    </div>
+    <div class="service-grid">
+      <a href="/elevate-audiology-proof/manufacturers/" class="service-card">
+        <h3>Manufacturers</h3>
+        <p>Eight leading hearing aid brands — including Oticon Intent, Phonak Infinio, ReSound Nexia, and more.</p>
+        <span class="read-more">View manufacturers →</span>
+      </a>
+      <a href="/elevate-audiology-proof/benefits-of-hearing-aids/" class="service-card">
+        <h3>Benefits of Hearing Aids</h3>
+        <p>Mental health, cognitive health, balance, relationships — what changes when you treat hearing loss.</p>
+        <span class="read-more">See the benefits →</span>
+      </a>
+      <a href="/elevate-audiology-proof/financing/" class="service-card">
+        <h3>Financing &amp; Insurance</h3>
+        <p>How we work with Medicare and other insurance, and what's included in our care plans.</p>
+        <span class="read-more">View financing →</span>
+      </a>
+      <a href="/elevate-audiology-proof/repair/" class="service-card">
+        <h3>Repair &amp; Service</h3>
+        <p>In-office repair, Redux deep cleaning, and the Elevate 180™ Review for underperforming aids.</p>
+        <span class="read-more">Learn more →</span>
+      </a>
+      <a href="/elevate-audiology-proof/batteries/" class="service-card">
+        <h3>Batteries</h3>
+        <p>Disposable and rechargeable — sizes, color codes, and tips to extend life.</p>
+        <span class="read-more">Battery guide →</span>
+      </a>
+      <a href="/elevate-audiology-proof/hearing-testing/" class="service-card">
+        <h3>The Elevate Hearing Pathway™</h3>
+        <p>Six advanced assessments designed to reveal exactly how you hear in real life. $99.</p>
+        <span class="read-more">View pathway →</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section class="section section-alt">
+  <div class="container">
+    <div class="cta-band">
+      <h2>Let's find the right hearing aids for your life.</h2>
+      <p>Schedule a consultation with one of our Doctors of Audiology and we'll walk you through styles, technology levels, and the manufacturer that fits you best.</p>
+      <a href="/elevate-audiology-proof/contact/" class="btn btn-on-dark">Schedule a Consultation</a>
+    </div>
   </div>
 </section>
 

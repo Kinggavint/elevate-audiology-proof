@@ -3,14 +3,290 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Hearing Loss — Elevate Audiology</title>
-<meta name="description" content="Causes, types, and signs of hearing loss — and what to do about them.">
+<title>Hearing Loss — Causes, Types &amp; Signs · Elevate Audiology</title>
+<meta name="description" content="Understand the causes, three types, and 10 most common signs of hearing loss. Doctors of Audiology in Easley & Greenville, SC.">
 <meta name="theme-color" content="#2b1747">
 <link rel="icon" type="image/png" href="/elevate-audiology-proof/images/logo.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/elevate-audiology-proof/css/base.css">
+
+<style>
+  .stat-row {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: var(--sp-5);
+    margin-block: var(--sp-7);
+  }
+  .stat {
+    text-align: center;
+    padding: var(--sp-5);
+    background: var(--c-white);
+    border: 1px solid var(--c-border);
+    border-radius: var(--radius-lg);
+  }
+  .stat .num {
+    font-family: var(--font-display);
+    font-size: clamp(2rem, 4vw, 3rem);
+    color: var(--c-purple-700);
+    line-height: 1;
+    margin-bottom: var(--sp-2);
+    font-weight: 700;
+  }
+  .stat .label { font-size: var(--text-sm); color: var(--c-text-soft); }
+
+  .pathway-step {
+    display: grid;
+    grid-template-columns: 80px 1fr;
+    gap: var(--sp-5);
+    align-items: start;
+    padding-block: var(--sp-6);
+    border-bottom: 1px solid var(--c-border);
+  }
+  .pathway-step:last-child { border-bottom: none; }
+  .pathway-step .step-num {
+    font-family: var(--font-display);
+    font-size: 3.5rem;
+    line-height: 1;
+    color: var(--c-purple-500);
+    font-weight: 700;
+  }
+  .pathway-step h3 {
+    margin-bottom: var(--sp-2);
+    display: flex;
+    align-items: baseline;
+    gap: var(--sp-3);
+    flex-wrap: wrap;
+  }
+  .pathway-step .trade { color: var(--c-accent-2); font-size: var(--text-sm); font-weight: 600; font-family: var(--font-sans); }
+  .pathway-step ul { padding-left: 0; list-style: none; }
+  .pathway-step ul li {
+    padding-left: 28px; position: relative; margin-bottom: var(--sp-2); color: var(--c-text-soft);
+  }
+  .pathway-step ul li::before {
+    content: '→'; position: absolute; left: 0; top: 0;
+    color: var(--c-accent-2); font-weight: 700;
+  }
+
+  .price-feature-card {
+    background: linear-gradient(135deg, var(--c-purple-700), var(--c-purple-900));
+    color: var(--c-white);
+    border-radius: var(--radius-lg);
+    padding: var(--sp-7);
+    text-align: center;
+    margin-bottom: var(--sp-7);
+    position: relative;
+    overflow: hidden;
+  }
+  .price-feature-card::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse at 80% 20%, rgba(26,154,163,0.3), transparent 60%);
+    pointer-events: none;
+  }
+  .price-feature-card * { position: relative; z-index: 1; }
+  .price-feature-card .price {
+    font-family: var(--font-display);
+    font-size: clamp(3rem, 6vw, 4.5rem);
+    font-weight: 700;
+    line-height: 1;
+    color: var(--c-teal-100);
+  }
+  .price-feature-card .valued {
+    font-size: var(--text-sm);
+    color: rgba(255,255,255,0.75);
+    text-decoration: line-through;
+    margin-top: var(--sp-2);
+  }
+
+  .style-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: var(--sp-5);
+  }
+  .style-card {
+    background: var(--c-white);
+    border: 1px solid var(--c-border);
+    border-radius: var(--radius-lg);
+    padding: var(--sp-6);
+    transition: all .2s var(--ease);
+  }
+  .style-card:hover { border-color: var(--c-purple-500); box-shadow: var(--shadow); transform: translateY(-2px); }
+  .style-card .acronym {
+    display: inline-block;
+    background: var(--c-purple-50);
+    color: var(--c-purple-700);
+    font-weight: 700;
+    font-size: var(--text-xs);
+    letter-spacing: 0.08em;
+    padding: 4px 10px;
+    border-radius: var(--radius-pill);
+    margin-bottom: var(--sp-3);
+  }
+  .style-card h3 { font-size: var(--text-lg); margin-bottom: var(--sp-3); }
+  .style-card p { color: var(--c-text-soft); font-size: var(--text-sm); }
+  .style-card .severity {
+    margin-top: var(--sp-3);
+    font-size: var(--text-xs);
+    color: var(--c-accent-2);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+  }
+
+  .mfg-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: var(--sp-5);
+  }
+  .mfg-card {
+    background: var(--c-white);
+    border: 1px solid var(--c-border);
+    border-radius: var(--radius-lg);
+    padding: var(--sp-6);
+    transition: all .2s var(--ease);
+  }
+  .mfg-card:hover { border-color: var(--c-purple-500); box-shadow: var(--shadow); }
+  .mfg-card.featured {
+    background: linear-gradient(135deg, var(--c-purple-50), var(--c-white));
+    border-color: var(--c-purple-500);
+  }
+  .mfg-card .badge {
+    display: inline-block;
+    background: var(--c-purple-700);
+    color: var(--c-white);
+    font-size: var(--text-xs);
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 4px 10px;
+    border-radius: var(--radius-pill);
+    margin-bottom: var(--sp-3);
+  }
+  .mfg-card h3 { margin-bottom: var(--sp-2); display: flex; align-items: baseline; gap: var(--sp-3); flex-wrap: wrap; }
+  .mfg-card h3 .country { font-size: var(--text-sm); color: var(--c-text-muted); font-weight: 400; font-family: var(--font-sans); }
+  .mfg-card .models { font-size: var(--text-sm); color: var(--c-text-soft); margin-bottom: var(--sp-3); }
+  .mfg-card .models strong { color: var(--c-text); }
+  .mfg-card .tech { font-size: var(--text-sm); color: var(--c-text-soft); }
+
+  .checklist {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: var(--sp-3) var(--sp-5);
+    margin-top: var(--sp-5);
+  }
+  .checklist .feature-list { margin: 0; }
+
+  .signs-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: var(--sp-4);
+  }
+  .sign-card {
+    background: var(--c-white);
+    border: 1px solid var(--c-border);
+    border-radius: var(--radius);
+    padding: var(--sp-4) var(--sp-5);
+    display: flex;
+    align-items: flex-start;
+    gap: var(--sp-3);
+  }
+  .sign-card .num {
+    font-family: var(--font-display);
+    font-weight: 700;
+    color: var(--c-accent-2);
+    font-size: var(--text-lg);
+    flex-shrink: 0;
+    width: 32px;
+  }
+  .sign-card p { margin: 0; font-size: var(--text-sm); color: var(--c-text-soft); }
+
+  .battery-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-block: var(--sp-5);
+    background: var(--c-white);
+    border-radius: var(--radius);
+    overflow: hidden;
+    border: 1px solid var(--c-border);
+  }
+  .battery-table th, .battery-table td {
+    padding: var(--sp-4);
+    text-align: left;
+    border-bottom: 1px solid var(--c-border);
+  }
+  .battery-table th { background: var(--c-purple-50); color: var(--c-purple-900); font-weight: 600; font-size: var(--text-sm); letter-spacing: 0.04em; text-transform: uppercase; }
+  .battery-table tr:last-child td { border-bottom: none; }
+  .color-dot { display: inline-block; width: 14px; height: 14px; border-radius: 50%; margin-right: 8px; vertical-align: middle; border: 1px solid rgba(0,0,0,.1); }
+
+  .three-col-process {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: var(--sp-5);
+  }
+  .process-step {
+    background: var(--c-white);
+    border: 1px solid var(--c-border);
+    border-radius: var(--radius-lg);
+    padding: var(--sp-6);
+    position: relative;
+  }
+  .process-step .step-tag {
+    display: inline-block;
+    background: var(--c-purple-700);
+    color: var(--c-white);
+    font-size: var(--text-xs);
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    padding: 4px 10px;
+    border-radius: var(--radius-pill);
+    margin-bottom: var(--sp-3);
+  }
+  .process-step h3 { margin-bottom: var(--sp-3); font-size: var(--text-xl); }
+  .process-step p { color: var(--c-text-soft); font-size: var(--text-sm); margin: 0; }
+
+  .outcome-card {
+    background: var(--c-white);
+    border-left: 4px solid var(--c-accent-2);
+    border-radius: var(--radius);
+    padding: var(--sp-5) var(--sp-6);
+    margin-bottom: var(--sp-4);
+  }
+  .outcome-card .outcome-num {
+    font-family: var(--font-display);
+    color: var(--c-purple-700);
+    font-weight: 700;
+    font-size: var(--text-sm);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+  .outcome-card h3 { margin: var(--sp-2) 0 var(--sp-3); font-size: var(--text-lg); }
+
+  .troubleshoot {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: var(--sp-5);
+    margin-top: var(--sp-6);
+  }
+  .troubleshoot .ts-card {
+    background: var(--c-white);
+    border: 1px solid var(--c-border);
+    border-radius: var(--radius-lg);
+    padding: var(--sp-6);
+  }
+  .ts-card h3 { font-size: var(--text-lg); color: var(--c-purple-700); margin-bottom: var(--sp-3); }
+  .ts-card ul { list-style: none; padding: 0; margin: 0; }
+  .ts-card ul li {
+    padding-left: 24px; position: relative; margin-bottom: var(--sp-2);
+    font-size: var(--text-sm); color: var(--c-text-soft);
+  }
+  .ts-card ul li::before {
+    content: '✓'; position: absolute; left: 0; top: 0;
+    color: var(--c-accent-2); font-weight: 700;
+  }
+</style>
 
 </head>
 <body>
@@ -84,14 +360,119 @@
 <section class="hero" style="padding-block: clamp(3rem, 6vw, 5rem);">
   <div class="container">
     <span class="eyebrow">Hearing loss</span>
-    <h1 style="max-width: 24ch;">Understanding hearing loss.</h1>
-    <p class="lead">Causes, types, and signs of hearing loss — and what to do about them.</p>
+    <h1 style="max-width: 26ch;">Understanding hearing loss — and what you can do about it.</h1>
+    <p class="lead">Hearing loss develops gradually for most people, so signs are easy to miss. The earlier we find it, the more we can do.</p>
+    <div class="hero-actions">
+      <a href="/elevate-audiology-proof/contact/" class="btn btn-on-dark">Schedule a Hearing Test</a>
+      <a href="/elevate-audiology-proof/hearing-testing/" class="btn btn-outline" style="color:#fff;border-color:rgba(255,255,255,.5);">See How We Test</a>
+    </div>
   </div>
 </section>
+
 <section class="section">
-  <div class="container" style="text-align:center;">
-    <p style="color:var(--c-text-muted); font-style: italic;">This page is being redesigned. Phase 2 of the Elevate Audiology website refresh will bring detailed content here. In the meantime, please <a href="/elevate-audiology-proof/contact/">contact us</a> with any questions.</p>
-    <p style="margin-top: var(--sp-5);"><a href="/elevate-audiology-proof/contact/" class="btn btn-primary">Schedule an Appointment</a></p>
+  <div class="container">
+    <div class="stat-row">
+      <div class="stat"><div class="num">48M</div><div class="label">Americans living with hearing loss</div></div>
+      <div class="stat"><div class="num">15%</div><div class="label">Of adults age 20–69 affected by noise-induced loss</div></div>
+      <div class="stat"><div class="num">1 in 3</div><div class="label">Adults age 65+ has age-related hearing loss</div></div>
+      <div class="stat"><div class="num">7 yrs</div><div class="label">Average delay before seeking treatment</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="section section-alt">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Common causes</span>
+      <h2>What causes hearing loss?</h2>
+      <p>A number of factors can damage hearing — some are everyday and preventable, others are genetic or medical.</p>
+    </div>
+    <div class="checklist">
+      <ul class="feature-list"><li><strong>Aging</strong> (presbycusis) — the most common cause</li><li><strong>Noise exposure</strong> from work, recreation, or sudden loud events</li><li><strong>Ear infections</strong> (acute or chronic)</li><li><strong>Excessive earwax</strong> blocking the canal</li></ul>
+      <ul class="feature-list"><li><strong>Trauma</strong> to the ear or head</li><li><strong>Genetics &amp; birth defects</strong></li><li><strong>Medical conditions</strong> like otosclerosis or Ménière's</li><li><strong>Ototoxic medications</strong> that damage the inner ear</li></ul>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-head center text-center">
+      <span class="eyebrow">Three categories</span>
+      <h2>The three types of hearing loss</h2>
+    </div>
+    <div class="three-col-process">
+      <div class="process-step">
+        <span class="step-tag">Type 1</span>
+        <h3>Sensorineural</h3>
+        <p>Damage to the inner ear (cochlea) or auditory nerve. Permanent and the most common form — typically managed with hearing aids.</p>
+      </div>
+      <div class="process-step">
+        <span class="step-tag">Type 2</span>
+        <h3>Conductive</h3>
+        <p>Sound can't reach the inner ear because of a problem in the outer or middle ear. Often medically or surgically treatable.</p>
+      </div>
+      <div class="process-step">
+        <span class="step-tag">Type 3</span>
+        <h3>Mixed</h3>
+        <p>A combination of sensorineural and conductive loss. Treatment depends on which component is dominant.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section-alt">
+  <div class="container">
+    <div class="two-col">
+      <div>
+        <span class="eyebrow">A specific case</span>
+        <h2>Single-sided deafness (SSD)</h2>
+        <p>Single-sided deafness — also called unilateral hearing loss — is when one ear has hearing loss while the other hears normally. It's diagnosed in about <strong>60,000 Americans</strong> each year.</p>
+        <p>While there's no cure and traditional amplification is less effective, alternative treatment options like CROS hearing aids and bone-anchored devices can dramatically improve everyday hearing.</p>
+      </div>
+      <div>
+        <ul class="feature-list">
+          <li>Difficulty locating where sounds come from</li>
+          <li>Trouble understanding speech in noisy environments</li>
+          <li>Fatigue from straining to listen</li>
+          <li>Avoiding social situations</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-head center text-center">
+      <span class="eyebrow">Watch for these</span>
+      <h2>10 signs you might have hearing loss</h2>
+      <p>Hearing loss isn't always easy to detect — your brain learns to adapt, so symptoms develop quietly. Here's what to look for.</p>
+    </div>
+    <div class="signs-grid">
+      <div class="sign-card"><span class="num">1</span><p>People around you seem to mumble.</p></div>
+      <div class="sign-card"><span class="num">2</span><p>You ask others to repeat themselves often.</p></div>
+      <div class="sign-card"><span class="num">3</span><p>You turn the TV up louder than your family wants.</p></div>
+      <div class="sign-card"><span class="num">4</span><p>You struggle to follow conversations in restaurants.</p></div>
+      <div class="sign-card"><span class="num">5</span><p>Phone calls feel harder than they used to.</p></div>
+      <div class="sign-card"><span class="num">6</span><p>You hear ringing or buzzing (tinnitus) in your ears.</p></div>
+      <div class="sign-card"><span class="num">7</span><p>You miss high-pitched sounds — birds, doorbells, alarms.</p></div>
+      <div class="sign-card"><span class="num">8</span><p>You feel exhausted after social gatherings.</p></div>
+      <div class="sign-card"><span class="num">9</span><p>You avoid situations where you'll need to listen.</p></div>
+      <div class="sign-card"><span class="num">10</span><p>Family or friends mention your hearing seems off.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="section section-alt">
+  <div class="container">
+    <div class="cta-band">
+      <h2>If you're nodding to two or three, it's time to test.</h2>
+      <p>The Elevate Hearing Pathway™ goes far beyond beeps and tones. We measure how you actually hear in real-life environments, then build a plan around what matters most to you.</p>
+      <div style="display:flex;gap:var(--sp-3);justify-content:center;flex-wrap:wrap;">
+        <a href="/elevate-audiology-proof/hearing-testing/" class="btn btn-on-dark">Learn About the Pathway</a>
+        <a href="/elevate-audiology-proof/contact/" class="btn btn-outline" style="color:#fff;border-color:rgba(255,255,255,.6);">Schedule Now</a>
+      </div>
+    </div>
   </div>
 </section>
 

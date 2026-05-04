@@ -3,14 +3,290 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Hearing Aid Manufacturers — Elevate Audiology</title>
-<meta name="description" content="Oticon, Phonak, ReSound, Widex, Signia, Starkey, Unitron, and Sonic Innovations.">
+<title>Hearing Aid Manufacturers — Oticon Intent &amp; More · Elevate Audiology</title>
+<meta name="description" content="Eight major hearing aid brands at Elevate Audiology — Oticon Intent, Phonak Infinio, ReSound Nexia, Widex Moment, Signia, Starkey, Unitron, Sonic Innovations.">
 <meta name="theme-color" content="#2b1747">
 <link rel="icon" type="image/png" href="/elevate-audiology-proof/images/logo.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/elevate-audiology-proof/css/base.css">
+
+<style>
+  .stat-row {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: var(--sp-5);
+    margin-block: var(--sp-7);
+  }
+  .stat {
+    text-align: center;
+    padding: var(--sp-5);
+    background: var(--c-white);
+    border: 1px solid var(--c-border);
+    border-radius: var(--radius-lg);
+  }
+  .stat .num {
+    font-family: var(--font-display);
+    font-size: clamp(2rem, 4vw, 3rem);
+    color: var(--c-purple-700);
+    line-height: 1;
+    margin-bottom: var(--sp-2);
+    font-weight: 700;
+  }
+  .stat .label { font-size: var(--text-sm); color: var(--c-text-soft); }
+
+  .pathway-step {
+    display: grid;
+    grid-template-columns: 80px 1fr;
+    gap: var(--sp-5);
+    align-items: start;
+    padding-block: var(--sp-6);
+    border-bottom: 1px solid var(--c-border);
+  }
+  .pathway-step:last-child { border-bottom: none; }
+  .pathway-step .step-num {
+    font-family: var(--font-display);
+    font-size: 3.5rem;
+    line-height: 1;
+    color: var(--c-purple-500);
+    font-weight: 700;
+  }
+  .pathway-step h3 {
+    margin-bottom: var(--sp-2);
+    display: flex;
+    align-items: baseline;
+    gap: var(--sp-3);
+    flex-wrap: wrap;
+  }
+  .pathway-step .trade { color: var(--c-accent-2); font-size: var(--text-sm); font-weight: 600; font-family: var(--font-sans); }
+  .pathway-step ul { padding-left: 0; list-style: none; }
+  .pathway-step ul li {
+    padding-left: 28px; position: relative; margin-bottom: var(--sp-2); color: var(--c-text-soft);
+  }
+  .pathway-step ul li::before {
+    content: '→'; position: absolute; left: 0; top: 0;
+    color: var(--c-accent-2); font-weight: 700;
+  }
+
+  .price-feature-card {
+    background: linear-gradient(135deg, var(--c-purple-700), var(--c-purple-900));
+    color: var(--c-white);
+    border-radius: var(--radius-lg);
+    padding: var(--sp-7);
+    text-align: center;
+    margin-bottom: var(--sp-7);
+    position: relative;
+    overflow: hidden;
+  }
+  .price-feature-card::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse at 80% 20%, rgba(26,154,163,0.3), transparent 60%);
+    pointer-events: none;
+  }
+  .price-feature-card * { position: relative; z-index: 1; }
+  .price-feature-card .price {
+    font-family: var(--font-display);
+    font-size: clamp(3rem, 6vw, 4.5rem);
+    font-weight: 700;
+    line-height: 1;
+    color: var(--c-teal-100);
+  }
+  .price-feature-card .valued {
+    font-size: var(--text-sm);
+    color: rgba(255,255,255,0.75);
+    text-decoration: line-through;
+    margin-top: var(--sp-2);
+  }
+
+  .style-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: var(--sp-5);
+  }
+  .style-card {
+    background: var(--c-white);
+    border: 1px solid var(--c-border);
+    border-radius: var(--radius-lg);
+    padding: var(--sp-6);
+    transition: all .2s var(--ease);
+  }
+  .style-card:hover { border-color: var(--c-purple-500); box-shadow: var(--shadow); transform: translateY(-2px); }
+  .style-card .acronym {
+    display: inline-block;
+    background: var(--c-purple-50);
+    color: var(--c-purple-700);
+    font-weight: 700;
+    font-size: var(--text-xs);
+    letter-spacing: 0.08em;
+    padding: 4px 10px;
+    border-radius: var(--radius-pill);
+    margin-bottom: var(--sp-3);
+  }
+  .style-card h3 { font-size: var(--text-lg); margin-bottom: var(--sp-3); }
+  .style-card p { color: var(--c-text-soft); font-size: var(--text-sm); }
+  .style-card .severity {
+    margin-top: var(--sp-3);
+    font-size: var(--text-xs);
+    color: var(--c-accent-2);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+  }
+
+  .mfg-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: var(--sp-5);
+  }
+  .mfg-card {
+    background: var(--c-white);
+    border: 1px solid var(--c-border);
+    border-radius: var(--radius-lg);
+    padding: var(--sp-6);
+    transition: all .2s var(--ease);
+  }
+  .mfg-card:hover { border-color: var(--c-purple-500); box-shadow: var(--shadow); }
+  .mfg-card.featured {
+    background: linear-gradient(135deg, var(--c-purple-50), var(--c-white));
+    border-color: var(--c-purple-500);
+  }
+  .mfg-card .badge {
+    display: inline-block;
+    background: var(--c-purple-700);
+    color: var(--c-white);
+    font-size: var(--text-xs);
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 4px 10px;
+    border-radius: var(--radius-pill);
+    margin-bottom: var(--sp-3);
+  }
+  .mfg-card h3 { margin-bottom: var(--sp-2); display: flex; align-items: baseline; gap: var(--sp-3); flex-wrap: wrap; }
+  .mfg-card h3 .country { font-size: var(--text-sm); color: var(--c-text-muted); font-weight: 400; font-family: var(--font-sans); }
+  .mfg-card .models { font-size: var(--text-sm); color: var(--c-text-soft); margin-bottom: var(--sp-3); }
+  .mfg-card .models strong { color: var(--c-text); }
+  .mfg-card .tech { font-size: var(--text-sm); color: var(--c-text-soft); }
+
+  .checklist {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: var(--sp-3) var(--sp-5);
+    margin-top: var(--sp-5);
+  }
+  .checklist .feature-list { margin: 0; }
+
+  .signs-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: var(--sp-4);
+  }
+  .sign-card {
+    background: var(--c-white);
+    border: 1px solid var(--c-border);
+    border-radius: var(--radius);
+    padding: var(--sp-4) var(--sp-5);
+    display: flex;
+    align-items: flex-start;
+    gap: var(--sp-3);
+  }
+  .sign-card .num {
+    font-family: var(--font-display);
+    font-weight: 700;
+    color: var(--c-accent-2);
+    font-size: var(--text-lg);
+    flex-shrink: 0;
+    width: 32px;
+  }
+  .sign-card p { margin: 0; font-size: var(--text-sm); color: var(--c-text-soft); }
+
+  .battery-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-block: var(--sp-5);
+    background: var(--c-white);
+    border-radius: var(--radius);
+    overflow: hidden;
+    border: 1px solid var(--c-border);
+  }
+  .battery-table th, .battery-table td {
+    padding: var(--sp-4);
+    text-align: left;
+    border-bottom: 1px solid var(--c-border);
+  }
+  .battery-table th { background: var(--c-purple-50); color: var(--c-purple-900); font-weight: 600; font-size: var(--text-sm); letter-spacing: 0.04em; text-transform: uppercase; }
+  .battery-table tr:last-child td { border-bottom: none; }
+  .color-dot { display: inline-block; width: 14px; height: 14px; border-radius: 50%; margin-right: 8px; vertical-align: middle; border: 1px solid rgba(0,0,0,.1); }
+
+  .three-col-process {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: var(--sp-5);
+  }
+  .process-step {
+    background: var(--c-white);
+    border: 1px solid var(--c-border);
+    border-radius: var(--radius-lg);
+    padding: var(--sp-6);
+    position: relative;
+  }
+  .process-step .step-tag {
+    display: inline-block;
+    background: var(--c-purple-700);
+    color: var(--c-white);
+    font-size: var(--text-xs);
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    padding: 4px 10px;
+    border-radius: var(--radius-pill);
+    margin-bottom: var(--sp-3);
+  }
+  .process-step h3 { margin-bottom: var(--sp-3); font-size: var(--text-xl); }
+  .process-step p { color: var(--c-text-soft); font-size: var(--text-sm); margin: 0; }
+
+  .outcome-card {
+    background: var(--c-white);
+    border-left: 4px solid var(--c-accent-2);
+    border-radius: var(--radius);
+    padding: var(--sp-5) var(--sp-6);
+    margin-bottom: var(--sp-4);
+  }
+  .outcome-card .outcome-num {
+    font-family: var(--font-display);
+    color: var(--c-purple-700);
+    font-weight: 700;
+    font-size: var(--text-sm);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+  .outcome-card h3 { margin: var(--sp-2) 0 var(--sp-3); font-size: var(--text-lg); }
+
+  .troubleshoot {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: var(--sp-5);
+    margin-top: var(--sp-6);
+  }
+  .troubleshoot .ts-card {
+    background: var(--c-white);
+    border: 1px solid var(--c-border);
+    border-radius: var(--radius-lg);
+    padding: var(--sp-6);
+  }
+  .ts-card h3 { font-size: var(--text-lg); color: var(--c-purple-700); margin-bottom: var(--sp-3); }
+  .ts-card ul { list-style: none; padding: 0; margin: 0; }
+  .ts-card ul li {
+    padding-left: 24px; position: relative; margin-bottom: var(--sp-2);
+    font-size: var(--text-sm); color: var(--c-text-soft);
+  }
+  .ts-card ul li::before {
+    content: '✓'; position: absolute; left: 0; top: 0;
+    color: var(--c-accent-2); font-weight: 700;
+  }
+</style>
 
 </head>
 <body>
@@ -83,15 +359,101 @@
 
 <section class="hero" style="padding-block: clamp(3rem, 6vw, 5rem);">
   <div class="container">
-    <span class="eyebrow">Manufacturers we work with</span>
-    <h1 style="max-width: 24ch;">Eight leading hearing aid brands.</h1>
-    <p class="lead">Oticon, Phonak, ReSound, Widex, Signia, Starkey, Unitron, and Sonic Innovations.</p>
+    <span class="eyebrow">Hearing aid manufacturers</span>
+    <h1 style="max-width: 28ch;">Eight world-leading hearing aid brands — fit by Doctors of Audiology.</h1>
+    <p class="lead">We're independent. That means our recommendations are driven by what works for your hearing loss and lifestyle — not by which manufacturer pays best.</p>
   </div>
 </section>
+
 <section class="section">
-  <div class="container" style="text-align:center;">
-    <p style="color:var(--c-text-muted); font-style: italic;">This page is being redesigned. Phase 2 of the Elevate Audiology website refresh will bring detailed content here. In the meantime, please <a href="/elevate-audiology-proof/contact/">contact us</a> with any questions.</p>
-    <p style="margin-top: var(--sp-5);"><a href="/elevate-audiology-proof/contact/" class="btn btn-primary">Schedule an Appointment</a></p>
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Featured technology</span>
+      <h2>Oticon Intent™ — the world's first user-intent hearing aid</h2>
+    </div>
+    <div class="mfg-card featured" style="padding: var(--sp-7);">
+      <span class="badge">Featured</span>
+      <h3 style="font-size: var(--text-2xl);">Oticon Intent <span class="country">Denmark · est. 1904</span></h3>
+      <p style="font-size: var(--text-lg);">Oticon's <strong>Intent</strong> is the first hearing aid with <strong>4D Sensor technology</strong> that detects what you want to listen to — your head movement, body movement, the sound environment, and the conversation activity around you. Powered by Oticon's <strong>BrainHearing™</strong> philosophy, Intent supports your brain's natural ability to make sense of sound.</p>
+      <div class="checklist" style="margin-top: var(--sp-5);">
+        <ul class="feature-list">
+          <li>4D Sensor technology that adapts to your listening intent</li>
+          <li>Open-sound processing — preserves natural soundscape</li>
+          <li>Deep Neural Network trained on 12 million real-life sound scenes</li>
+        </ul>
+        <ul class="feature-list">
+          <li>Rechargeable RIC with all-day power</li>
+          <li>Direct streaming from iPhone &amp; Android</li>
+          <li>BrainHearing™ — supports cognitive health</li>
+        </ul>
+      </div>
+      <p style="margin-top: var(--sp-5);">Oticon also offers <strong>Real</strong>, <strong>More</strong>, and <strong>Opn</strong> — all available at Elevate Audiology.</p>
+      <a href="/elevate-audiology-proof/contact/" class="btn btn-primary" style="margin-top: var(--sp-3);">Try Oticon Intent</a>
+    </div>
+  </div>
+</section>
+
+<section class="section section-alt">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">All eight manufacturers</span>
+      <h2>Every major hearing aid brand under one roof</h2>
+    </div>
+    <div class="mfg-grid">
+
+      <div class="mfg-card">
+        <h3>Phonak <span class="country">Switzerland · est. 1947</span></h3>
+        <p class="models"><strong>Models:</strong> Infinio, Lumity, Paradise, Marvel</p>
+        <p class="tech">First Bluetooth® hearing aid (2003) and first extended-wear device (Lyric, 2011). Founded the Hear the World initiative.</p>
+      </div>
+
+      <div class="mfg-card">
+        <h3>ReSound <span class="country">Denmark · est. 1943</span></h3>
+        <p class="models"><strong>Models:</strong> Nexia, OMNIA, Key, LiNX Quattro, ENZO</p>
+        <p class="tech">Pioneered Wide Dynamic Range Compression and Digital Feedback Suppression. Available in 80+ countries.</p>
+      </div>
+
+      <div class="mfg-card">
+        <h3>Widex <span class="country">Denmark · est. 1956</span></h3>
+        <p class="models"><strong>Models:</strong> SmartRIC, Moment, Evoke</p>
+        <p class="tech">Family-owned. Created the world's first digital in-the-ear hearing aid and pioneered wireless connectivity.</p>
+      </div>
+
+      <div class="mfg-card">
+        <h3>Signia <span class="country">Singapore · since 1913</span></h3>
+        <p class="models"><strong>Models:</strong> Styletto, Insio, Pure Charge &amp; Go, Silk</p>
+        <p class="tech">German engineering heritage from Siemens. Introduced the first behind-the-ear hearing aid in 1959.</p>
+      </div>
+
+      <div class="mfg-card">
+        <h3>Starkey <span class="country">USA · est. 1967</span></h3>
+        <p class="models"><strong>Models:</strong> Edge AI, Genesis AI, Evolv AI, Livio</p>
+        <p class="tech">The only American-owned major manufacturer. Starkey Hearing Foundation donates proceeds globally.</p>
+      </div>
+
+      <div class="mfg-card">
+        <h3>Unitron <span class="country">Canada · est. 1964</span></h3>
+        <p class="models"><strong>Focus:</strong> FLEX learning program</p>
+        <p class="tech">Known for product design excellence and the FLEX program that lets you trial different technology levels.</p>
+      </div>
+
+      <div class="mfg-card">
+        <h3>Sonic Innovations <span class="country">USA · est. 1998</span></h3>
+        <p class="models"><strong>Focus:</strong> Brain-friendly digital processing</p>
+        <p class="tech">Founded by three scientists. Pioneered fully digital hearing aids focused on background noise reduction.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="cta-band">
+      <h2>Not sure which brand fits you best?</h2>
+      <p>That's exactly the conversation we're built for. Bring your priorities — we'll bring the science.</p>
+      <a href="/elevate-audiology-proof/contact/" class="btn btn-on-dark">Schedule a Consultation</a>
+    </div>
   </div>
 </section>
 
