@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Blog — Elevate Audiology | Easley & Greenville, SC</title>
+<title>Blog — Elevate Audiology | Easley &amp; Greenville, SC</title>
 <meta name="description" content="Practical, plain-language guides on hearing loss, tinnitus, hearing aids, auditory processing, and ear health from the Elevate Audiology team.">
 <meta name="theme-color" content="#2b1747">
 <link rel="icon" type="image/png" href="/elevate-audiology-proof/images/logo.png">
@@ -16,6 +16,34 @@
 .blog-hero h1 { color: #fff; max-width: 56rem; }
 .blog-hero p.lead { color: var(--c-purple-100); max-width: 50rem; }
 
+/* Toolbar (search + filter pills) */
+.blog-toolbar { background: #fff; border-bottom: 1px solid var(--c-gray-200); padding: 1.25rem 0; position: sticky; top: 0; z-index: 30; }
+.blog-toolbar-inner { display: flex; flex-direction: column; gap: .85rem; }
+.blog-search-wrap { position: relative; max-width: 36rem; }
+.blog-search-wrap svg { position: absolute; left: .9rem; top: 50%; transform: translateY(-50%); color: var(--c-gray-500); pointer-events: none; }
+.blog-search { width: 100%; padding: .75rem 1rem .75rem 2.5rem; border: 1.5px solid var(--c-gray-300); border-radius: 999px; font: inherit; background: var(--c-gray-50); transition: border-color .15s, background .15s, box-shadow .15s; }
+.blog-search:focus { outline: none; border-color: var(--c-purple-700); background: #fff; box-shadow: 0 0 0 4px rgba(43,23,71,.08); }
+.blog-filter-pills { display: flex; flex-wrap: wrap; gap: .5rem; align-items: center; }
+.filter-pill {
+  appearance: none;
+  border: 1.5px solid var(--c-gray-300);
+  background: #fff;
+  color: var(--c-gray-700);
+  padding: .45rem 1rem;
+  border-radius: 999px;
+  font: inherit;
+  font-size: .875rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all .15s;
+  white-space: nowrap;
+}
+.filter-pill:hover { border-color: var(--c-purple-300); color: var(--c-purple-900); }
+.filter-pill.active { background: var(--c-purple-900); border-color: var(--c-purple-900); color: #fff; }
+.blog-count { color: var(--c-gray-600); font-size: .9375rem; padding: .5rem 0 0; }
+.blog-count strong { color: var(--c-purple-900); }
+
+/* Post cards (existing styles preserved) */
 .post-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 2rem; }
 .post-card { background: #fff; border: 1px solid var(--c-gray-200); border-radius: 12px; overflow: hidden; display: flex; flex-direction: column; transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease; }
 .post-card:hover { transform: translateY(-2px); box-shadow: 0 12px 28px rgba(43,23,71,0.08); border-color: var(--c-purple-200); }
@@ -23,38 +51,26 @@
 .post-card a.cover img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform .4s ease; }
 .post-card:hover a.cover img { transform: scale(1.04); }
 .post-card .body { padding: 1.25rem 1.25rem 1.5rem; display: flex; flex-direction: column; gap: .5rem; flex: 1; }
-.post-card .meta { font-size: .8125rem; color: var(--c-gray-500); text-transform: uppercase; letter-spacing: .05em; font-weight: 600; }
+.post-card .meta { font-size: .75rem; color: var(--c-gray-500); text-transform: uppercase; letter-spacing: .05em; font-weight: 600; }
 .post-card h3 { font-size: 1.25rem; line-height: 1.3; margin: 0; }
 .post-card h3 a { color: var(--c-purple-900); text-decoration: none; }
 .post-card h3 a:hover { color: var(--c-accent-2); }
 .post-card .excerpt { color: var(--c-gray-700); font-size: .9375rem; line-height: 1.55; margin-top: .25rem; }
-.post-card .read-more { margin-top: auto; padding-top: .75rem; font-weight: 600; color: var(--c-accent-2); font-size: .9375rem; }
-.post-card .read-more::after { content: ' →'; }
-
+.post-card a.read-more { margin-top: auto; padding-top: .75rem; font-weight: 700; color: var(--c-accent-2); font-size: .9375rem; text-decoration: none; align-self: flex-start; }
+.post-card a.read-more::after { content: ' →'; transition: transform .15s; display: inline-block; }
+.post-card a.read-more:hover { color: var(--c-purple-700); }
+.post-card a.read-more:hover::after { transform: translateX(3px); }
 .post-card.no-img a.cover { display: none; }
+.post-card.is-hidden { display: none; }
 
-/* Single post page */
-.post-header { background: linear-gradient(135deg, var(--c-purple-900) 0%, var(--c-purple-700) 60%, var(--c-purple-600) 100%); color: #fff; padding: 4rem 0 3rem; }
-.post-header h1 { color: #fff; max-width: 50rem; line-height: 1.15; }
-.post-header .post-meta { color: var(--c-purple-100); font-size: .9375rem; text-transform: uppercase; letter-spacing: .06em; font-weight: 600; margin-bottom: 1rem; }
-.post-feature-img { max-width: 56rem; margin: -2.5rem auto 0; padding: 0 1.5rem; position: relative; }
-.post-feature-img img { width: 100%; height: auto; border-radius: 14px; box-shadow: 0 18px 38px rgba(43,23,71,0.18); display: block; }
-.post-content { max-width: 44rem; margin: 0 auto; padding: 3rem 1.5rem 4rem; font-size: 1.0625rem; line-height: 1.75; color: var(--c-gray-800); }
-.post-content h2 { font-size: 1.625rem; margin-top: 2.5rem; margin-bottom: .75rem; color: var(--c-purple-900); }
-.post-content h3 { font-size: 1.25rem; margin-top: 1.75rem; margin-bottom: .5rem; color: var(--c-purple-800); }
-.post-content p { margin: 0 0 1.15rem; }
-.post-content a { color: var(--c-accent-2); text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 3px; }
-.post-content a:hover { color: var(--c-purple-700); }
-.post-content ul, .post-content ol { margin: 0 0 1.25rem 1.25rem; padding-left: 1rem; }
-.post-content li { margin-bottom: .35rem; }
-.post-content blockquote { border-left: 4px solid var(--c-purple-300); padding: .25rem 0 .25rem 1.25rem; color: var(--c-gray-700); font-style: italic; margin: 1.5rem 0; }
-.post-content strong { color: var(--c-purple-900); }
-.post-back { display: inline-flex; align-items: center; gap: .35rem; color: var(--c-purple-100); text-decoration: none; font-weight: 600; font-size: .9375rem; margin-top: .75rem; }
-.post-back:hover { color: #fff; }
+/* No results */
+.blog-no-results { text-align: center; padding: 4rem 1rem; color: var(--c-gray-600); display: none; }
+.blog-no-results h3 { color: var(--c-purple-900); margin-bottom: .5rem; }
 
-.post-cta { background: var(--c-gray-50); border-top: 1px solid var(--c-gray-200); padding: 3rem 0; text-align: center; }
-.post-cta h2 { color: var(--c-purple-900); margin-bottom: .75rem; }
-.post-cta p { color: var(--c-gray-700); max-width: 38rem; margin: 0 auto 1.5rem; }
+@media (max-width: 720px) {
+  .blog-toolbar { padding: 1rem 0; }
+  .filter-pill { font-size: .8125rem; padding: .4rem .85rem; }
+}
 </style>
 </head>
 <body>
@@ -63,7 +79,7 @@
   <div class="utility-bar">
     <div class="container-wide">
       <div class="util-left">
-        <a href="tel:+18644425555" aria-label="Call us">📞 (864) 442-5555</a>
+        <a href="tel:+18644476611" aria-label="Call us">📞 (864) 447-6611</a>
         <span>Easley &amp; Greenville, SC</span>
       </div>
       <div class="util-right">
@@ -125,760 +141,780 @@
 
 <main id="main">
 
-    <section class="blog-hero">
-      <div class="container-wide">
-        <p class="eyebrow" style="color: var(--c-purple-200);">ELEVATE AUDIOLOGY BLOG</p>
-        <h1>Practical guidance on hearing health, tinnitus, and auditory care.</h1>
-        <p class="lead">Written for patients, families, and anyone who wants to understand hearing loss, hearing aids, tinnitus, and auditory processing in plain language. 80 articles from our team.</p>
-      </div>
-    </section>
+  <section class="blog-hero">
+    <div class="container-wide">
+      <p style="color: var(--c-purple-100); font-size: .875rem; font-weight: 700; text-transform: uppercase; letter-spacing: .08em; margin-bottom: 1rem;">Elevate Audiology Blog</p>
+      <h1>Practical guidance on hearing health, tinnitus, and auditory care.</h1>
+      <p class="lead">Written for patients, families, and anyone who wants to understand hearing loss, hearing aids, tinnitus, and auditory processing in plain language. 80 articles from our team.</p>
+    </div>
+  </section>
 
-    <section class="section">
-      <div class="container-wide">
-        <div class="post-grid">
-          
-        <article class="post-card">
+  <section class="blog-toolbar" role="search" aria-label="Filter articles">
+    <div class="container-wide">
+      <div class="blog-toolbar-inner">
+        <div class="blog-search-wrap">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+          <input type="search" id="blog-search" class="blog-search" placeholder="Search articles by topic, condition, or keyword…" aria-label="Search articles">
+        </div>
+        <div class="blog-filter-pills" role="group" aria-label="Filter by category">
+          <button class="filter-pill active" data-category="all">All Articles</button>
+          <button class="filter-pill" data-category="tinnitus">Tinnitus</button>
+          <button class="filter-pill" data-category="hearing-loss">Hearing Loss</button>
+          <button class="filter-pill" data-category="hearing-aids">Hearing Aids</button>
+          <button class="filter-pill" data-category="hearing-tests">Hearing Testing</button>
+          <button class="filter-pill" data-category="hearing-health">Hearing & Health</button>
+          <button class="filter-pill" data-category="apd">Auditory Processing</button>
+          <button class="filter-pill" data-category="lifestyle">Lifestyle</button>
+          <button class="filter-pill" data-category="news">News</button>
+        </div>
+        <div class="blog-count" id="blog-count">Showing <strong>80</strong> of <strong>80</strong> articles</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container-wide">
+      <div class="post-grid" id="post-grid">
+        <article class="post-card" data-category="tinnitus" data-title="What We Know About the Connection Between Blood Pressure and Tinnitus" data-excerpt="High blood pressure, or hypertension, occurs when blood flows through your arteries at higher-than-normal levels of force, putting pressure on the walls of your blood vessels.…">
           <a class="cover" href="/elevate-audiology-proof/blog/what-we-know-about-the-connection-between-blood-pressure-and-tinnitus/"><img src="/elevate-audiology-proof/blog/images/iStock-2230802117.jpg" alt="What We Know About the Connection Between Blood Pressure and Tinnitus" loading="lazy"></a>
           <div class="body">
-            <div class="meta">April 2026</div>
+            <div class="meta">April 2026 · Tinnitus</div>
             <h3><a href="/elevate-audiology-proof/blog/what-we-know-about-the-connection-between-blood-pressure-and-tinnitus/">What We Know About the Connection Between Blood Pressure and Tinnitus</a></h3>
             <p class="excerpt">High blood pressure, or hypertension, occurs when blood flows through your arteries at higher-than-normal levels of force, putting pressure on the walls of your blood vessels.…</p>
-            <span class="read-more">Read article</span>
+            <a class="read-more" href="/elevate-audiology-proof/blog/what-we-know-about-the-connection-between-blood-pressure-and-tinnitus/">Read article</a>
           </div>
         </article>
-        <article class="post-card">
+        <article class="post-card" data-category="tinnitus" data-title="Can Brain Fog Be Connected to Tinnitus?" data-excerpt="Have you ever experienced brain fog? This may feel like your brain isn’t working like it’s supposed to, causing confusion and making it difficult to focus. Brain fog isn’t a…">
           <a class="cover" href="/elevate-audiology-proof/blog/can-brain-fog-be-connected-to-tinnitus/"><img src="/elevate-audiology-proof/blog/images/iStock-1421410621.jpg" alt="Can Brain Fog Be Connected to Tinnitus?" loading="lazy"></a>
           <div class="body">
-            <div class="meta">March 2026</div>
+            <div class="meta">March 2026 · Tinnitus</div>
             <h3><a href="/elevate-audiology-proof/blog/can-brain-fog-be-connected-to-tinnitus/">Can Brain Fog Be Connected to Tinnitus?</a></h3>
             <p class="excerpt">Have you ever experienced brain fog? This may feel like your brain isn’t working like it’s supposed to, causing confusion and making it difficult to focus. Brain fog isn’t a…</p>
-            <span class="read-more">Read article</span>
+            <a class="read-more" href="/elevate-audiology-proof/blog/can-brain-fog-be-connected-to-tinnitus/">Read article</a>
           </div>
         </article>
-        <article class="post-card">
+        <article class="post-card" data-category="tinnitus" data-title="Finding Relief from Tinnitus at Night" data-excerpt="Has your tinnitus been keeping you up at night? Few things are more frustrating than missing out on a full night’s sleep, and if the ringing in your ears is the culprit behind…">
           <a class="cover" href="/elevate-audiology-proof/blog/finding-relief-from-tinnitus-at-night/"><img src="/elevate-audiology-proof/blog/images/iStock-1171903518.jpg" alt="Finding Relief from Tinnitus at Night" loading="lazy"></a>
           <div class="body">
-            <div class="meta">February 2026</div>
+            <div class="meta">February 2026 · Tinnitus</div>
             <h3><a href="/elevate-audiology-proof/blog/finding-relief-from-tinnitus-at-night/">Finding Relief from Tinnitus at Night</a></h3>
             <p class="excerpt">Has your tinnitus been keeping you up at night? Few things are more frustrating than missing out on a full night’s sleep, and if the ringing in your ears is the culprit behind…</p>
-            <span class="read-more">Read article</span>
+            <a class="read-more" href="/elevate-audiology-proof/blog/finding-relief-from-tinnitus-at-night/">Read article</a>
           </div>
         </article>
-        <article class="post-card">
+        <article class="post-card" data-category="hearing-loss" data-title="The Different Types of Hearing Loss and What They Mean for Your Treatment Options" data-excerpt="Hearing loss is a complex health condition, and it’s different for everyone. At the same time, it’s relatively common; approximately 15% of all American adults over age 18 have…">
           <a class="cover" href="/elevate-audiology-proof/blog/the-different-types-of-hearing-loss-and-what-they-mean-for-your-treatment-options/"><img src="/elevate-audiology-proof/blog/images/Couple-sitting-on-the-beach-talking.jpg" alt="The Different Types of Hearing Loss and What They Mean for Your Treatment Options" loading="lazy"></a>
           <div class="body">
-            <div class="meta">January 2026</div>
+            <div class="meta">January 2026 · Hearing Loss</div>
             <h3><a href="/elevate-audiology-proof/blog/the-different-types-of-hearing-loss-and-what-they-mean-for-your-treatment-options/">The Different Types of Hearing Loss and What They Mean for Your Treatment Options</a></h3>
             <p class="excerpt">Hearing loss is a complex health condition, and it’s different for everyone. At the same time, it’s relatively common; approximately 15% of all American adults over age 18 have…</p>
-            <span class="read-more">Read article</span>
+            <a class="read-more" href="/elevate-audiology-proof/blog/the-different-types-of-hearing-loss-and-what-they-mean-for-your-treatment-options/">Read article</a>
           </div>
         </article>
-        <article class="post-card">
+        <article class="post-card" data-category="hearing-aids" data-title="What It Means When Your Hearing Aids Sound “Tinny”" data-excerpt="Adjusting to new hearing aids can be a long process as you relearn sounds that you’d forgotten about. You may notice that they sound different from how you remember. People…">
           <a class="cover" href="/elevate-audiology-proof/blog/what-it-means-when-your-hearing-aids-sound-tinny/"><img src="/elevate-audiology-proof/blog/images/iStock-1332148869.jpg" alt="What It Means When Your Hearing Aids Sound “Tinny”" loading="lazy"></a>
           <div class="body">
-            <div class="meta">January 2026</div>
+            <div class="meta">January 2026 · Hearing Aids</div>
             <h3><a href="/elevate-audiology-proof/blog/what-it-means-when-your-hearing-aids-sound-tinny/">What It Means When Your Hearing Aids Sound “Tinny”</a></h3>
             <p class="excerpt">Adjusting to new hearing aids can be a long process as you relearn sounds that you’d forgotten about. You may notice that they sound different from how you remember. People…</p>
-            <span class="read-more">Read article</span>
+            <a class="read-more" href="/elevate-audiology-proof/blog/what-it-means-when-your-hearing-aids-sound-tinny/">Read article</a>
           </div>
         </article>
-        <article class="post-card">
+        <article class="post-card" data-category="hearing-aids" data-title="How to Tell It’s Time for a Hearing Aid Upgrade" data-excerpt="Just like your phone or your laptop, hearing aids don’t last forever and will eventually need an upgrade. Here are some signs to look for that may indicate it’s time for a new set.">
           <a class="cover" href="/elevate-audiology-proof/blog/how-to-tell-its-time-for-a-hearing-aid-upgrade/"><img src="/elevate-audiology-proof/blog/images/Audiologist-holding-up-a-behind-the-ear-hearing-aid.jpg" alt="How to Tell It’s Time for a Hearing Aid Upgrade" loading="lazy"></a>
           <div class="body">
-            <div class="meta">November 2025</div>
+            <div class="meta">November 2025 · Hearing Aids</div>
             <h3><a href="/elevate-audiology-proof/blog/how-to-tell-its-time-for-a-hearing-aid-upgrade/">How to Tell It’s Time for a Hearing Aid Upgrade</a></h3>
             <p class="excerpt">Just like your phone or your laptop, hearing aids don’t last forever and will eventually need an upgrade. Here are some signs to look for that may indicate it’s time for a new set.</p>
-            <span class="read-more">Read article</span>
+            <a class="read-more" href="/elevate-audiology-proof/blog/how-to-tell-its-time-for-a-hearing-aid-upgrade/">Read article</a>
           </div>
         </article>
-        <article class="post-card">
+        <article class="post-card" data-category="lifestyle" data-title="Sharpen Your Hearing and Listening through Audiobooks" data-excerpt="Audiobooks are becoming increasingly popular as a means to read your favorite books on the go; it’s easy and convenient to listen while driving or doing chores around the house.…">
           <a class="cover" href="/elevate-audiology-proof/blog/sharpen-your-hearing-and-listening-through-audiobooks/"><img src="/elevate-audiology-proof/blog/images/GettyImages-1365018163-1024x703-1.jpg" alt="Sharpen Your Hearing and Listening through Audiobooks" loading="lazy"></a>
           <div class="body">
-            <div class="meta">October 2025</div>
+            <div class="meta">October 2025 · Lifestyle</div>
             <h3><a href="/elevate-audiology-proof/blog/sharpen-your-hearing-and-listening-through-audiobooks/">Sharpen Your Hearing and Listening through Audiobooks</a></h3>
             <p class="excerpt">Audiobooks are becoming increasingly popular as a means to read your favorite books on the go; it’s easy and convenient to listen while driving or doing chores around the house.…</p>
-            <span class="read-more">Read article</span>
+            <a class="read-more" href="/elevate-audiology-proof/blog/sharpen-your-hearing-and-listening-through-audiobooks/">Read article</a>
           </div>
         </article>
-        <article class="post-card">
+        <article class="post-card" data-category="hearing-aids" data-title="How to Troubleshoot Common Hearing Aid Problems" data-excerpt="If you’re a hearing aid user, you know that hearing aids significantly improve, not just your hearing, but your quality of life as well. You also know that sometimes your hearing…">
           <a class="cover" href="/elevate-audiology-proof/blog/how-to-troubleshoot-common-hearing-aid-problems/"><img src="/elevate-audiology-proof/blog/images/Happy-woman-admiring-her-new-hearing-aid.jpg" alt="How to Troubleshoot Common Hearing Aid Problems" loading="lazy"></a>
           <div class="body">
-            <div class="meta">September 2025</div>
+            <div class="meta">September 2025 · Hearing Aids</div>
             <h3><a href="/elevate-audiology-proof/blog/how-to-troubleshoot-common-hearing-aid-problems/">How to Troubleshoot Common Hearing Aid Problems</a></h3>
             <p class="excerpt">If you’re a hearing aid user, you know that hearing aids significantly improve, not just your hearing, but your quality of life as well. You also know that sometimes your hearing…</p>
-            <span class="read-more">Read article</span>
+            <a class="read-more" href="/elevate-audiology-proof/blog/how-to-troubleshoot-common-hearing-aid-problems/">Read article</a>
           </div>
         </article>
-        <article class="post-card">
+        <article class="post-card" data-category="tinnitus" data-title="What to Know About Pulsatile Tinnitus" data-excerpt="You’ve probably heard of tinnitus: a constant ringing, buzzing or whooshing sound in the ear with no physical source. It’s a common condition; it’s estimated that over 50 million…">
           <a class="cover" href="/elevate-audiology-proof/blog/what-to-know-about-pulsatile-tinnitus/"><img src="/elevate-audiology-proof/blog/images/Woman-experieencing-tinnitus-holding-her-ear.jpg" alt="What to Know About Pulsatile Tinnitus" loading="lazy"></a>
           <div class="body">
-            <div class="meta">August 2025</div>
+            <div class="meta">August 2025 · Tinnitus</div>
             <h3><a href="/elevate-audiology-proof/blog/what-to-know-about-pulsatile-tinnitus/">What to Know About Pulsatile Tinnitus</a></h3>
             <p class="excerpt">You’ve probably heard of tinnitus: a constant ringing, buzzing or whooshing sound in the ear with no physical source. It’s a common condition; it’s estimated that over 50 million…</p>
-            <span class="read-more">Read article</span>
+            <a class="read-more" href="/elevate-audiology-proof/blog/what-to-know-about-pulsatile-tinnitus/">Read article</a>
           </div>
         </article>
-        <article class="post-card">
+        <article class="post-card" data-category="tinnitus" data-title="The Link Between Tinnitus and Ototoxic Drugs" data-excerpt="Tinnitus, often described as ringing or buzzing in the ears, can affect daily life and well-being. Ototoxic drugs can cause or worsen tinnitus by damaging the inner ear. Elevate…">
           <a class="cover" href="/elevate-audiology-proof/blog/the-link-between-tinnitus-and-ototoxic-drugs/"><img src="/elevate-audiology-proof/blog/images/Annoyed-man-with-tinnitus-holding-his-temples.jpg" alt="The Link Between Tinnitus and Ototoxic Drugs" loading="lazy"></a>
           <div class="body">
-            <div class="meta">July 2025</div>
+            <div class="meta">July 2025 · Tinnitus</div>
             <h3><a href="/elevate-audiology-proof/blog/the-link-between-tinnitus-and-ototoxic-drugs/">The Link Between Tinnitus and Ototoxic Drugs</a></h3>
             <p class="excerpt">Tinnitus, often described as ringing or buzzing in the ears, can affect daily life and well-being. Ototoxic drugs can cause or worsen tinnitus by damaging the inner ear. Elevate…</p>
-            <span class="read-more">Read article</span>
+            <a class="read-more" href="/elevate-audiology-proof/blog/the-link-between-tinnitus-and-ototoxic-drugs/">Read article</a>
           </div>
         </article>
-        <article class="post-card">
+        <article class="post-card" data-category="hearing-tests" data-title="Can Thyroid Disorders Impact Hearing?" data-excerpt="Thyroid disorders are known to affect a variety of bodily functions, including the auditory system. Understanding this connection is essential for timely diagnosis and effective…">
           <a class="cover" href="/elevate-audiology-proof/blog/can-thyroid-disorders-impact-hearing/"><img src="/elevate-audiology-proof/blog/images/persons-ear.jpg" alt="Can Thyroid Disorders Impact Hearing?" loading="lazy"></a>
           <div class="body">
-            <div class="meta">June 2025</div>
+            <div class="meta">June 2025 · Hearing Testing</div>
             <h3><a href="/elevate-audiology-proof/blog/can-thyroid-disorders-impact-hearing/">Can Thyroid Disorders Impact Hearing?</a></h3>
             <p class="excerpt">Thyroid disorders are known to affect a variety of bodily functions, including the auditory system. Understanding this connection is essential for timely diagnosis and effective…</p>
-            <span class="read-more">Read article</span>
+            <a class="read-more" href="/elevate-audiology-proof/blog/can-thyroid-disorders-impact-hearing/">Read article</a>
           </div>
         </article>
-        <article class="post-card">
+        <article class="post-card" data-category="hearing-tests" data-title="How Do I Know if I Need a Hearing Test?" data-excerpt="Hearing loss is common, with 15% of Americans reporting some trouble hearing. It can be subtle and gradual, making it difficult to notice at first. Often, people become more aware…">
           <a class="cover" href="/elevate-audiology-proof/blog/how-do-i-know-if-i-need-a-hearing-test/"><img src="/elevate-audiology-proof/blog/images/Woman-takes-hearing-test.jpg" alt="How Do I Know if I Need a Hearing Test?" loading="lazy"></a>
           <div class="body">
-            <div class="meta">April 2025</div>
+            <div class="meta">April 2025 · Hearing Testing</div>
             <h3><a href="/elevate-audiology-proof/blog/how-do-i-know-if-i-need-a-hearing-test/">How Do I Know if I Need a Hearing Test?</a></h3>
             <p class="excerpt">Hearing loss is common, with 15% of Americans reporting some trouble hearing. It can be subtle and gradual, making it difficult to notice at first. Often, people become more aware…</p>
-            <span class="read-more">Read article</span>
+            <a class="read-more" href="/elevate-audiology-proof/blog/how-do-i-know-if-i-need-a-hearing-test/">Read article</a>
           </div>
         </article>
-        <article class="post-card">
+        <article class="post-card" data-category="apd" data-title="The Different Types of Auditory Processing Disorder" data-excerpt="Auditory Processing Disorder (APD) affects the way the brain processes sounds. People with APD can hear but have difficulty understanding auditory information. APD is caused by…">
           <a class="cover" href="/elevate-audiology-proof/blog/the-different-types-of-auditory-processing-disorder/"><img src="/elevate-audiology-proof/blog/images/Person-listens-in-conversation.jpg" alt="The Different Types of Auditory Processing Disorder" loading="lazy"></a>
           <div class="body">
-            <div class="meta">March 2025</div>
+            <div class="meta">March 2025 · Auditory Processing</div>
             <h3><a href="/elevate-audiology-proof/blog/the-different-types-of-auditory-processing-disorder/">The Different Types of Auditory Processing Disorder</a></h3>
             <p class="excerpt">Auditory Processing Disorder (APD) affects the way the brain processes sounds. People with APD can hear but have difficulty understanding auditory information. APD is caused by…</p>
-            <span class="read-more">Read article</span>
+            <a class="read-more" href="/elevate-audiology-proof/blog/the-different-types-of-auditory-processing-disorder/">Read article</a>
           </div>
         </article>
-        <article class="post-card">
+        <article class="post-card" data-category="hearing-tests" data-title="Navigating the Emotional Journey of Hearing Loss" data-excerpt="Approximately 15% of U.S. adults have hearing loss. If you or a loved one is processing a new hearing loss diagnosis, it’s helpful to recognize the five common emotional stages…">
           <a class="cover" href="/elevate-audiology-proof/blog/navigating-the-emotional-journey-of-hearing-loss/"><img src="/elevate-audiology-proof/blog/images/Senior-man-looking-at-his-hearing-aid.jpg" alt="Navigating the Emotional Journey of Hearing Loss" loading="lazy"></a>
           <div class="body">
-            <div class="meta">February 2025</div>
+            <div class="meta">February 2025 · Hearing Testing</div>
             <h3><a href="/elevate-audiology-proof/blog/navigating-the-emotional-journey-of-hearing-loss/">Navigating the Emotional Journey of Hearing Loss</a></h3>
             <p class="excerpt">Approximately 15% of U.S. adults have hearing loss. If you or a loved one is processing a new hearing loss diagnosis, it’s helpful to recognize the five common emotional stages…</p>
-            <span class="read-more">Read article</span>
+            <a class="read-more" href="/elevate-audiology-proof/blog/navigating-the-emotional-journey-of-hearing-loss/">Read article</a>
           </div>
         </article>
-        <article class="post-card">
+        <article class="post-card" data-category="tinnitus" data-title="How Does Stress Impact My Tinnitus?" data-excerpt="Tinnitus is the presence of a sound in the ears that has no external source. Although the type of sound may differ from person to person, it’s usually described as a ringing or…">
           <a class="cover" href="/elevate-audiology-proof/blog/how-does-stress-impact-my-tinnitus/"><img src="/elevate-audiology-proof/blog/images/Man-with-stress-tinnitus-in-a-meeting-holding-his-face.jpg" alt="How Does Stress Impact My Tinnitus?" loading="lazy"></a>
           <div class="body">
-            <div class="meta">January 2025</div>
+            <div class="meta">January 2025 · Tinnitus</div>
             <h3><a href="/elevate-audiology-proof/blog/how-does-stress-impact-my-tinnitus/">How Does Stress Impact My Tinnitus?</a></h3>
             <p class="excerpt">Tinnitus is the presence of a sound in the ears that has no external source. Although the type of sound may differ from person to person, it’s usually described as a ringing or…</p>
-            <span class="read-more">Read article</span>
+            <a class="read-more" href="/elevate-audiology-proof/blog/how-does-stress-impact-my-tinnitus/">Read article</a>
           </div>
         </article>
-        <article class="post-card">
+        <article class="post-card" data-category="hearing-aids" data-title="Tips To Get the Most Out of Your Hearing Aids This Holiday Season" data-excerpt="Holiday parties are a fun way to relax at the end of the year. Whether you’re attending a huge holiday work party or joining friends for a few celebratory drinks at Steddy’s, you…">
           <a class="cover" href="/elevate-audiology-proof/blog/tips-to-get-the-most-out-of-your-hearing-aids-this-holiday-season/"><img src="/elevate-audiology-proof/blog/images/Young-girl-wearing-a-hearing-aid-wrapping-gifts-with-her-family.jpg" alt="Tips To Get the Most Out of Your Hearing Aids This Holiday Season" loading="lazy"></a>
           <div class="body">
-            <div class="meta">December 2024</div>
+            <div class="meta">December 2024 · Hearing Aids</div>
             <h3><a href="/elevate-audiology-proof/blog/tips-to-get-the-most-out-of-your-hearing-aids-this-holiday-season/">Tips To Get the Most Out of Your Hearing Aids This Holiday Season</a></h3>
             <p class="excerpt">Holiday parties are a fun way to relax at the end of the year. Whether you’re attending a huge holiday work party or joining friends for a few celebratory drinks at Steddy’s, you…</p>
-            <span class="read-more">Read article</span>
+            <a class="read-more" href="/elevate-audiology-proof/blog/tips-to-get-the-most-out-of-your-hearing-aids-this-holiday-season/">Read article</a>
           </div>
         </article>
-        <article class="post-card">
+        <article class="post-card" data-category="lifestyle" data-title="Thriving at Thanksgiving: Communication Tips for Everyone" data-excerpt="The air is crisp, the leaves are falling and Thanksgiving is right around the corner. It’s a time for gathering, gratitude and a lot of conversation. These lively gatherings can…">
           <a class="cover" href="/elevate-audiology-proof/blog/thriving-at-thanksgiving-communication-tips-for-everyone/"><img src="/elevate-audiology-proof/blog/images/Happy-family-enjoying-Thanksgiving-dinner-together-.jpg" alt="Thriving at Thanksgiving: Communication Tips for Everyone" loading="lazy"></a>
           <div class="body">
-            <div class="meta">November 2024</div>
+            <div class="meta">November 2024 · Lifestyle</div>
             <h3><a href="/elevate-audiology-proof/blog/thriving-at-thanksgiving-communication-tips-for-everyone/">Thriving at Thanksgiving: Communication Tips for Everyone</a></h3>
             <p class="excerpt">The air is crisp, the leaves are falling and Thanksgiving is right around the corner. It’s a time for gathering, gratitude and a lot of conversation. These lively gatherings can…</p>
-            <span class="read-more">Read article</span>
+            <a class="read-more" href="/elevate-audiology-proof/blog/thriving-at-thanksgiving-communication-tips-for-everyone/">Read article</a>
           </div>
         </article>
-        <article class="post-card">
+        <article class="post-card" data-category="hearing-loss" data-title="How Can AI Captioning Software Make My Life With Hearing Loss Easier?" data-excerpt="Imagine trying to follow a conversation, but background noise or multiple speakers make it impossible to catch every word. This challenge is a daily reality for the 20% of people…">
           <a class="cover" href="/elevate-audiology-proof/blog/how-can-ai-captioning-software-make-my-life-with-hearing-loss-easier/"><img src="/elevate-audiology-proof/blog/images/Man-using-captioning-software-in-a-meeting.jpg" alt="How Can AI Captioning Software Make My Life With Hearing Loss Easier?" loading="lazy"></a>
           <div class="body">
-            <div class="meta">September 2024</div>
+            <div class="meta">September 2024 · Hearing Loss</div>
             <h3><a href="/elevate-audiology-proof/blog/how-can-ai-captioning-software-make-my-life-with-hearing-loss-easier/">How Can AI Captioning Software Make My Life With Hearing Loss Easier?</a></h3>
             <p class="excerpt">Imagine trying to follow a conversation, but background noise or multiple speakers make it impossible to catch every word. This challenge is a daily reality for the 20% of people…</p>
-            <span class="read-more">Read article</span>
+            <a class="read-more" href="/elevate-audiology-proof/blog/how-can-ai-captioning-software-make-my-life-with-hearing-loss-easier/">Read article</a>
           </div>
         </article>
-        <article class="post-card">
+        <article class="post-card" data-category="hearing-aids" data-title="How To Address Hearing Aid Non-Use" data-excerpt="Approximately 28.8 million U.S. adults could benefit from hearing aids. These small but powerful devices pick up and amplify essential speech and background noise to keep the…">
           <a class="cover" href="/elevate-audiology-proof/blog/how-to-address-hearing-aid-non-use/"><img src="/elevate-audiology-proof/blog/images/Woman-showing-off-her-hearing-aid.jpg" alt="How To Address Hearing Aid Non-Use" loading="lazy"></a>
           <div class="body">
-            <div class="meta">July 2024</div>
+            <div class="meta">July 2024 · Hearing Aids</div>
             <h3><a href="/elevate-audiology-proof/blog/how-to-address-hearing-aid-non-use/">How To Address Hearing Aid Non-Use</a></h3>
             <p class="excerpt">Approximately 28.8 million U.S. adults could benefit from hearing aids. These small but powerful devices pick up and amplify essential speech and background noise to keep the…</p>
-            <span class="read-more">Read article</span>
+            <a class="read-more" href="/elevate-audiology-proof/blog/how-to-address-hearing-aid-non-use/">Read article</a>
           </div>
         </article>
-        <article class="post-card">
+        <article class="post-card" data-category="hearing-health" data-title="How Does Inner Ear Damage Affect Hearing?" data-excerpt="The auditory system is a complex structure working tirelessly to bring sounds like chirping birds or steaming milk at Southern Fuel Coffee to your brain. When one part of the…">
           <a class="cover" href="/elevate-audiology-proof/blog/how-does-inner-ear-damage-affect-hearing/"><img src="/elevate-audiology-proof/blog/images/Drawing-of-the-ear-system.jpg" alt="How Does Inner Ear Damage Affect Hearing?" loading="lazy"></a>
           <div class="body">
-            <div class="meta">June 2024</div>
+            <div class="meta">June 2024 · Hearing & Health</div>
             <h3><a href="/elevate-audiology-proof/blog/how-does-inner-ear-damage-affect-hearing/">How Does Inner Ear Damage Affect Hearing?</a></h3>
             <p class="excerpt">The auditory system is a complex structure working tirelessly to bring sounds like chirping birds or steaming milk at Southern Fuel Coffee to your brain. When one part of the…</p>
-            <span class="read-more">Read article</span>
+            <a class="read-more" href="/elevate-audiology-proof/blog/how-does-inner-ear-damage-affect-hearing/">Read article</a>
           </div>
         </article>
-        <article class="post-card">
+        <article class="post-card" data-category="hearing-health" data-title="How Does Diabetes Affect Your Hearing?" data-excerpt="Diabetes, a chronic condition affecting blood sugar processing, can impact various bodily systems, including hearing, when not properly managed. Learn about the connection between…">
           <a class="cover" href="/elevate-audiology-proof/blog/how-does-diabetes-affect-your-hearing/"><img src="/elevate-audiology-proof/blog/images/Hearing-loss.jpg" alt="How Does Diabetes Affect Your Hearing?" loading="lazy"></a>
           <div class="body">
-            <div class="meta">May 2024</div>
+            <div class="meta">May 2024 · Hearing & Health</div>
             <h3><a href="/elevate-audiology-proof/blog/how-does-diabetes-affect-your-hearing/">How Does Diabetes Affect Your Hearing?</a></h3>
             <p class="excerpt">Diabetes, a chronic condition affecting blood sugar processing, can impact various bodily systems, including hearing, when not properly managed. Learn about the connection between…</p>
-            <span class="read-more">Read article</span>
+            <a class="read-more" href="/elevate-audiology-proof/blog/how-does-diabetes-affect-your-hearing/">Read article</a>
           </div>
         </article>
-        <article class="post-card">
+        <article class="post-card" data-category="lifestyle" data-title="Active Listening Strategies for People with Hearing Loss" data-excerpt="Active listening is technique for fully engaging in and understanding conversations. For individuals with hearing loss, it’s especially beneficial as it can help bridge gaps in…">
           <a class="cover" href="/elevate-audiology-proof/blog/active-listening-strategies-for-people-with-hearing-loss/"><img src="/elevate-audiology-proof/blog/images/Woman-holds-hand-to-ear.jpg" alt="Active Listening Strategies for People with Hearing Loss" loading="lazy"></a>
           <div class="body">
-            <div class="meta">April 2024</div>
+            <div class="meta">April 2024 · Lifestyle</div>
             <h3><a href="/elevate-audiology-proof/blog/active-listening-strategies-for-people-with-hearing-loss/">Active Listening Strategies for People with Hearing Loss</a></h3>
             <p class="excerpt">Active listening is technique for fully engaging in and understanding conversations. For individuals with hearing loss, it’s especially beneficial as it can help bridge gaps in…</p>
-            <span class="read-more">Read article</span>
+            <a class="read-more" href="/elevate-audiology-proof/blog/active-listening-strategies-for-people-with-hearing-loss/">Read article</a>
           </div>
         </article>
-        <article class="post-card">
+        <article class="post-card" data-category="tinnitus" data-title="What To Know About Tinnitus Counseling?" data-excerpt="Tinnitus is the presence of ringing or buzzing sounds when no physical sound is present. There is no cure for tinnitus, but some evidence suggests forms of therapy can assist with…">
           <a class="cover" href="/elevate-audiology-proof/blog/what-to-know-about-tinnitus-counseling/"><img src="/elevate-audiology-proof/blog/images/Man-with-tinnitus-holds-ear.jpg" alt="What To Know About Tinnitus Counseling?" loading="lazy"></a>
           <div class="body">
-            <div class="meta">March 2024</div>
+            <div class="meta">March 2024 · Tinnitus</div>
             <h3><a href="/elevate-audiology-proof/blog/what-to-know-about-tinnitus-counseling/">What To Know About Tinnitus Counseling?</a></h3>
             <p class="excerpt">Tinnitus is the presence of ringing or buzzing sounds when no physical sound is present. There is no cure for tinnitus, but some evidence suggests forms of therapy can assist with…</p>
-            <span class="read-more">Read article</span>
+            <a class="read-more" href="/elevate-audiology-proof/blog/what-to-know-about-tinnitus-counseling/">Read article</a>
           </div>
         </article>
-        <article class="post-card">
+        <article class="post-card" data-category="hearing-loss" data-title="Is My Hearing Loss Temporary or Permanent?" data-excerpt="Nearly everyone has experienced muffled hearing at least once in their life. When this muffled hearing is temporary, it is not always a cause for concern. However, some instances…">
           <a class="cover" href="/elevate-audiology-proof/blog/is-my-hearing-loss-temporary-or-permanent/"><img src="/elevate-audiology-proof/blog/images/Young-woman-about-to-start-a-hearing-test.jpg" alt="Is My Hearing Loss Temporary or Permanent?" loading="lazy"></a>
           <div class="body">
-            <div class="meta">February 2024</div>
+            <div class="meta">February 2024 · Hearing Loss</div>
             <h3><a href="/elevate-audiology-proof/blog/is-my-hearing-loss-temporary-or-permanent/">Is My Hearing Loss Temporary or Permanent?</a></h3>
             <p class="excerpt">Nearly everyone has experienced muffled hearing at least once in their life. When this muffled hearing is temporary, it is not always a cause for concern. However, some instances…</p>
-            <span class="read-more">Read article</span>
+            <a class="read-more" href="/elevate-audiology-proof/blog/is-my-hearing-loss-temporary-or-permanent/">Read article</a>
           </div>
         </article>
-        <article class="post-card">
+        <article class="post-card" data-category="lifestyle" data-title="How to Combat Listening Fatigue: Tips for People with Hearing Loss" data-excerpt="Listening fatigue, also known as &#x27;auditory fatigue&#x27; or &#x27;mental fatigue,&#x27; results from ongoing strenuous efforts to listen with hearing loss. For individuals with hearing loss, the…">
           <a class="cover" href="/elevate-audiology-proof/blog/how-to-combat-listening-fatigue-tips-for-people-with-hearing-loss/"><img src="/elevate-audiology-proof/blog/images/Tired-man-rubbing-his-eyes-at-his-computer.jpg" alt="How to Combat Listening Fatigue: Tips for People with Hearing Loss" loading="lazy"></a>
           <div class="body">
-            <div class="meta">January 2024</div>
+            <div class="meta">January 2024 · Lifestyle</div>
             <h3><a href="/elevate-audiology-proof/blog/how-to-combat-listening-fatigue-tips-for-people-with-hearing-loss/">How to Combat Listening Fatigue: Tips for People with Hearing Loss</a></h3>
-            <p class="excerpt">Listening fatigue, also known as &#x27;auditory fatigue&#x27; or &#x27;mental fatigue,&#x27; results from ongoing strenuous efforts to listen with hearing loss. For individuals with hearing loss, the…</p>
-            <span class="read-more">Read article</span>
+            <p class="excerpt">Listening fatigue, also known as 'auditory fatigue' or 'mental fatigue,' results from ongoing strenuous efforts to listen with hearing loss. For individuals with hearing loss, the…</p>
+            <a class="read-more" href="/elevate-audiology-proof/blog/how-to-combat-listening-fatigue-tips-for-people-with-hearing-loss/">Read article</a>
           </div>
         </article>
-        <article class="post-card">
+        <article class="post-card" data-category="tinnitus" data-title="Causes and Symptom Management of Somatic Tinnitus" data-excerpt="Tinnitus is the perception of sound, usually a ringing or buzzing noise, without an external source or stimulus. Tinnitus affects approximately 10%-17% of the global population,…">
           <a class="cover" href="/elevate-audiology-proof/blog/causes-and-symptom-management-of-somatic-tinnitus/"><img src="/elevate-audiology-proof/blog/images/Woman-plugging-her-ear-trying-to-drown-out-tinnitus.jpg" alt="Causes and Symptom Management of Somatic Tinnitus" loading="lazy"></a>
           <div class="body">
-            <div class="meta">December 2023</div>
+            <div class="meta">December 2023 · Tinnitus</div>
             <h3><a href="/elevate-audiology-proof/blog/causes-and-symptom-management-of-somatic-tinnitus/">Causes and Symptom Management of Somatic Tinnitus</a></h3>
             <p class="excerpt">Tinnitus is the perception of sound, usually a ringing or buzzing noise, without an external source or stimulus. Tinnitus affects approximately 10%-17% of the global population,…</p>
-            <span class="read-more">Read article</span>
+            <a class="read-more" href="/elevate-audiology-proof/blog/causes-and-symptom-management-of-somatic-tinnitus/">Read article</a>
           </div>
         </article>
-        <article class="post-card">
+        <article class="post-card" data-category="tinnitus" data-title="Tools to Improve Your Life With Tinnitus" data-excerpt="Tinnitus causes a ringing or buzzing in the ears that cannot be heard from the outside. Affecting more than 50 million people in the United States, severe tinnitus can cause…">
           <a class="cover" href="/elevate-audiology-proof/blog/tools-to-improve-your-life-with-tinnitus/"><img src="/elevate-audiology-proof/blog/images/Woman-with-tinnitus-holding-her-ear.jpg" alt="Tools to Improve Your Life With Tinnitus" loading="lazy"></a>
           <div class="body">
-            <div class="meta">November 2023</div>
+            <div class="meta">November 2023 · Tinnitus</div>
             <h3><a href="/elevate-audiology-proof/blog/tools-to-improve-your-life-with-tinnitus/">Tools to Improve Your Life With Tinnitus</a></h3>
             <p class="excerpt">Tinnitus causes a ringing or buzzing in the ears that cannot be heard from the outside. Affecting more than 50 million people in the United States, severe tinnitus can cause…</p>
-            <span class="read-more">Read article</span>
+            <a class="read-more" href="/elevate-audiology-proof/blog/tools-to-improve-your-life-with-tinnitus/">Read article</a>
           </div>
         </article>
-        <article class="post-card">
+        <article class="post-card" data-category="news" data-title="What Every Day Sounds Can Harm Your Hearing?" data-excerpt="October is both Audiology Awareness Month and National Protect Your Hearing Month. These campaigns are aimed at raising awareness about hearing health and learning how to prevent…">
           <a class="cover" href="/elevate-audiology-proof/blog/what-every-day-sounds-can-harm-your-hearing/"><img src="/elevate-audiology-proof/blog/images/pexels-picjumbocom-196652-scaled.jpg" alt="What Every Day Sounds Can Harm Your Hearing?" loading="lazy"></a>
           <div class="body">
-            <div class="meta">October 2023</div>
+            <div class="meta">October 2023 · News</div>
             <h3><a href="/elevate-audiology-proof/blog/what-every-day-sounds-can-harm-your-hearing/">What Every Day Sounds Can Harm Your Hearing?</a></h3>
             <p class="excerpt">October is both Audiology Awareness Month and National Protect Your Hearing Month. These campaigns are aimed at raising awareness about hearing health and learning how to prevent…</p>
-            <span class="read-more">Read article</span>
+            <a class="read-more" href="/elevate-audiology-proof/blog/what-every-day-sounds-can-harm-your-hearing/">Read article</a>
           </div>
         </article>
-        <article class="post-card">
+        <article class="post-card" data-category="tinnitus" data-title="Can Sound Enrichment Therapy Help Manage Your Tinnitus?" data-excerpt="Tinnitus is a ringing, buzzing, roaring or clicking noise in the ears that cannot be heard from the outside. Affecting approximately 10% of the U.S. population, tinnitus can range…">
           <a class="cover" href="/elevate-audiology-proof/blog/can-sound-enrichment-therapy-help-manage-your-tinnitus/"><img src="/elevate-audiology-proof/blog/images/Man-being-fit-for-a-hearing-aid-to-help-with-his-tinnitus.jpg" alt="Can Sound Enrichment Therapy Help Manage Your Tinnitus?" loading="lazy"></a>
           <div class="body">
-            <div class="meta">September 2023</div>
+            <div class="meta">September 2023 · Tinnitus</div>
             <h3><a href="/elevate-audiology-proof/blog/can-sound-enrichment-therapy-help-manage-your-tinnitus/">Can Sound Enrichment Therapy Help Manage Your Tinnitus?</a></h3>
             <p class="excerpt">Tinnitus is a ringing, buzzing, roaring or clicking noise in the ears that cannot be heard from the outside. Affecting approximately 10% of the U.S. population, tinnitus can range…</p>
-            <span class="read-more">Read article</span>
+            <a class="read-more" href="/elevate-audiology-proof/blog/can-sound-enrichment-therapy-help-manage-your-tinnitus/">Read article</a>
           </div>
         </article>
-        <article class="post-card">
+        <article class="post-card" data-category="apd" data-title="How Can a Concussion Affect Your Ability to Process Sound?" data-excerpt="A concussion is a traumatic brain injury caused by a blow, bump or jolt to the head or by damage to the body that causes sudden movement to the head. Common symptoms of a…">
           <a class="cover" href="/elevate-audiology-proof/blog/how-can-a-concussion-affect-your-ability-to-process-sound/"><img src="/elevate-audiology-proof/blog/images/Football-player-holding-ball-during-game.jpg" alt="How Can a Concussion Affect Your Ability to Process Sound?" loading="lazy"></a>
           <div class="body">
-            <div class="meta">August 2023</div>
+            <div class="meta">August 2023 · Auditory Processing</div>
             <h3><a href="/elevate-audiology-proof/blog/how-can-a-concussion-affect-your-ability-to-process-sound/">How Can a Concussion Affect Your Ability to Process Sound?</a></h3>
             <p class="excerpt">A concussion is a traumatic brain injury caused by a blow, bump or jolt to the head or by damage to the body that causes sudden movement to the head. Common symptoms of a…</p>
-            <span class="read-more">Read article</span>
+            <a class="read-more" href="/elevate-audiology-proof/blog/how-can-a-concussion-affect-your-ability-to-process-sound/">Read article</a>
           </div>
         </article>
-        <article class="post-card">
+        <article class="post-card" data-category="hearing-loss" data-title="Three Reasons Hearing Loss Causes You to Isolate From Others" data-excerpt="It’s not uncommon for people with hearing loss to begin to isolate themselves from the world around them. Unfortunately, doing so can worsen their mental and physical health and…">
           <a class="cover" href="/elevate-audiology-proof/blog/three-reasons-hearing-loss-causes-you-to-isolate-from-others/"><img src="/elevate-audiology-proof/blog/images/iStock-1328351657.jpg" alt="Three Reasons Hearing Loss Causes You to Isolate From Others" loading="lazy"></a>
           <div class="body">
-            <div class="meta">July 2023</div>
+            <div class="meta">July 2023 · Hearing Loss</div>
             <h3><a href="/elevate-audiology-proof/blog/three-reasons-hearing-loss-causes-you-to-isolate-from-others/">Three Reasons Hearing Loss Causes You to Isolate From Others</a></h3>
             <p class="excerpt">It’s not uncommon for people with hearing loss to begin to isolate themselves from the world around them. Unfortunately, doing so can worsen their mental and physical health and…</p>
-            <span class="read-more">Read article</span>
+            <a class="read-more" href="/elevate-audiology-proof/blog/three-reasons-hearing-loss-causes-you-to-isolate-from-others/">Read article</a>
           </div>
         </article>
-        <article class="post-card">
+        <article class="post-card" data-category="hearing-loss" data-title="How to Prevent Hearing Loss in Young Adults" data-excerpt="It’s common to associate hearing loss with older age. While it’s true that your risk of hearing loss increases as you get older, people of any age can develop the condition. In…">
           <a class="cover" href="/elevate-audiology-proof/blog/how-to-prevent-hearing-loss-in-young-adults/"><img src="/elevate-audiology-proof/blog/images/pexels-andrea-piacquadio-3799096-scaled.jpg" alt="How to Prevent Hearing Loss in Young Adults" loading="lazy"></a>
           <div class="body">
-            <div class="meta">June 2023</div>
+            <div class="meta">June 2023 · Hearing Loss</div>
             <h3><a href="/elevate-audiology-proof/blog/how-to-prevent-hearing-loss-in-young-adults/">How to Prevent Hearing Loss in Young Adults</a></h3>
             <p class="excerpt">It’s common to associate hearing loss with older age. While it’s true that your risk of hearing loss increases as you get older, people of any age can develop the condition. In…</p>
-            <span class="read-more">Read article</span>
+            <a class="read-more" href="/elevate-audiology-proof/blog/how-to-prevent-hearing-loss-in-young-adults/">Read article</a>
           </div>
         </article>
-        <article class="post-card">
+        <article class="post-card" data-category="hearing-health" data-title="What’s The Link Between Hearing and The Brain?" data-excerpt="Untreated hearing loss can have many negative consequences. Research has shown that it can affect the way your brain works and impact cognition.">
           <a class="cover" href="/elevate-audiology-proof/blog/whats-the-link-between-hearing-and-the-brain/"><img src="/elevate-audiology-proof/blog/images/pexels-antoni-shkraba-production-8791196-scaled.jpg" alt="What’s The Link Between Hearing and The Brain?" loading="lazy"></a>
           <div class="body">
-            <div class="meta">May 2023</div>
+            <div class="meta">May 2023 · Hearing & Health</div>
             <h3><a href="/elevate-audiology-proof/blog/whats-the-link-between-hearing-and-the-brain/">What’s The Link Between Hearing and The Brain?</a></h3>
             <p class="excerpt">Untreated hearing loss can have many negative consequences. Research has shown that it can affect the way your brain works and impact cognition.</p>
-            <span class="read-more">Read article</span>
+            <a class="read-more" href="/elevate-audiology-proof/blog/whats-the-link-between-hearing-and-the-brain/">Read article</a>
           </div>
         </article>
-        <article class="post-card">
+        <article class="post-card" data-category="hearing-health" data-title="Here’s How Untreated Hearing Loss May Affect Your Memory" data-excerpt="Untreated hearing loss can have a variety of negative consequences, including affecting your memory.">
           <a class="cover" href="/elevate-audiology-proof/blog/heres-how-untreated-hearing-loss-may-affect-your-memory/"><img src="/elevate-audiology-proof/blog/images/iStock-1049512658.jpg" alt="Here’s How Untreated Hearing Loss May Affect Your Memory" loading="lazy"></a>
           <div class="body">
-            <div class="meta">April 2023</div>
+            <div class="meta">April 2023 · Hearing & Health</div>
             <h3><a href="/elevate-audiology-proof/blog/heres-how-untreated-hearing-loss-may-affect-your-memory/">Here’s How Untreated Hearing Loss May Affect Your Memory</a></h3>
             <p class="excerpt">Untreated hearing loss can have a variety of negative consequences, including affecting your memory.</p>
-            <span class="read-more">Read article</span>
+            <a class="read-more" href="/elevate-audiology-proof/blog/heres-how-untreated-hearing-loss-may-affect-your-memory/">Read article</a>
           </div>
         </article>
-        <article class="post-card">
+        <article class="post-card" data-category="hearing-loss" data-title="Untreated Hearing Loss May Leave You More Vulnerable to Falls" data-excerpt="Leaving your hearing lossuntreated can have several other negative consequences on your health. Research indicates that it may make you more vulnerable to falls.">
           <a class="cover" href="/elevate-audiology-proof/blog/untreated-hearing-loss-may-leave-you-more-vulnerable-to-falls/"><img src="/elevate-audiology-proof/blog/images/iStock-936488050-scaled.jpg" alt="Untreated Hearing Loss May Leave You More Vulnerable to Falls" loading="lazy"></a>
           <div class="body">
-            <div class="meta">March 2023</div>
+            <div class="meta">March 2023 · Hearing Loss</div>
             <h3><a href="/elevate-audiology-proof/blog/untreated-hearing-loss-may-leave-you-more-vulnerable-to-falls/">Untreated Hearing Loss May Leave You More Vulnerable to Falls</a></h3>
             <p class="excerpt">Leaving your hearing lossuntreated can have several other negative consequences on your health. Research indicates that it may make you more vulnerable to falls.</p>
-            <span class="read-more">Read article</span>
+            <a class="read-more" href="/elevate-audiology-proof/blog/untreated-hearing-loss-may-leave-you-more-vulnerable-to-falls/">Read article</a>
           </div>
         </article>
-        <article class="post-card">
+        <article class="post-card" data-category="lifestyle" data-title="Here’s How You Can Make the Most of Video Games with Hearing Loss" data-excerpt="The National Institute on Deafness and Other Communication Disorders report that “One in eight people in the United States (13 percent, or 30 million) aged 12 years or older has…">
           <a class="cover" href="/elevate-audiology-proof/blog/heres-how-you-can-make-the-most-of-video-games-with-hearing-loss/"><img src="/elevate-audiology-proof/blog/images/video-games-hearing-loss-scaled.jpg" alt="Here’s How You Can Make the Most of Video Games with Hearing Loss" loading="lazy"></a>
           <div class="body">
-            <div class="meta">March 2023</div>
+            <div class="meta">March 2023 · Lifestyle</div>
             <h3><a href="/elevate-audiology-proof/blog/heres-how-you-can-make-the-most-of-video-games-with-hearing-loss/">Here’s How You Can Make the Most of Video Games with Hearing Loss</a></h3>
             <p class="excerpt">The National Institute on Deafness and Other Communication Disorders report that “One in eight people in the United States (13 percent, or 30 million) aged 12 years or older has…</p>
-            <span class="read-more">Read article</span>
+            <a class="read-more" href="/elevate-audiology-proof/blog/heres-how-you-can-make-the-most-of-video-games-with-hearing-loss/">Read article</a>
           </div>
         </article>
-        <article class="post-card">
+        <article class="post-card" data-category="hearing-loss" data-title="What To Do if You’re Worried You Have Hearing Loss" data-excerpt="Though some people have hearing issues from birth, for most of us, hearing loss can sneak up gradually. It may be because of age or chronic exposure to loud noise or some…">
           <a class="cover" href="/elevate-audiology-proof/blog/what-to-do-if-youre-worried-you-have-hearing-loss/"><img src="/elevate-audiology-proof/blog/images/iStock-1140556380-scaled.jpg" alt="What To Do if You’re Worried You Have Hearing Loss" loading="lazy"></a>
           <div class="body">
-            <div class="meta">January 2023</div>
+            <div class="meta">January 2023 · Hearing Loss</div>
             <h3><a href="/elevate-audiology-proof/blog/what-to-do-if-youre-worried-you-have-hearing-loss/">What To Do if You’re Worried You Have Hearing Loss</a></h3>
             <p class="excerpt">Though some people have hearing issues from birth, for most of us, hearing loss can sneak up gradually. It may be because of age or chronic exposure to loud noise or some…</p>
-            <span class="read-more">Read article</span>
+            <a class="read-more" href="/elevate-audiology-proof/blog/what-to-do-if-youre-worried-you-have-hearing-loss/">Read article</a>
           </div>
         </article>
-        <article class="post-card">
+        <article class="post-card" data-category="hearing-health" data-title="Studies Find Hearing &amp; Vision Impairments Linked to Increased Risk of Dementia" data-excerpt="It’s common knowledge that the older you get, the more likely you will experience sensory impairment like hearing and vision loss. In fact, one in three people ages 65 to 74 has…">
           <a class="cover" href="/elevate-audiology-proof/blog/studies-find-hearing-vision-impairments-linked-to-increased-risk-of-dementia/"><img src="/elevate-audiology-proof/blog/images/hearing-aid-hearing-loss-scaled.jpg" alt="Studies Find Hearing &amp; Vision Impairments Linked to Increased Risk of Dementia" loading="lazy"></a>
           <div class="body">
-            <div class="meta">December 2022</div>
-            <h3><a href="/elevate-audiology-proof/blog/studies-find-hearing-vision-impairments-linked-to-increased-risk-of-dementia/">Studies Find Hearing &amp; Vision Impairments Linked to Increased Risk of Dementia</a></h3>
+            <div class="meta">December 2022 · Hearing & Health</div>
+            <h3><a href="/elevate-audiology-proof/blog/studies-find-hearing-vision-impairments-linked-to-increased-risk-of-dementia/">Studies Find Hearing & Vision Impairments Linked to Increased Risk of Dementia</a></h3>
             <p class="excerpt">It’s common knowledge that the older you get, the more likely you will experience sensory impairment like hearing and vision loss. In fact, one in three people ages 65 to 74 has…</p>
-            <span class="read-more">Read article</span>
+            <a class="read-more" href="/elevate-audiology-proof/blog/studies-find-hearing-vision-impairments-linked-to-increased-risk-of-dementia/">Read article</a>
           </div>
         </article>
-        <article class="post-card">
+        <article class="post-card" data-category="news" data-title="Effects of Untreated Hearing Loss on Senior Citizens" data-excerpt="According to the National Institute on Aging, approximately one in three people ages 65 to 74 has hearing loss. For those ages 75 and up, this number jumps to one in two. But…">
           <a class="cover" href="/elevate-audiology-proof/blog/effects-of-untreated-hearing-loss-on-senior-citizens/"><img src="/elevate-audiology-proof/blog/images/senior-hearing-aids-hearing-loss-scaled.jpg" alt="Effects of Untreated Hearing Loss on Senior Citizens" loading="lazy"></a>
           <div class="body">
-            <div class="meta">November 2022</div>
+            <div class="meta">November 2022 · News</div>
             <h3><a href="/elevate-audiology-proof/blog/effects-of-untreated-hearing-loss-on-senior-citizens/">Effects of Untreated Hearing Loss on Senior Citizens</a></h3>
             <p class="excerpt">According to the National Institute on Aging, approximately one in three people ages 65 to 74 has hearing loss. For those ages 75 and up, this number jumps to one in two. But…</p>
-            <span class="read-more">Read article</span>
+            <a class="read-more" href="/elevate-audiology-proof/blog/effects-of-untreated-hearing-loss-on-senior-citizens/">Read article</a>
           </div>
         </article>
-        <article class="post-card">
+        <article class="post-card" data-category="hearing-aids" data-title="Learn About the History of the Hearing Aid for Audiology Awareness Month" data-excerpt="Hearing aids make life for people with hearing loss so much easier. Whether they help you follow along during work meetings or to connect with your grandchildren over a stack of…">
           <a class="cover" href="/elevate-audiology-proof/blog/learn-about-the-history-of-the-hearing-aid-for-audiology-awareness-month/"><img src="/elevate-audiology-proof/blog/images/iStock-1217572062.jpg" alt="Learn About the History of the Hearing Aid for Audiology Awareness Month" loading="lazy"></a>
           <div class="body">
-            <div class="meta">October 2022</div>
+            <div class="meta">October 2022 · Hearing Aids</div>
             <h3><a href="/elevate-audiology-proof/blog/learn-about-the-history-of-the-hearing-aid-for-audiology-awareness-month/">Learn About the History of the Hearing Aid for Audiology Awareness Month</a></h3>
             <p class="excerpt">Hearing aids make life for people with hearing loss so much easier. Whether they help you follow along during work meetings or to connect with your grandchildren over a stack of…</p>
-            <span class="read-more">Read article</span>
+            <a class="read-more" href="/elevate-audiology-proof/blog/learn-about-the-history-of-the-hearing-aid-for-audiology-awareness-month/">Read article</a>
           </div>
         </article>
-        <article class="post-card">
+        <article class="post-card" data-category="tinnitus" data-title="Unusual Causes of Tinnitus" data-excerpt="If you hear a ringing, roaring, hissing, whistling, buzzing or humming sound in the ear with no external source when out with friends at Jimmy’s Family Restaurant, this is known…">
           <a class="cover" href="/elevate-audiology-proof/blog/unusual-causes-of-tinnitus/"><img src="/elevate-audiology-proof/blog/images/ear-pain-ent.jpg" alt="Unusual Causes of Tinnitus" loading="lazy"></a>
           <div class="body">
-            <div class="meta">September 2022</div>
+            <div class="meta">September 2022 · Tinnitus</div>
             <h3><a href="/elevate-audiology-proof/blog/unusual-causes-of-tinnitus/">Unusual Causes of Tinnitus</a></h3>
             <p class="excerpt">If you hear a ringing, roaring, hissing, whistling, buzzing or humming sound in the ear with no external source when out with friends at Jimmy’s Family Restaurant, this is known…</p>
-            <span class="read-more">Read article</span>
+            <a class="read-more" href="/elevate-audiology-proof/blog/unusual-causes-of-tinnitus/">Read article</a>
           </div>
         </article>
-        <article class="post-card">
+        <article class="post-card" data-category="hearing-loss" data-title="Injuries That Can Cause Hearing Loss" data-excerpt="When most people think of the causes of hearing loss, old age and exposure to loud noise come to mind. But did you know that certain injuries can also cause trouble hearing at the…">
           <a class="cover" href="/elevate-audiology-proof/blog/injuries-that-can-cause-hearing-loss/"><img src="/elevate-audiology-proof/blog/images/ear-exam-hearing2-scaled.jpg" alt="Injuries That Can Cause Hearing Loss" loading="lazy"></a>
           <div class="body">
-            <div class="meta">August 2022</div>
+            <div class="meta">August 2022 · Hearing Loss</div>
             <h3><a href="/elevate-audiology-proof/blog/injuries-that-can-cause-hearing-loss/">Injuries That Can Cause Hearing Loss</a></h3>
             <p class="excerpt">When most people think of the causes of hearing loss, old age and exposure to loud noise come to mind. But did you know that certain injuries can also cause trouble hearing at the…</p>
-            <span class="read-more">Read article</span>
+            <a class="read-more" href="/elevate-audiology-proof/blog/injuries-that-can-cause-hearing-loss/">Read article</a>
           </div>
         </article>
-        <article class="post-card">
+        <article class="post-card" data-category="hearing-loss" data-title="How to Support a Loved One with Hearing Loss Who’s in a Nursing Home" data-excerpt="The most common cause of hearing loss is old age, usually due to a lifetime of noise exposure. In fact, according to one study, “It is estimated that 70% to 90% of elderly…">
           <a class="cover" href="/elevate-audiology-proof/blog/how-to-support-a-loved-one-with-hearing-loss-whos-in-a-nursing-home/"><img src="/elevate-audiology-proof/blog/images/couple-hearing-aids-nursing-home.jpg" alt="How to Support a Loved One with Hearing Loss Who’s in a Nursing Home" loading="lazy"></a>
           <div class="body">
-            <div class="meta">July 2022</div>
+            <div class="meta">July 2022 · Hearing Loss</div>
             <h3><a href="/elevate-audiology-proof/blog/how-to-support-a-loved-one-with-hearing-loss-whos-in-a-nursing-home/">How to Support a Loved One with Hearing Loss Who’s in a Nursing Home</a></h3>
             <p class="excerpt">The most common cause of hearing loss is old age, usually due to a lifetime of noise exposure. In fact, according to one study, “It is estimated that 70% to 90% of elderly…</p>
-            <span class="read-more">Read article</span>
+            <a class="read-more" href="/elevate-audiology-proof/blog/how-to-support-a-loved-one-with-hearing-loss-whos-in-a-nursing-home/">Read article</a>
           </div>
         </article>
-        <article class="post-card">
+        <article class="post-card" data-category="hearing-tests" data-title="Has Your Child’s Hearing Loss Been Misdiagnosed as a Learning Disability?" data-excerpt="The CDC reports that approximately 15% of school-aged children ages 6 to 19 have a hearing loss of at least 16 dB in one or both ears.">
           <a class="cover" href="/elevate-audiology-proof/blog/has-your-childs-hearing-loss-been-misdiagnosed-as-a-learning-disability/"><img src="/elevate-audiology-proof/blog/images/teacher-class-hearing-loss-scaled.jpg" alt="Has Your Child’s Hearing Loss Been Misdiagnosed as a Learning Disability?" loading="lazy"></a>
           <div class="body">
-            <div class="meta">June 2022</div>
+            <div class="meta">June 2022 · Hearing Testing</div>
             <h3><a href="/elevate-audiology-proof/blog/has-your-childs-hearing-loss-been-misdiagnosed-as-a-learning-disability/">Has Your Child’s Hearing Loss Been Misdiagnosed as a Learning Disability?</a></h3>
             <p class="excerpt">The CDC reports that approximately 15% of school-aged children ages 6 to 19 have a hearing loss of at least 16 dB in one or both ears.</p>
-            <span class="read-more">Read article</span>
+            <a class="read-more" href="/elevate-audiology-proof/blog/has-your-childs-hearing-loss-been-misdiagnosed-as-a-learning-disability/">Read article</a>
           </div>
         </article>
-        <article class="post-card">
+        <article class="post-card" data-category="hearing-loss" data-title="What Jobs Are Most at Risk for Hearing Loss?" data-excerpt="The highest risk of noise-induced hearing loss (NIHL) is related to exposures in the workplace, which affects about 7% of the population. Below we review how loud sounds cause…">
           <a class="cover" href="/elevate-audiology-proof/blog/what-jobs-are-most-at-risk-for-hearing-loss/"><img src="/elevate-audiology-proof/blog/images/How-to-Protect-Your-Hearing_01.jpg" alt="What Jobs Are Most at Risk for Hearing Loss?" loading="lazy"></a>
           <div class="body">
-            <div class="meta">May 2022</div>
+            <div class="meta">May 2022 · Hearing Loss</div>
             <h3><a href="/elevate-audiology-proof/blog/what-jobs-are-most-at-risk-for-hearing-loss/">What Jobs Are Most at Risk for Hearing Loss?</a></h3>
             <p class="excerpt">The highest risk of noise-induced hearing loss (NIHL) is related to exposures in the workplace, which affects about 7% of the population. Below we review how loud sounds cause…</p>
-            <span class="read-more">Read article</span>
+            <a class="read-more" href="/elevate-audiology-proof/blog/what-jobs-are-most-at-risk-for-hearing-loss/">Read article</a>
           </div>
         </article>
-        <article class="post-card">
+        <article class="post-card" data-category="news" data-title="WHO Sets New Standard of Safe Listening" data-excerpt="The World Health Organization (WHO) directs international health within the United Nations and leads partners in global health responses. In preparation for World Hearing Day…">
           <a class="cover" href="/elevate-audiology-proof/blog/who-sets-new-standard-of-safe-listening/"><img src="/elevate-audiology-proof/blog/images/hearing-aid-hearing-test-02-scaled.jpg" alt="WHO Sets New Standard of Safe Listening" loading="lazy"></a>
           <div class="body">
-            <div class="meta">April 2022</div>
+            <div class="meta">April 2022 · News</div>
             <h3><a href="/elevate-audiology-proof/blog/who-sets-new-standard-of-safe-listening/">WHO Sets New Standard of Safe Listening</a></h3>
             <p class="excerpt">The World Health Organization (WHO) directs international health within the United Nations and leads partners in global health responses. In preparation for World Hearing Day…</p>
-            <span class="read-more">Read article</span>
+            <a class="read-more" href="/elevate-audiology-proof/blog/who-sets-new-standard-of-safe-listening/">Read article</a>
           </div>
         </article>
-        <article class="post-card">
+        <article class="post-card" data-category="hearing-health" data-title="Is There a Connection Between Hearing Loss and Diabetes?" data-excerpt="Research has shown a link betweenhearing lossand diabetes.">
           <a class="cover" href="/elevate-audiology-proof/blog/is-there-a-connection-between-hearing-loss-and-diabetes/"><img src="/elevate-audiology-proof/blog/images/iStock-1280704506-scaled.jpg" alt="Is There a Connection Between Hearing Loss and Diabetes?" loading="lazy"></a>
           <div class="body">
-            <div class="meta">March 2022</div>
+            <div class="meta">March 2022 · Hearing & Health</div>
             <h3><a href="/elevate-audiology-proof/blog/is-there-a-connection-between-hearing-loss-and-diabetes/">Is There a Connection Between Hearing Loss and Diabetes?</a></h3>
             <p class="excerpt">Research has shown a link betweenhearing lossand diabetes.</p>
-            <span class="read-more">Read article</span>
+            <a class="read-more" href="/elevate-audiology-proof/blog/is-there-a-connection-between-hearing-loss-and-diabetes/">Read article</a>
           </div>
         </article>
-        <article class="post-card">
+        <article class="post-card" data-category="hearing-loss" data-title="Tips for Dealing with Hearing Loss at Work" data-excerpt="According to the Centers for Disease Control and Prevention (CDC), approximately 12% of the U.S. working population has hearing difficulty. If you are affected by hearing loss and…">
           <a class="cover" href="/elevate-audiology-proof/blog/tips-for-dealing-with-hearing-loss-at-work/"><img src="/elevate-audiology-proof/blog/images/business-man-generic.jpg" alt="Tips for Dealing with Hearing Loss at Work" loading="lazy"></a>
           <div class="body">
-            <div class="meta">February 2022</div>
+            <div class="meta">February 2022 · Hearing Loss</div>
             <h3><a href="/elevate-audiology-proof/blog/tips-for-dealing-with-hearing-loss-at-work/">Tips for Dealing with Hearing Loss at Work</a></h3>
             <p class="excerpt">According to the Centers for Disease Control and Prevention (CDC), approximately 12% of the U.S. working population has hearing difficulty. If you are affected by hearing loss and…</p>
-            <span class="read-more">Read article</span>
+            <a class="read-more" href="/elevate-audiology-proof/blog/tips-for-dealing-with-hearing-loss-at-work/">Read article</a>
           </div>
         </article>
-        <article class="post-card">
+        <article class="post-card" data-category="hearing-loss" data-title="Balance &amp; Hearing: What’s the Connection?" data-excerpt="If you’re experiencing problems with feeling imbalanced, being unsteady on your feet or experiencing vertigo, you may have a vestibular disorder. Your vestibular system, like your…">
           <a class="cover" href="/elevate-audiology-proof/blog/balance-hearing-whats-the-connection/"><img src="/elevate-audiology-proof/blog/images/ear-exam-hearing-scaled.jpg" alt="Balance &amp; Hearing: What’s the Connection?" loading="lazy"></a>
           <div class="body">
-            <div class="meta">January 2022</div>
-            <h3><a href="/elevate-audiology-proof/blog/balance-hearing-whats-the-connection/">Balance &amp; Hearing: What’s the Connection?</a></h3>
+            <div class="meta">January 2022 · Hearing Loss</div>
+            <h3><a href="/elevate-audiology-proof/blog/balance-hearing-whats-the-connection/">Balance & Hearing: What’s the Connection?</a></h3>
             <p class="excerpt">If you’re experiencing problems with feeling imbalanced, being unsteady on your feet or experiencing vertigo, you may have a vestibular disorder. Your vestibular system, like your…</p>
-            <span class="read-more">Read article</span>
+            <a class="read-more" href="/elevate-audiology-proof/blog/balance-hearing-whats-the-connection/">Read article</a>
           </div>
         </article>
-        <article class="post-card">
+        <article class="post-card" data-category="lifestyle" data-title="How to Host a Hearing Loss-Friendly Dinner Party" data-excerpt="‘Tis the season for get-togethers with friends and family. While this is a joyous time of year, it can also be challenging for the many people with hearing loss. Below we review…">
           <a class="cover" href="/elevate-audiology-proof/blog/how-to-host-a-hearing-loss-friendly-dinner-party/"><img src="/elevate-audiology-proof/blog/images/dinner-party-hearing-loss.jpg" alt="How to Host a Hearing Loss-Friendly Dinner Party" loading="lazy"></a>
           <div class="body">
-            <div class="meta">December 2021</div>
+            <div class="meta">December 2021 · Lifestyle</div>
             <h3><a href="/elevate-audiology-proof/blog/how-to-host-a-hearing-loss-friendly-dinner-party/">How to Host a Hearing Loss-Friendly Dinner Party</a></h3>
             <p class="excerpt">‘Tis the season for get-togethers with friends and family. While this is a joyous time of year, it can also be challenging for the many people with hearing loss. Below we review…</p>
-            <span class="read-more">Read article</span>
+            <a class="read-more" href="/elevate-audiology-proof/blog/how-to-host-a-hearing-loss-friendly-dinner-party/">Read article</a>
           </div>
         </article>
-        <article class="post-card">
+        <article class="post-card" data-category="hearing-health" data-title="What You Need to Know About Ototoxic Medications" data-excerpt="Most people are aware of the two most common causes of hearing loss: aging and noise exposure. However, many are unaware of the dangers of ototoxic medications. Below we review…">
           <a class="cover" href="/elevate-audiology-proof/blog/what-you-need-to-know-about-ototoxic-medications/"><img src="/elevate-audiology-proof/blog/images/ototoxic-medications-scaled.jpg" alt="What You Need to Know About Ototoxic Medications" loading="lazy"></a>
           <div class="body">
-            <div class="meta">November 2021</div>
+            <div class="meta">November 2021 · Hearing & Health</div>
             <h3><a href="/elevate-audiology-proof/blog/what-you-need-to-know-about-ototoxic-medications/">What You Need to Know About Ototoxic Medications</a></h3>
             <p class="excerpt">Most people are aware of the two most common causes of hearing loss: aging and noise exposure. However, many are unaware of the dangers of ototoxic medications. Below we review…</p>
-            <span class="read-more">Read article</span>
+            <a class="read-more" href="/elevate-audiology-proof/blog/what-you-need-to-know-about-ototoxic-medications/">Read article</a>
           </div>
         </article>
-        <article class="post-card">
+        <article class="post-card" data-category="tinnitus" data-title="What Is It Like to Have Tinnitus?" data-excerpt="Tinnitus affects approximately 50 million people across the country. It is a hearing impairment that causes you to hear phantom noises with no external sound source. Below we…">
           <a class="cover" href="/elevate-audiology-proof/blog/what-is-it-like-to-have-tinnitus/"><img src="/elevate-audiology-proof/blog/images/hearing-aid-benefits-care-scaled.jpg" alt="What Is It Like to Have Tinnitus?" loading="lazy"></a>
           <div class="body">
-            <div class="meta">November 2021</div>
+            <div class="meta">November 2021 · Tinnitus</div>
             <h3><a href="/elevate-audiology-proof/blog/what-is-it-like-to-have-tinnitus/">What Is It Like to Have Tinnitus?</a></h3>
             <p class="excerpt">Tinnitus affects approximately 50 million people across the country. It is a hearing impairment that causes you to hear phantom noises with no external sound source. Below we…</p>
-            <span class="read-more">Read article</span>
+            <a class="read-more" href="/elevate-audiology-proof/blog/what-is-it-like-to-have-tinnitus/">Read article</a>
           </div>
         </article>
-        <article class="post-card">
+        <article class="post-card" data-category="hearing-aids" data-title="Can Hearing Aids Help My Mind?" data-excerpt="Hearing aids don’t just allow you to hear better, they improve your quality of life. Whether that means getting to enjoy an engaging conversation with friends out at dinner or…">
           <a class="cover" href="/elevate-audiology-proof/blog/can-hearing-aids-help-my-mind/"><img src="/elevate-audiology-proof/blog/images/audiologist-hearing-aid-fit-scaled.jpg" alt="Can Hearing Aids Help My Mind?" loading="lazy"></a>
           <div class="body">
-            <div class="meta">September 2021</div>
+            <div class="meta">September 2021 · Hearing Aids</div>
             <h3><a href="/elevate-audiology-proof/blog/can-hearing-aids-help-my-mind/">Can Hearing Aids Help My Mind?</a></h3>
             <p class="excerpt">Hearing aids don’t just allow you to hear better, they improve your quality of life. Whether that means getting to enjoy an engaging conversation with friends out at dinner or…</p>
-            <span class="read-more">Read article</span>
+            <a class="read-more" href="/elevate-audiology-proof/blog/can-hearing-aids-help-my-mind/">Read article</a>
           </div>
         </article>
-        <article class="post-card">
+        <article class="post-card" data-category="tinnitus" data-title="How Foods &amp; Drinks Can Contribute to Tinnitus Spikes" data-excerpt="Do you have a ringing, roaring, hissing, whistling, buzzing or humming sound in your ear with no external sound source? If so, you may have noticed occasional periods where these…">
           <a class="cover" href="/elevate-audiology-proof/blog/how-foods-drinks-can-contribute-to-tinnitus-spikes/"><img src="/elevate-audiology-proof/blog/images/fish-dinner-diet-tinnitus.jpg" alt="How Foods &amp; Drinks Can Contribute to Tinnitus Spikes" loading="lazy"></a>
           <div class="body">
-            <div class="meta">September 2021</div>
-            <h3><a href="/elevate-audiology-proof/blog/how-foods-drinks-can-contribute-to-tinnitus-spikes/">How Foods &amp; Drinks Can Contribute to Tinnitus Spikes</a></h3>
+            <div class="meta">September 2021 · Tinnitus</div>
+            <h3><a href="/elevate-audiology-proof/blog/how-foods-drinks-can-contribute-to-tinnitus-spikes/">How Foods & Drinks Can Contribute to Tinnitus Spikes</a></h3>
             <p class="excerpt">Do you have a ringing, roaring, hissing, whistling, buzzing or humming sound in your ear with no external sound source? If so, you may have noticed occasional periods where these…</p>
-            <span class="read-more">Read article</span>
+            <a class="read-more" href="/elevate-audiology-proof/blog/how-foods-drinks-can-contribute-to-tinnitus-spikes/">Read article</a>
           </div>
         </article>
-        <article class="post-card">
+        <article class="post-card" data-category="tinnitus" data-title="The Truth About Tinnitus" data-excerpt="Tinnitus is common, affecting approximately 50 million Americans. But despite its prevalence, there are many myths surrounding the condition. Below we review some of these myths…">
           <a class="cover" href="/elevate-audiology-proof/blog/the-truth-about-tinnitus/"><img src="/elevate-audiology-proof/blog/images/ear-exam-hearing-loss-ms-scaled.jpg" alt="The Truth About Tinnitus" loading="lazy"></a>
           <div class="body">
-            <div class="meta">July 2021</div>
+            <div class="meta">July 2021 · Tinnitus</div>
             <h3><a href="/elevate-audiology-proof/blog/the-truth-about-tinnitus/">The Truth About Tinnitus</a></h3>
             <p class="excerpt">Tinnitus is common, affecting approximately 50 million Americans. But despite its prevalence, there are many myths surrounding the condition. Below we review some of these myths…</p>
-            <span class="read-more">Read article</span>
+            <a class="read-more" href="/elevate-audiology-proof/blog/the-truth-about-tinnitus/">Read article</a>
           </div>
         </article>
-        <article class="post-card">
+        <article class="post-card" data-category="hearing-health" data-title="The Link Between Osteoporosis &amp; Hearing Loss" data-excerpt="Hearing loss has been linked to a number of health conditions including, balance problems, cardiovascular disease, diabetes and depression. Research shows yet another condition…">
           <a class="cover" href="/elevate-audiology-proof/blog/the-link-between-osteoporosis-hearing-loss/"><img src="/elevate-audiology-proof/blog/images/hearing-test-man-hearing-loss-scaled.jpg" alt="The Link Between Osteoporosis &amp; Hearing Loss" loading="lazy"></a>
           <div class="body">
-            <div class="meta">July 2021</div>
-            <h3><a href="/elevate-audiology-proof/blog/the-link-between-osteoporosis-hearing-loss/">The Link Between Osteoporosis &amp; Hearing Loss</a></h3>
+            <div class="meta">July 2021 · Hearing & Health</div>
+            <h3><a href="/elevate-audiology-proof/blog/the-link-between-osteoporosis-hearing-loss/">The Link Between Osteoporosis & Hearing Loss</a></h3>
             <p class="excerpt">Hearing loss has been linked to a number of health conditions including, balance problems, cardiovascular disease, diabetes and depression. Research shows yet another condition…</p>
-            <span class="read-more">Read article</span>
+            <a class="read-more" href="/elevate-audiology-proof/blog/the-link-between-osteoporosis-hearing-loss/">Read article</a>
           </div>
         </article>
-        <article class="post-card no-img">
+        <article class="post-card no-img" data-category="news" data-title="Elevate Audiology Announces Greenville Location" data-excerpt="We are thrilled to share a BIG announcement: Elevate Audiology is opening a second location in Greenville, SC!">
           
           <div class="body">
-            <div class="meta">May 2021</div>
+            <div class="meta">May 2021 · News</div>
             <h3><a href="/elevate-audiology-proof/blog/elevate-audiology-announces-greenville-location/">Elevate Audiology Announces Greenville Location</a></h3>
             <p class="excerpt">We are thrilled to share a BIG announcement: Elevate Audiology is opening a second location in Greenville, SC!</p>
-            <span class="read-more">Read article</span>
+            <a class="read-more" href="/elevate-audiology-proof/blog/elevate-audiology-announces-greenville-location/">Read article</a>
           </div>
         </article>
-        <article class="post-card no-img">
+        <article class="post-card no-img" data-category="hearing-health" data-title="Can Dehydration Affect Your Hearing" data-excerpt="Hydration is important for overall well-being. But one lesser-known effect of dehydration is how it impacts your hearing. It’s essential for energy, temperature regulation and…">
           
           <div class="body">
-            <div class="meta">May 2021</div>
+            <div class="meta">May 2021 · Hearing & Health</div>
             <h3><a href="/elevate-audiology-proof/blog/can-dehydration-affect-your-hearing/">Can Dehydration Affect Your Hearing</a></h3>
             <p class="excerpt">Hydration is important for overall well-being. But one lesser-known effect of dehydration is how it impacts your hearing. It’s essential for energy, temperature regulation and…</p>
-            <span class="read-more">Read article</span>
+            <a class="read-more" href="/elevate-audiology-proof/blog/can-dehydration-affect-your-hearing/">Read article</a>
           </div>
         </article>
-        <article class="post-card no-img">
+        <article class="post-card no-img" data-category="hearing-loss" data-title="How to Advocate for Yourself in Medical Settings with Hearing Loss" data-excerpt="Approximately 48 million Americans live with hearing loss, and for those people, visiting a doctor can bring challenges. The potential for miscommunication is higher, and that can…">
           
           <div class="body">
-            <div class="meta">May 2021</div>
+            <div class="meta">May 2021 · Hearing Loss</div>
             <h3><a href="/elevate-audiology-proof/blog/how-to-advocate-for-yourself-in-medical-settings-with-hearing-loss/">How to Advocate for Yourself in Medical Settings with Hearing Loss</a></h3>
             <p class="excerpt">Approximately 48 million Americans live with hearing loss, and for those people, visiting a doctor can bring challenges. The potential for miscommunication is higher, and that can…</p>
-            <span class="read-more">Read article</span>
+            <a class="read-more" href="/elevate-audiology-proof/blog/how-to-advocate-for-yourself-in-medical-settings-with-hearing-loss/">Read article</a>
           </div>
         </article>
-        <article class="post-card no-img">
+        <article class="post-card no-img" data-category="hearing-loss" data-title="Can Eating Healthy Prevent Hearing Loss?" data-excerpt="We all know that eating a healthy diet full of fruits and vegetables is good for us. However, what you might not know is that it may also lower your risk of hearing loss.">
           
           <div class="body">
-            <div class="meta">May 2021</div>
+            <div class="meta">May 2021 · Hearing Loss</div>
             <h3><a href="/elevate-audiology-proof/blog/can-eating-healthy-prevent-hearing-loss/">Can Eating Healthy Prevent Hearing Loss?</a></h3>
             <p class="excerpt">We all know that eating a healthy diet full of fruits and vegetables is good for us. However, what you might not know is that it may also lower your risk of hearing loss.</p>
-            <span class="read-more">Read article</span>
+            <a class="read-more" href="/elevate-audiology-proof/blog/can-eating-healthy-prevent-hearing-loss/">Read article</a>
           </div>
         </article>
-        <article class="post-card">
+        <article class="post-card" data-category="hearing-loss" data-title="Noise-Induced Hearing Loss" data-excerpt="What Is Noise-Induced Hearing Loss?">
           <a class="cover" href="/elevate-audiology-proof/blog/noise-induced-hearing-loss/"><img src="/elevate-audiology-proof/blog/images/protective-ear-equipment-1280x853-1.jpeg" alt="Noise-Induced Hearing Loss" loading="lazy"></a>
           <div class="body">
-            <div class="meta">May 2021</div>
+            <div class="meta">May 2021 · Hearing Loss</div>
             <h3><a href="/elevate-audiology-proof/blog/noise-induced-hearing-loss/">Noise-Induced Hearing Loss</a></h3>
             <p class="excerpt">What Is Noise-Induced Hearing Loss?</p>
-            <span class="read-more">Read article</span>
+            <a class="read-more" href="/elevate-audiology-proof/blog/noise-induced-hearing-loss/">Read article</a>
           </div>
         </article>
-        <article class="post-card">
+        <article class="post-card" data-category="hearing-loss" data-title="Sudden Sensorineural Hearing Loss" data-excerpt="For most people who experience hearing loss, the condition comes on gradually over a period of years. In rare cases, an abrupt loss of hearing occurs with little or no warning.…">
           <a class="cover" href="/elevate-audiology-proof/blog/sudden-sensorineural-hearing-loss/"><img src="/elevate-audiology-proof/blog/images/discussing-hearing-loss-1280x853-1.jpeg" alt="Sudden Sensorineural Hearing Loss" loading="lazy"></a>
           <div class="body">
-            <div class="meta">May 2021</div>
+            <div class="meta">May 2021 · Hearing Loss</div>
             <h3><a href="/elevate-audiology-proof/blog/sudden-sensorineural-hearing-loss/">Sudden Sensorineural Hearing Loss</a></h3>
             <p class="excerpt">For most people who experience hearing loss, the condition comes on gradually over a period of years. In rare cases, an abrupt loss of hearing occurs with little or no warning.…</p>
-            <span class="read-more">Read article</span>
+            <a class="read-more" href="/elevate-audiology-proof/blog/sudden-sensorineural-hearing-loss/">Read article</a>
           </div>
         </article>
-        <article class="post-card">
+        <article class="post-card" data-category="hearing-loss" data-title="Unilateral Hearing Loss" data-excerpt="What is Single Sided Deafness?">
           <a class="cover" href="/elevate-audiology-proof/blog/unilateral-hearing-loss/"><img src="/elevate-audiology-proof/blog/images/iStock-541602928-banner-scaled-1-1280x420-1.jpeg" alt="Unilateral Hearing Loss" loading="lazy"></a>
           <div class="body">
-            <div class="meta">May 2021</div>
+            <div class="meta">May 2021 · Hearing Loss</div>
             <h3><a href="/elevate-audiology-proof/blog/unilateral-hearing-loss/">Unilateral Hearing Loss</a></h3>
             <p class="excerpt">What is Single Sided Deafness?</p>
-            <span class="read-more">Read article</span>
+            <a class="read-more" href="/elevate-audiology-proof/blog/unilateral-hearing-loss/">Read article</a>
           </div>
         </article>
-        <article class="post-card no-img">
+        <article class="post-card no-img" data-category="hearing-loss" data-title="Signs &amp; Reasons for Hearing Loss" data-excerpt="Hearing loss is a common occurrence that affects many individuals every year. The Mayo Clinic projects that “About one-third of people in the United States between the ages of 65…">
           
           <div class="body">
-            <div class="meta">May 2021</div>
-            <h3><a href="/elevate-audiology-proof/blog/signs-reasons-for-hearing-loss-2/">Signs &amp; Reasons for Hearing Loss</a></h3>
+            <div class="meta">May 2021 · Hearing Loss</div>
+            <h3><a href="/elevate-audiology-proof/blog/signs-reasons-for-hearing-loss-2/">Signs & Reasons for Hearing Loss</a></h3>
             <p class="excerpt">Hearing loss is a common occurrence that affects many individuals every year. The Mayo Clinic projects that “About one-third of people in the United States between the ages of 65…</p>
-            <span class="read-more">Read article</span>
+            <a class="read-more" href="/elevate-audiology-proof/blog/signs-reasons-for-hearing-loss-2/">Read article</a>
           </div>
         </article>
-        <article class="post-card no-img">
+        <article class="post-card no-img" data-category="hearing-loss" data-title="Tips for Communicating with Hearing Loss" data-excerpt="It&#x27;s a scary thing when we begin to lose our hearing. Most of us walk around with untreated hearing loss that puts a strain on our relationships. At first you might not notice the…">
           
           <div class="body">
-            <div class="meta">May 2021</div>
+            <div class="meta">May 2021 · Hearing Loss</div>
             <h3><a href="/elevate-audiology-proof/blog/tips-for-communicating-with-hearing-loss-2/">Tips for Communicating with Hearing Loss</a></h3>
-            <p class="excerpt">It&#x27;s a scary thing when we begin to lose our hearing. Most of us walk around with untreated hearing loss that puts a strain on our relationships. At first you might not notice the…</p>
-            <span class="read-more">Read article</span>
+            <p class="excerpt">It's a scary thing when we begin to lose our hearing. Most of us walk around with untreated hearing loss that puts a strain on our relationships. At first you might not notice the…</p>
+            <a class="read-more" href="/elevate-audiology-proof/blog/tips-for-communicating-with-hearing-loss-2/">Read article</a>
           </div>
         </article>
-        <article class="post-card no-img">
+        <article class="post-card no-img" data-category="hearing-loss" data-title="How Treating Hearing Loss Improves Your Relationships" data-excerpt="Communication in our daily lives from social situations to spiritual or religious congregations to sporting activities to family gatherings, form some the most important…">
           
           <div class="body">
-            <div class="meta">May 2021</div>
+            <div class="meta">May 2021 · Hearing Loss</div>
             <h3><a href="/elevate-audiology-proof/blog/how-treating-hearing-loss-improves-your-relationships-2/">How Treating Hearing Loss Improves Your Relationships</a></h3>
             <p class="excerpt">Communication in our daily lives from social situations to spiritual or religious congregations to sporting activities to family gatherings, form some the most important…</p>
-            <span class="read-more">Read article</span>
+            <a class="read-more" href="/elevate-audiology-proof/blog/how-treating-hearing-loss-improves-your-relationships-2/">Read article</a>
           </div>
         </article>
-        <article class="post-card no-img">
+        <article class="post-card no-img" data-category="hearing-aids" data-title="Talking about Hearing Loss: Why Your Disclosure Method Matters" data-excerpt="If you’ve recently been treated for hearing loss, then you are aware of the many benefits that hearing aids bring. Now that you have accepted it within yourself, it should be an…">
           
           <div class="body">
-            <div class="meta">May 2021</div>
+            <div class="meta">May 2021 · Hearing Aids</div>
             <h3><a href="/elevate-audiology-proof/blog/talking-about-hearing-loss-why-your-disclosure-method-matters-2/">Talking about Hearing Loss: Why Your Disclosure Method Matters</a></h3>
             <p class="excerpt">If you’ve recently been treated for hearing loss, then you are aware of the many benefits that hearing aids bring. Now that you have accepted it within yourself, it should be an…</p>
-            <span class="read-more">Read article</span>
+            <a class="read-more" href="/elevate-audiology-proof/blog/talking-about-hearing-loss-why-your-disclosure-method-matters-2/">Read article</a>
           </div>
         </article>
-        <article class="post-card no-img">
+        <article class="post-card no-img" data-category="hearing-aids" data-title="Things People with Hearing Loss Wish You Knew" data-excerpt="When a person is dealing with hearing loss, they are using everything they have to stay engaged in conversation. Even if they are wearing hearing aids and can lip read, they are…">
           
           <div class="body">
-            <div class="meta">May 2021</div>
+            <div class="meta">May 2021 · Hearing Aids</div>
             <h3><a href="/elevate-audiology-proof/blog/things-people-with-hearing-loss-wish-you-knew-2/">Things People with Hearing Loss Wish You Knew</a></h3>
             <p class="excerpt">When a person is dealing with hearing loss, they are using everything they have to stay engaged in conversation. Even if they are wearing hearing aids and can lip read, they are…</p>
-            <span class="read-more">Read article</span>
+            <a class="read-more" href="/elevate-audiology-proof/blog/things-people-with-hearing-loss-wish-you-knew-2/">Read article</a>
           </div>
         </article>
-        <article class="post-card no-img">
+        <article class="post-card no-img" data-category="hearing-tests" data-title="Encouraging a Loved One to Take a Hearing Test" data-excerpt="Communication is at the heart of all relationships. We relate to one another through conversations, our shared interests come alive through these moments. Friendships are built,…">
           
           <div class="body">
-            <div class="meta">May 2021</div>
+            <div class="meta">May 2021 · Hearing Testing</div>
             <h3><a href="/elevate-audiology-proof/blog/encouraging-a-loved-one-to-take-a-hearing-test-2/">Encouraging a Loved One to Take a Hearing Test</a></h3>
             <p class="excerpt">Communication is at the heart of all relationships. We relate to one another through conversations, our shared interests come alive through these moments. Friendships are built,…</p>
-            <span class="read-more">Read article</span>
+            <a class="read-more" href="/elevate-audiology-proof/blog/encouraging-a-loved-one-to-take-a-hearing-test-2/">Read article</a>
           </div>
         </article>
-        <article class="post-card no-img">
+        <article class="post-card no-img" data-category="news" data-title="Occupational Hearing Hazards" data-excerpt="Hearing loss is the third most common medical condition in the United States, affecting people of all ages, especially those over the age of 65. However, did you know that hearing…">
           
           <div class="body">
-            <div class="meta">May 2021</div>
+            <div class="meta">May 2021 · News</div>
             <h3><a href="/elevate-audiology-proof/blog/occupational-hearing-hazards-2/">Occupational Hearing Hazards</a></h3>
             <p class="excerpt">Hearing loss is the third most common medical condition in the United States, affecting people of all ages, especially those over the age of 65. However, did you know that hearing…</p>
-            <span class="read-more">Read article</span>
+            <a class="read-more" href="/elevate-audiology-proof/blog/occupational-hearing-hazards-2/">Read article</a>
           </div>
         </article>
-        <article class="post-card no-img">
+        <article class="post-card no-img" data-category="hearing-aids" data-title="Tips for Adjusting to a New Pair of Hearing Aids" data-excerpt="If you’ve just been fitted for a new pair of hearing aids, congratulations! Whether you’ve just been diagnosed with a hearing loss or you have upgraded from an old pair of hearing…">
           
           <div class="body">
-            <div class="meta">May 2021</div>
+            <div class="meta">May 2021 · Hearing Aids</div>
             <h3><a href="/elevate-audiology-proof/blog/tips-for-adjusting-to-a-new-pair-of-hearing-aids-2/">Tips for Adjusting to a New Pair of Hearing Aids</a></h3>
             <p class="excerpt">If you’ve just been fitted for a new pair of hearing aids, congratulations! Whether you’ve just been diagnosed with a hearing loss or you have upgraded from an old pair of hearing…</p>
-            <span class="read-more">Read article</span>
+            <a class="read-more" href="/elevate-audiology-proof/blog/tips-for-adjusting-to-a-new-pair-of-hearing-aids-2/">Read article</a>
           </div>
         </article>
-        <article class="post-card no-img">
+        <article class="post-card no-img" data-category="hearing-loss" data-title="Recognizing the Signs of Hearing Loss" data-excerpt="The Centers for Disease Control and Prevention (CDC) estimates that hearing loss effects one-third of people aged 65-74 and one-half of people over the age of 74. Shockingly,…">
           
           <div class="body">
-            <div class="meta">May 2021</div>
+            <div class="meta">May 2021 · Hearing Loss</div>
             <h3><a href="/elevate-audiology-proof/blog/recognizing-the-signs-of-hearing-loss-2/">Recognizing the Signs of Hearing Loss</a></h3>
             <p class="excerpt">The Centers for Disease Control and Prevention (CDC) estimates that hearing loss effects one-third of people aged 65-74 and one-half of people over the age of 74. Shockingly,…</p>
-            <span class="read-more">Read article</span>
+            <a class="read-more" href="/elevate-audiology-proof/blog/recognizing-the-signs-of-hearing-loss-2/">Read article</a>
           </div>
         </article>
-        <article class="post-card">
+        <article class="post-card" data-category="hearing-loss" data-title="The Risks of Untreated Hearing Loss" data-excerpt="The Risks of Untreated Hearing Loss">
           <a class="cover" href="/elevate-audiology-proof/blog/the-risks-of-untreated-hearing-loss-2/"><img src="/elevate-audiology-proof/blog/images/77708.jpg" alt="The Risks of Untreated Hearing Loss" loading="lazy"></a>
           <div class="body">
-            <div class="meta">March 2021</div>
+            <div class="meta">March 2021 · Hearing Loss</div>
             <h3><a href="/elevate-audiology-proof/blog/the-risks-of-untreated-hearing-loss-2/">The Risks of Untreated Hearing Loss</a></h3>
             <p class="excerpt">The Risks of Untreated Hearing Loss</p>
-            <span class="read-more">Read article</span>
+            <a class="read-more" href="/elevate-audiology-proof/blog/the-risks-of-untreated-hearing-loss-2/">Read article</a>
           </div>
         </article>
-        <article class="post-card">
+        <article class="post-card" data-category="hearing-loss" data-title="How to Maintain Ear Health and Avoid Impaction" data-excerpt="Excess wax and buildup in your ears can be frustrating. However, earwax usually disperses naturally without manual cleaning. Many people still attempt to clean their ears…">
           <a class="cover" href="/elevate-audiology-proof/blog/how-to-maintain-ear-health-and-avoid-impaction/"><img src="/elevate-audiology-proof/blog/images/doctor-examining-patients-ear-1400x894-1.jpg" alt="How to Maintain Ear Health and Avoid Impaction" loading="lazy"></a>
           <div class="body">
-            <div class="meta">November 2020</div>
+            <div class="meta">November 2020 · Hearing Loss</div>
             <h3><a href="/elevate-audiology-proof/blog/how-to-maintain-ear-health-and-avoid-impaction/">How to Maintain Ear Health and Avoid Impaction</a></h3>
             <p class="excerpt">Excess wax and buildup in your ears can be frustrating. However, earwax usually disperses naturally without manual cleaning. Many people still attempt to clean their ears…</p>
-            <span class="read-more">Read article</span>
+            <a class="read-more" href="/elevate-audiology-proof/blog/how-to-maintain-ear-health-and-avoid-impaction/">Read article</a>
           </div>
         </article>
-        <article class="post-card">
+        <article class="post-card" data-category="hearing-tests" data-title="Hearing Loss &amp; Cognitive Decline" data-excerpt="Learning disabilities are often misdiagnosed. It is a known fact that hearing loss can impact one’s ability to learn properly. This is especially true of how children hear sounds.…">
           <a class="cover" href="/elevate-audiology-proof/blog/hearing-loss-cognitive-decline/"><img src="/elevate-audiology-proof/blog/images/Elevate-Audiology-Hearing-Loss-3.jpg" alt="Hearing Loss &amp; Cognitive Decline" loading="lazy"></a>
           <div class="body">
-            <div class="meta">November 2020</div>
-            <h3><a href="/elevate-audiology-proof/blog/hearing-loss-cognitive-decline/">Hearing Loss &amp; Cognitive Decline</a></h3>
+            <div class="meta">November 2020 · Hearing Testing</div>
+            <h3><a href="/elevate-audiology-proof/blog/hearing-loss-cognitive-decline/">Hearing Loss & Cognitive Decline</a></h3>
             <p class="excerpt">Learning disabilities are often misdiagnosed. It is a known fact that hearing loss can impact one’s ability to learn properly. This is especially true of how children hear sounds.…</p>
-            <span class="read-more">Read article</span>
+            <a class="read-more" href="/elevate-audiology-proof/blog/hearing-loss-cognitive-decline/">Read article</a>
           </div>
         </article>
-        <article class="post-card">
+        <article class="post-card" data-category="hearing-health" data-title="September is World Alzheimer’s Month" data-excerpt="Alzheimer’s disease and dementia are projected to impact 152 million people world-wide by 2050. Alzheimer’s disease is a brain condition that impacts areas which control thought,…">
           <a class="cover" href="/elevate-audiology-proof/blog/september-is-world-alzheimers-month/"><img src="/elevate-audiology-proof/blog/images/Elevate-Audiology-September-is-World-Alzheimers-Month.jpg" alt="September is World Alzheimer’s Month" loading="lazy"></a>
           <div class="body">
-            <div class="meta">November 2020</div>
+            <div class="meta">November 2020 · Hearing & Health</div>
             <h3><a href="/elevate-audiology-proof/blog/september-is-world-alzheimers-month/">September is World Alzheimer’s Month</a></h3>
             <p class="excerpt">Alzheimer’s disease and dementia are projected to impact 152 million people world-wide by 2050. Alzheimer’s disease is a brain condition that impacts areas which control thought,…</p>
-            <span class="read-more">Read article</span>
+            <a class="read-more" href="/elevate-audiology-proof/blog/september-is-world-alzheimers-month/">Read article</a>
           </div>
         </article>
-        <article class="post-card">
+        <article class="post-card" data-category="news" data-title="Addressing Hearing Loss May Improve Care of Older Adults" data-excerpt="The National Institute on Deafness and Other Communication Disorders, otherwise known as NIDCD, reports that nearly 1 in 3 people between 65 and 74 years old has hearing loss.…">
           <a class="cover" href="/elevate-audiology-proof/blog/addressing-hearing-loss-may-improve-care-of-older-adults/"><img src="/elevate-audiology-proof/blog/images/Elevate-Audiology-Addressing-Hearing-Loss-May-Improve-Care-of-Older-Adults.jpg" alt="Addressing Hearing Loss May Improve Care of Older Adults" loading="lazy"></a>
           <div class="body">
-            <div class="meta">November 2020</div>
+            <div class="meta">November 2020 · News</div>
             <h3><a href="/elevate-audiology-proof/blog/addressing-hearing-loss-may-improve-care-of-older-adults/">Addressing Hearing Loss May Improve Care of Older Adults</a></h3>
             <p class="excerpt">The National Institute on Deafness and Other Communication Disorders, otherwise known as NIDCD, reports that nearly 1 in 3 people between 65 and 74 years old has hearing loss.…</p>
-            <span class="read-more">Read article</span>
+            <a class="read-more" href="/elevate-audiology-proof/blog/addressing-hearing-loss-may-improve-care-of-older-adults/">Read article</a>
           </div>
         </article>
-        <article class="post-card">
+        <article class="post-card" data-category="hearing-loss" data-title="The Benefits of Treating Hearing Loss" data-excerpt="There are many benefits to treating your hearing loss.  You can communicate with others effortlessly, stay socially active, and improve your overall well-being. The potential…">
           <a class="cover" href="/elevate-audiology-proof/blog/the-benefits-of-treating-hearing-loss/"><img src="/elevate-audiology-proof/blog/images/Elevate-Audiology-The-Benefits-of-Treating-Hearing-Loss.jpg" alt="The Benefits of Treating Hearing Loss" loading="lazy"></a>
           <div class="body">
-            <div class="meta">November 2020</div>
+            <div class="meta">November 2020 · Hearing Loss</div>
             <h3><a href="/elevate-audiology-proof/blog/the-benefits-of-treating-hearing-loss/">The Benefits of Treating Hearing Loss</a></h3>
             <p class="excerpt">There are many benefits to treating your hearing loss.  You can communicate with others effortlessly, stay socially active, and improve your overall well-being. The potential…</p>
-            <span class="read-more">Read article</span>
+            <a class="read-more" href="/elevate-audiology-proof/blog/the-benefits-of-treating-hearing-loss/">Read article</a>
           </div>
         </article>
-        <article class="post-card">
+        <article class="post-card" data-category="news" data-title="May is Better Speech and Hearing Month!" data-excerpt="Each May, Better Hearing &amp; Speech Month (BHSM) is an annual event promoted by the American Speech-Language-Hearing Association (ASHA) to raise awareness about communication…">
           <a class="cover" href="/elevate-audiology-proof/blog/may-is-better-speech-and-hearing-month/"><img src="/elevate-audiology-proof/blog/images/Elevate-Audiology-May-is-Better-Speech-and-Hearing-Month.jpg" alt="May is Better Speech and Hearing Month!" loading="lazy"></a>
           <div class="body">
-            <div class="meta">November 2020</div>
+            <div class="meta">November 2020 · News</div>
             <h3><a href="/elevate-audiology-proof/blog/may-is-better-speech-and-hearing-month/">May is Better Speech and Hearing Month!</a></h3>
-            <p class="excerpt">Each May, Better Hearing &amp; Speech Month (BHSM) is an annual event promoted by the American Speech-Language-Hearing Association (ASHA) to raise awareness about communication…</p>
-            <span class="read-more">Read article</span>
+            <p class="excerpt">Each May, Better Hearing & Speech Month (BHSM) is an annual event promoted by the American Speech-Language-Hearing Association (ASHA) to raise awareness about communication…</p>
+            <a class="read-more" href="/elevate-audiology-proof/blog/may-is-better-speech-and-hearing-month/">Read article</a>
           </div>
         </article>
-        <article class="post-card">
+        <article class="post-card" data-category="lifestyle" data-title="Great Things to Hear This Holiday in Greenville, SC" data-excerpt="At Elevate Audiology, our team is committed to reconnecting you to the people and sounds in your life. We know how important it is to reconnect with your family and loved ones…">
           <a class="cover" href="/elevate-audiology-proof/blog/great-things-to-hear-this-holiday-in-greenville-sc/"><img src="/elevate-audiology-proof/blog/images/Elevate-Audiology-Things-to-Hear-This-Holiday-Season-in-Greenville-SC-1.jpg" alt="Great Things to Hear This Holiday in Greenville, SC" loading="lazy"></a>
           <div class="body">
-            <div class="meta">November 2020</div>
+            <div class="meta">November 2020 · Lifestyle</div>
             <h3><a href="/elevate-audiology-proof/blog/great-things-to-hear-this-holiday-in-greenville-sc/">Great Things to Hear This Holiday in Greenville, SC</a></h3>
             <p class="excerpt">At Elevate Audiology, our team is committed to reconnecting you to the people and sounds in your life. We know how important it is to reconnect with your family and loved ones…</p>
-            <span class="read-more">Read article</span>
+            <a class="read-more" href="/elevate-audiology-proof/blog/great-things-to-hear-this-holiday-in-greenville-sc/">Read article</a>
           </div>
         </article>
-        </div>
       </div>
-    </section>
-
-    <section class="cta-band">
-      <div class="container">
-        <h2>Have a question we haven't answered?</h2>
-        <p>Call <a href="tel:+18644425555">(864) 442-5555</a> or schedule a consultation — we read every message.</p>
-        <a class="btn btn-accent" href="/elevate-audiology-proof/contact/">Schedule a Consultation</a>
+      <div class="blog-no-results" id="blog-no-results">
+        <h3>No articles found</h3>
+        <p>Try a different keyword or category. <a href="#" id="reset-filters" style="color: var(--c-accent-2); font-weight: 600; text-decoration: underline;">Clear filters</a></p>
       </div>
-    </section>
-    
-</main>
-<section class="affiliations" aria-label="Affiliations">
-  <div class="container">
-    <div class="affiliations-row">
-      <img src="/elevate-audiology-proof/images/affiliations/ada-logo.png" alt="Academy of Doctors of Audiology">
-      <img src="/elevate-audiology-proof/images/affiliations/cognihear-logo.png" alt="CogniHear Provider">
-      <img src="/elevate-audiology-proof/images/offices/bosc-best-2025.png" alt="Best of South Carolina 2025">
     </div>
-  </div>
-</section>
+  </section>
+
+  <section class="section section-alt" style="background: var(--c-purple-50);">
+    <div class="container">
+      <div class="section-head center text-center">
+        <h2>Have a question we haven't answered?</h2>
+        <p>Our audiologists are happy to help. Schedule an appointment at our Easley or Greenville office and let's talk through your hearing or tinnitus concerns together.</p>
+        <a href="/elevate-audiology-proof/contact/" class="btn btn-primary" style="margin-top: 1.5rem;">Schedule an Appointment</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
 <footer class="site-footer">
   <div class="container-wide">
     <div class="footer-grid">
@@ -900,13 +936,13 @@
           <div class="footer-loc">
             <strong>Easley</strong>
             <p>424 Rock Springs Road<br>Easley, SC 29642</p>
-            <p><a href="tel:+18644425555">(864) 442-5555</a></p>
+            <p><a href="tel:+18644476611">(864) 447-6611</a></p>
             <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=424+Rock+Springs+Road+Easley+SC+29642" target="_blank" rel="noopener">Directions →</a>
           </div>
           <div class="footer-loc">
             <strong>Greenville</strong>
             <p>2086 Woodruff Rd Suite B<br>Greenville, SC 29607</p>
-            <p><a href="tel:+18644425555">(864) 442-5555</a></p>
+            <p><a href="tel:+18644476611">(864) 447-6611</a></p>
             <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=2086+Woodruff+Rd+Suite+B+Greenville+SC+29607" target="_blank" rel="noopener">Directions →</a>
           </div>
         </div>
@@ -939,13 +975,72 @@
       <div>
         <a href="mailto:info@elevateaudiology.com">info@elevateaudiology.com</a>
         &nbsp;|&nbsp;
-        <a href="tel:+18644425555">(864) 442-5555</a>
+        <a href="tel:+18644476611">(864) 447-6611</a>
       </div>
     </div>
   </div>
 </footer>
+
 <script src="/elevate-audiology-proof/js/site.js" defer></script>
 <script>var fy=document.getElementById('footer-year'); if(fy) fy.textContent=new Date().getFullYear();</script>
 
+
+<script>
+(function() {
+  const searchInput = document.getElementById('blog-search');
+  const pills = document.querySelectorAll('.filter-pill');
+  const cards = document.querySelectorAll('.post-card');
+  const countEl = document.getElementById('blog-count');
+  const noResults = document.getElementById('blog-no-results');
+  const resetBtn = document.getElementById('reset-filters');
+  let activeCategory = 'all';
+
+  function updateCount(n) {
+    countEl.innerHTML = 'Showing <strong>' + n + '</strong> of <strong>' + cards.length + '</strong> articles';
+  }
+
+  function applyFilter() {
+    const q = (searchInput.value || '').toLowerCase().trim();
+    let visible = 0;
+    cards.forEach(function(card) {
+      const cat = card.dataset.category || '';
+      const title = (card.dataset.title || '').toLowerCase();
+      const excerpt = (card.dataset.excerpt || '').toLowerCase();
+      const catMatch = activeCategory === 'all' || cat === activeCategory;
+      const textMatch = !q || title.indexOf(q) !== -1 || excerpt.indexOf(q) !== -1 || cat.indexOf(q) !== -1;
+      if (catMatch && textMatch) {
+        card.classList.remove('is-hidden');
+        visible++;
+      } else {
+        card.classList.add('is-hidden');
+      }
+    });
+    updateCount(visible);
+    noResults.style.display = visible === 0 ? 'block' : 'none';
+  }
+
+  pills.forEach(function(pill) {
+    pill.addEventListener('click', function() {
+      pills.forEach(function(p) { p.classList.remove('active'); });
+      pill.classList.add('active');
+      activeCategory = pill.dataset.category;
+      applyFilter();
+    });
+  });
+
+  searchInput.addEventListener('input', applyFilter);
+  if (resetBtn) {
+    resetBtn.addEventListener('click', function(e) {
+      e.preventDefault();
+      searchInput.value = '';
+      pills.forEach(function(p) { p.classList.remove('active'); });
+      pills[0].classList.add('active');
+      activeCategory = 'all';
+      applyFilter();
+    });
+  }
+  updateCount(cards.length);
+})();
+</script>
 </body>
 </html>
