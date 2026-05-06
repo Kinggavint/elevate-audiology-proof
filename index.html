@@ -16,6 +16,9 @@
   /* Page-specific */
   .home-hero { padding-block: clamp(4rem, 8vw, 7rem); }
   .home-hero .lead { font-size: clamp(1.0625rem, 1.4vw, 1.25rem); }
+  /* Single team photo hero — override split layout */
+  .hero-media-team { padding-right: 0; padding-bottom: 0; }
+  .hero-media-team .hero-media-main { aspect-ratio: 1 / 1; }
   .home-trust {
     display: flex; gap: var(--sp-5); flex-wrap: wrap;
     margin-top: var(--sp-6);
@@ -156,23 +159,20 @@
         <div>
           <span class="eyebrow">Doctors of Audiology · Easley &amp; Greenville, SC</span>
           <h1>Elevate your life with trusted audiology care.</h1>
-          <p class="lead">Independent, locally owned, and led by Doctors of Audiology, we specialize in hearing care, tinnitus treatment, and auditory processing for the Upstate.</p>
+          <p class="lead">Independent, locally owned, and led by Doctors of Audiology, we specialize in hearing care, tinnitus treatment, and auditory processing for the Upstate and beyond.</p>
           <div class="hero-actions">
             <a href="/elevate-audiology-proof/contact/" class="btn btn-on-dark">Schedule an Appointment</a>
             <a href="/elevate-audiology-proof/hearing-testing/" class="btn btn-outline" style="color:#fff;border-color:rgba(255,255,255,.5);">Learn About the Elevate Pathway</a>
           </div>
           <div class="home-trust">
             <div class="home-trust-item"><span class="num">2</span><span>Locations in the Upstate</span></div>
-            <div class="home-trust-item"><span class="num">7+</span><span>Specialists on the team</span></div>
+            <div class="home-trust-item"><span class="num">3+</span><span>Specialists on the team</span></div>
             <div class="home-trust-item"><span class="num">100%</span><span>Locally owned &amp; independent</span></div>
           </div>
         </div>
-        <div class="hero-media">
+        <div class="hero-media hero-media-team">
           <div class="hero-media-main">
-            <img src="/elevate-audiology-proof/images/offices/office-storefront.webp" alt="Elevate Audiology storefront in Easley, SC" loading="eager" width="640" height="330">
-          </div>
-          <div class="hero-media-inset" aria-hidden="true">
-            <img src="/elevate-audiology-proof/images/offices/office-interior.webp" alt="" loading="eager" width="640" height="330">
+            <img src="/elevate-audiology-proof/assets/proof-changes-2026-05-06/team-photo-2026.webp" alt="The Elevate Audiology team — Doctors of Audiology and patient care staff in Easley and Greenville, SC" loading="eager" width="1200" height="1200">
           </div>
         </div>
       </div>
