@@ -93,10 +93,43 @@
 
 <section class="section">
   <div class="container">
-    <div class="schedule-embed">
-      <!-- Online scheduler embed will go here -->
+    <div class="schedule-tabs" style="display:flex;justify-content:center;gap:var(--sp-3);margin-bottom:var(--sp-5);flex-wrap:wrap;">
+      <button type="button" class="btn btn-primary" data-tab="easley" aria-pressed="true">Easley</button>
+      <button type="button" class="btn btn-outline" data-tab="greenville" aria-pressed="false">Greenville</button>
     </div>
-    <div class="schedule-fallback" style="text-align:center; max-width: 640px; margin: 0 auto;">
+
+    <div class="schedule-embed" id="schedule-easley" data-location="easley">
+      <h2 style="text-align:center;margin-bottom:var(--sp-4);">Easley Office</h2>
+      <iframe id="ceschedule-easley" src="https://www.hearinghealthportal.com/scheduling/schedule.aspx?key=102936-4608&embed=true&referralType=15095" width="100%" height="1200px" frameborder="0" style="border: 0;" title="Easley online scheduling"></iframe>
+    </div>
+
+    <div class="schedule-embed" id="schedule-greenville" data-location="greenville" style="display:none;">
+      <h2 style="text-align:center;margin-bottom:var(--sp-4);">Greenville Office</h2>
+      <iframe id="ceschedule-greenville" src="https://www.hearinghealthportal.com/scheduling/schedule.aspx?key=102936-11741&embed=true&referralType=15095" width="100%" height="1200px" frameborder="0" style="border: 0;" title="Greenville online scheduling"></iframe>
+    </div>
+
+    <script src="https://cdn.hearinghealthportal.com/Scripts/ScheduleEmbed-min-v1.js" type="text/javascript"></script>
+    <script>
+      (function(){
+        var tabs = document.querySelectorAll('.schedule-tabs [data-tab]');
+        tabs.forEach(function(btn){
+          btn.addEventListener('click', function(){
+            var target = btn.getAttribute('data-tab');
+            tabs.forEach(function(b){
+              var active = b.getAttribute('data-tab') === target;
+              b.setAttribute('aria-pressed', active ? 'true' : 'false');
+              b.classList.toggle('btn-primary', active);
+              b.classList.toggle('btn-outline', !active);
+            });
+            document.querySelectorAll('.schedule-embed').forEach(function(panel){
+              panel.style.display = panel.dataset.location === target ? '' : 'none';
+            });
+          });
+        });
+      })();
+    </script>
+
+    <div class="schedule-fallback" style="text-align:center; max-width: 640px; margin: var(--sp-7) auto 0;">
       <p style="margin-bottom: var(--sp-4);">Prefer to talk to a person? Call the office that's closest to you and our Patient Care Coordinators will help you find a time.</p>
       <p style="margin-bottom: var(--sp-2);"><strong>Easley</strong> &nbsp;·&nbsp; <a href="tel:+18644476611">(864) 447-6611</a></p>
       <p style="margin-bottom: var(--sp-5);"><strong>Greenville</strong> &nbsp;·&nbsp; <a href="tel:+18644474183">(864) 447-4183</a></p>
