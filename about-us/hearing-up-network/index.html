@@ -191,6 +191,60 @@
   </div>
 </section>
 
+<section class="section" style="padding-block: var(--sp-7);" aria-label="Our Hearing Up Network providers">
+  <div class="container">
+    <div style="text-align:center; margin-bottom: var(--sp-6);">
+      <span class="eyebrow" style="color: var(--c-purple-700);">Verified Best-Practice Audiologists</span>
+      <h2 style="margin-top: var(--sp-2);">Our Hearing Up Network Providers</h2>
+      <p style="max-width: 56ch; margin: var(--sp-3) auto 0;">Both of our Doctors of Audiology are personally vetted members of the Hearing Up Network. Choose the provider at the office closest to you.</p>
+    </div>
+    <div class="hun-providers">
+      <a href="/elevate-audiology-proof/about-us/hearing-up-network/" class="hun-provider-card hun-provider-card--current" aria-current="page">
+        <div class="hun-provider-photo">
+          <img src="/elevate-audiology-proof/images/team/alexandra-tarvin.png" alt="Dr. Alexandra Tarvin, Au.D." loading="eager">
+        </div>
+        <div class="hun-provider-body">
+          <span class="hun-provider-office">Easley Office</span>
+          <h3>Dr. Alexandra Tarvin, Au.D.</h3>
+          <p class="hun-provider-role">Founder &amp; Doctor of Audiology</p>
+          <span class="hun-provider-link">You are here</span>
+        </div>
+      </a>
+      <a href="/elevate-audiology-proof/about-us/hearing-up-network-capece/" class="hun-provider-card">
+        <div class="hun-provider-photo">
+          <img src="/elevate-audiology-proof/images/team/scott-capece.webp" alt="Dr. Scott Capece, Au.D." loading="eager">
+        </div>
+        <div class="hun-provider-body">
+          <span class="hun-provider-office">Greenville Office</span>
+          <h3>Dr. Scott Capece, Au.D.</h3>
+          <p class="hun-provider-role">Doctor of Audiology</p>
+          <span class="hun-provider-link">Learn more &rarr;</span>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+<style>
+  .hun-providers { display: grid; grid-template-columns: repeat(2, 1fr); gap: var(--sp-5); }
+  .hun-provider-card { display:flex; flex-direction: column; align-items: center; text-align: center; padding: var(--sp-6) var(--sp-5); background: var(--c-white, #fff); border: 1px solid var(--c-border, #e5e7eb); border-radius: var(--radius-lg); text-decoration: none; color: inherit; transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease; }
+  .hun-provider-card:hover { transform: translateY(-3px); box-shadow: 0 12px 32px rgba(74, 0, 85, 0.12); border-color: var(--c-purple-600); }
+  .hun-provider-card--current { background: var(--c-purple-50); border-color: var(--c-purple-600); cursor: default; }
+  .hun-provider-card--current:hover { transform: none; box-shadow: none; }
+  .hun-provider-photo { width: 140px; height: 140px; border-radius: 50%; overflow: hidden; margin-bottom: var(--sp-4); border: 3px solid var(--c-purple-600); background: var(--c-purple-50); }
+  .hun-provider-photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .hun-provider-office { display: inline-block; font-size: 0.75rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--c-purple-700); background: var(--c-purple-50); padding: 0.25rem 0.75rem; border-radius: 999px; margin-bottom: var(--sp-3); }
+  .hun-provider-card--current .hun-provider-office { background: var(--c-white, #fff); }
+  .hun-provider-body h3 { font-family: var(--font-display); font-size: 1.375rem; margin: 0 0 0.25rem; line-height: 1.2; }
+  .hun-provider-role { font-size: 0.9375rem; color: var(--c-text-soft); margin: 0 0 var(--sp-4); }
+  .hun-provider-link { font-weight: 600; color: var(--c-purple-700); font-size: 0.9375rem; }
+  .hun-provider-card--current .hun-provider-link { color: var(--c-text-soft); font-style: italic; font-weight: 500; }
+  @media (max-width: 720px) {
+    .hun-providers { grid-template-columns: 1fr; gap: var(--sp-4); }
+    .hun-provider-card { padding: var(--sp-5) var(--sp-4); }
+    .hun-provider-photo { width: 120px; height: 120px; }
+  }
+</style>
+
 <section class="section" style="padding-top: 0;" aria-label="Best practices in action at Elevate Audiology">
   <div class="container">
     <div class="hun-gallery">
@@ -254,7 +308,6 @@
       <li>A commitment to ongoing education and evidence-based practice</li>
     </ul>
     <p>To learn more about the Hearing Up Network and Dr. Tarvin's involvement, visit <a href="https://hearingup.com/provider/elevate-audiology/" target="_blank" rel="noopener">hearingup.com</a>.</p>
-    <p style="margin-top: var(--sp-5); padding-top: var(--sp-4); border-top: 1px solid var(--c-border, #e5e7eb);"><strong>Meet our other Hearing Up Network provider:</strong> <a href="/elevate-audiology-proof/about-us/hearing-up-network-capece/">Dr. Scott Capece, Au.D. →</a> (Greenville office)</p>
   </div>
 </section>
 
