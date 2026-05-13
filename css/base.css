@@ -638,3 +638,102 @@ p  { margin: 0 0 var(--sp-4); }
 
 /* Reviews/widget */
 .reviews-embed { margin-top: var(--sp-6); }
+
+/* ===========================================================
+   MOBILE FIXES — added 2026-05-13 by Apex AI Labs
+   Fixes for true mobile (≤480px and ≤380px iPhone-class viewports):
+   - Prevent horizontal overflow caused by max-width images forcing
+     grid columns to min-content width
+   - Allow long text (emails, URLs) to wrap
+   - Reduce excessive padding/gaps on small screens
+   - Ensure touch targets meet 44px minimum where practical
+   =========================================================== */
+
+/* Universal mobile safeguards — applied at common phone widths */
+@media (max-width: 768px) {
+  /* Stop images from forcing parent grid/flex columns wider than viewport.
+     !important is required to beat the inline max-width:480px / max-width:320px
+     style attributes on program-logo images across the site. */
+  img { max-width: 100% !important; height: auto !important; }
+
+  /* Generic two-col grid: ensure 1fr children can actually shrink below content width */
+  .two-col { grid-template-columns: 1fr; gap: var(--sp-5); }
+  .two-col > * { min-width: 0; }
+
+  /* Hero grid same treatment */
+  .hero-grid > * { min-width: 0; }
+
+  /* Allow long emails / URLs / phone strings to break instead of overflowing */
+  a[href^="mailto:"],
+  a[href^="tel:"],
+  .location-card a,
+  .location-card p { word-break: break-word; overflow-wrap: anywhere; }
+
+  /* Cards that contain CTA buttons should let them shrink */
+  .location-card .btn,
+  .home-locations-grid .btn { max-width: 100%; }
+}
+
+/* Tighter spacing under 480px (most phones in portrait) */
+@media (max-width: 480px) {
+  /* Containers — pull padding in so content has more room */
+  .container { padding-inline: var(--sp-4); }
+
+  /* Sections — reduce vertical padding so pages feel less empty */
+  .section { padding-block: var(--sp-6); }
+  .section-tight { padding-block: var(--sp-5); }
+
+  /* Hero — slightly tighter */
+  .hero { padding-block: var(--sp-7) var(--sp-6); }
+  .hero h1 { font-size: clamp(1.85rem, 7vw, 2.4rem); line-height: 1.15; }
+  .hero .lede { font-size: 1rem; }
+
+  /* Typography scale — keep readable but proportional */
+  h2 { font-size: clamp(1.5rem, 5.5vw, 1.9rem); }
+  h3 { font-size: 1.2rem; }
+
+  /* Touch targets — minimum 44px for buttons */
+  .btn { min-height: 44px; padding-block: 0.7rem; }
+
+  /* Affiliation strip — smaller logos, tighter gap */
+  .affiliations-row { gap: var(--sp-4); }
+  .affiliations-row img { max-height: 44px !important; }
+
+  /* Utility bar — keep phone numbers / hours from overflowing */
+  .utility-bar { font-size: 0.78rem; padding-block: 0.4rem; }
+  .utility-bar .utility-row { flex-wrap: wrap; gap: 0.35rem 0.75rem; justify-content: center; }
+
+  /* Footer — single column already kicks in at 600px, just tighten padding */
+  .footer { padding-block: var(--sp-6) var(--sp-5); }
+  .footer-grid { gap: var(--sp-5); }
+
+  /* Nav row */
+  .nav-row { padding-block: 0.65rem; }
+
+  /* Forms / iframes — never wider than parent */
+  iframe { max-width: 100%; }
+
+  /* Card grids that use minmax(240px,1fr) — force single column */
+  .home-locations-grid,
+  .team-grid,
+  .team-grid-centered { grid-template-columns: 1fr !important; gap: var(--sp-5) !important; }
+
+  /* Tab buttons on schedule page often have inline styles — give them wrap */
+  .schedule-tabs,
+  .tab-buttons,
+  [role="tablist"] { flex-wrap: wrap; gap: 0.5rem; }
+
+  /* CTA band — less aggressive padding */
+  .cta-band { padding: var(--sp-6) var(--sp-4); }
+}
+
+/* Extra-narrow phones (≤380px — iPhone SE / iPhone Mini) */
+@media (max-width: 380px) {
+  .container { padding-inline: var(--sp-3); }
+  .hero h1 { font-size: 1.6rem; }
+  .affiliations-row { gap: var(--sp-3); }
+  .affiliations-row img { max-height: 38px !important; }
+  .btn { font-size: 0.95rem; padding-inline: var(--sp-4); }
+  .cta-band { padding: var(--sp-5) var(--sp-3); }
+}
+
