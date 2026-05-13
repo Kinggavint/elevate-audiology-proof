@@ -246,26 +246,63 @@ p  { margin: 0 0 var(--sp-4); }
   .nav-toggle {
     display: inline-flex; align-items: center; justify-content: center;
     width: 44px; height: 44px;
+    min-width: 44px; flex: 0 0 44px;
     background: transparent; border: 1px solid var(--c-border); border-radius: var(--radius-sm);
+    color: var(--c-purple-700);
   }
+  .nav-toggle:hover, .nav-toggle[aria-expanded="true"] {
+    background: var(--c-purple-50); border-color: var(--c-purple-600);
+  }
+  .nav-toggle svg { width: 22px; height: 22px; }
+
+  /* Mobile nav panel: full-width drawer anchored just below the header.
+     Hidden by default (translated up out of view); slides down when the
+     hamburger is tapped. This is more usable than a bottom sheet because
+     users see the TOP nav items first and the menu starts where the
+     hamburger button is. */
   .nav-list {
-    position: fixed; inset: 0; top: auto; bottom: 0;
+    position: fixed; left: 0; right: 0; top: 0; bottom: auto;
     flex-direction: column; align-items: stretch; gap: 0;
     background: var(--c-white);
-    padding: var(--sp-5);
-    max-height: 80vh; overflow-y: auto;
-    border-top: 1px solid var(--c-border);
-    transform: translateY(100%);
+    padding: var(--sp-5) var(--sp-4) var(--sp-6);
+    padding-top: 120px; /* clear utility bar + nav row */
+    max-height: 100vh; overflow-y: auto;
+    border-bottom: 1px solid var(--c-border);
+    transform: translateY(-100%);
     transition: transform .25s var(--ease);
     box-shadow: var(--shadow-lg);
+    z-index: 90; /* below sticky header which is typically 100 */
+    visibility: hidden;
   }
-  .nav-list[data-open="true"] { transform: translateY(0); }
+  .nav-list[data-open="true"] { transform: translateY(0); visibility: visible; }
   .nav-list > li > a, .nav-list > li > button { padding: 0.85rem 0.5rem; width: 100%; justify-content: space-between; }
-  .dropdown { position: static; box-shadow: none; border: none; padding-left: var(--sp-4); padding-block: 0; min-width: 0; margin-top: 0; transform: none; transition: none; }
-  .has-drop[data-open="true"] .dropdown { opacity: 1; visibility: visible; pointer-events: auto; }
+
+  /* On mobile, dropdowns are accordion panels INSIDE the bottom sheet.
+     They are hidden by default and only open when the parent <li> has
+     data-open="true" (set by the JS toggle on tap). Disable the
+     desktop :hover and :focus-within triggers — those misfire on touch
+     devices and would auto-open every menu. */
+  .dropdown {
+    position: static; box-shadow: none; border: none;
+    padding-left: var(--sp-4); padding-block: 0;
+    min-width: 0; margin-top: 0; transform: none; transition: none;
+    display: none;
+    opacity: 1; visibility: visible; pointer-events: auto;
+  }
+  /* CRITICAL: undo the desktop hover/focus-within rules that auto-open menus on touch */
+  .has-drop:hover .dropdown,
+  .has-drop:focus-within .dropdown { display: none; }
+  /* Only the explicitly-opened accordion shows */
+  .has-drop[data-open="true"] .dropdown { display: block; }
   .has-drop > a::after { display: none; }
+
+  /* Rotate the inline chevron SVG when the accordion is open */
+  .has-drop > a > svg { transition: transform .2s ease; }
+  .has-drop[data-open="true"] > a > svg { transform: rotate(180deg); }
+
   .nav-cta .btn { display: none; }
   .nav-cta .btn.btn-primary { display: inline-flex; }
+  .nav-cta { flex: 0 0 auto; }
 }
 
 /* Footer */
