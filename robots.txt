@@ -1,7 +1,4 @@
 User-agent: *
 Allow: /
 
-# Draft pages — awaiting client content
-Disallow: /about-us/hearing-up-network-provider-2/
-
 Sitemap: https://elevateaudiology.com/sitemap.xml
