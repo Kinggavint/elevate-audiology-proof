@@ -292,8 +292,8 @@
     color: #4a0055; font-size: clamp(1.5rem, 3vw, 2rem); line-height: 1.15;
   }
   .team-modal--single .modal-role { margin: 0 0 .25rem; font-weight: 600; color: #6b3a78; }
-  .team-modal--single .modal-creds { margin: 0 0 1.25rem; color: #7a6b80; font-size: .95rem; }
-  .team-modal--single .modal-creds:empty { display: none; }
+  /* Hide the small gray credentials line — redundant with the name/title above (per Dr. Tarvin's request). */
+  .team-modal--single .modal-creds { display: none !important; }
   .team-modal--single .modal-quote {
     display: none; border-left: 4px solid #4a0055;
     padding: .25rem 0 .25rem 1rem; margin: 0 0 1.25rem;
