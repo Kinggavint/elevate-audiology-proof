@@ -233,7 +233,13 @@
   ]
 }
     </script>
-  </head>
+  <style>
+.yt-facade{position:relative;cursor:pointer;background:#000;width:100%;height:100%;overflow:hidden;border-radius:inherit}
+.yt-facade img{width:100%;height:100%;object-fit:cover;display:block}
+.yt-facade::after{content:"";position:absolute;left:50%;top:50%;width:68px;height:48px;margin:-24px 0 0 -34px;background:rgba(33,33,33,.85) no-repeat 50% 50%;background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='white'><path d='M8 5v14l11-7z'/></svg>");background-size:24px 24px;border-radius:14%;pointer-events:none}
+.yt-facade:hover::after{background-color:#cc0000}
+</style>
+</head>
 <body>
 <a class="skip-link" href="#main">Skip to main content</a>
 <a class="sr-only" href="#main">Skip to main content</a>
@@ -326,7 +332,7 @@
       <p>Hear directly from patients and Dr. Tarvin about what Lenire treatment looks like and the results our patients are seeing.</p>
     </div>
     <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: var(--radius-lg); box-shadow: var(--shadow);">
-      <iframe style="position:absolute;top:0;left:0;width:100%;height:100%;border:0;" src="https://www.youtube.com/embed/videoseries?si=qVKYZhVkJmIAfyJp&amp;list=PLwI7XbtFCg5tszykS3QH6r22HMasMFqFG" title="Lenire Tinnitus Treatment video playlist" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      <div class="yt-facade" data-id="videoseries" data-title="Lenire Tinnitus Treatment video playlist" role="button" tabindex="0" aria-label="Lenire Tinnitus Treatment video playlist"><img src="https://i.ytimg.com/vi/videoseries/hqdefault.jpg" alt="Lenire Tinnitus Treatment video playlist" loading="lazy" decoding="async"></div>
     </div>
   </div>
 </section>
@@ -544,5 +550,17 @@
 <script src="/js/site.js" defer></script>
 <script>var fy=document.getElementById('footer-year'); if(fy) fy.textContent=new Date().getFullYear();</script>
 
+<script>
+document.addEventListener('click',function(e){
+  var f=e.target.closest('.yt-facade');
+  if(!f)return;
+  var id=f.dataset.id;var src='https://www.youtube.com/embed/'+id+'?autoplay=1&rel=0';
+  var ifr=document.createElement('iframe');
+  ifr.setAttribute('src',src);ifr.setAttribute('title',f.dataset.title||'YouTube video');
+  ifr.setAttribute('allow','accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share');
+  ifr.setAttribute('allowfullscreen','');ifr.style.cssText='width:100%;height:100%;border:0;display:block';
+  f.replaceWith(ifr);
+});
+</script>
 </body>
 </html>
