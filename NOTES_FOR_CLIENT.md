@@ -14,3 +14,7 @@ This is the rebuilt static proof site for elevateaudiology.com.
 **Phase 3 (final):** Tinnitus + Lenire, APD consolidation, full QA.
 
 Live at: https://kinggavint.github.io/elevate-audiology-proof/
+
+
+## Tracking
+- Google Tag Manager container present: GTM-NKQGRBVK (head + noscript)
