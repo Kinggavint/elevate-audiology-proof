@@ -38,10 +38,20 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     background: var(--c-white);
     position: sticky; top: 0; z-index: 50;
   }
-  .lp-header .container { display: flex; align-items: center; justify-content: space-between; gap: var(--sp-4); }
-  .lp-header img { height: 44px; width: auto; }
-  .lp-header .lp-phone { font-weight: 600; color: var(--c-purple-700); font-size: var(--text-sm); text-decoration: none; }
+  .lp-header .container { display: flex; align-items: center; justify-content: space-between; gap: var(--sp-4); flex-wrap: nowrap; padding-inline: var(--sp-4); }
+  .lp-header img { height: 44px; width: auto; flex-shrink: 0; }
+  .lp-header .lp-phone { font-weight: 600; color: var(--c-purple-700); font-size: var(--text-sm); text-decoration: none; white-space: nowrap; display: inline-flex; align-items: center; line-height: 1; }
   .lp-header .lp-phone:hover { color: var(--c-purple-900); }
+  @media (max-width: 600px) {
+    .lp-header { padding: var(--sp-3) 0; }
+    .lp-header .container { gap: var(--sp-3); padding-inline: var(--sp-3); }
+    .lp-header img { height: 34px; }
+    .lp-header .lp-phone { font-size: 0.9375rem; }
+  }
+  @media (max-width: 380px) {
+    .lp-header img { height: 30px; }
+    .lp-header .lp-phone { font-size: 0.875rem; }
+  }
 
   .lp-hero {
     position: relative;
@@ -448,5 +458,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 
 
+  <script src="https://widgets.leadconnectorhq.com/loader.js" data-resources-url="https://widgets.leadconnectorhq.com/chat-widget/loader.js" data-widget-id="675c85501f70dc5e18fac08b"></script>
 </body>
 </html>
