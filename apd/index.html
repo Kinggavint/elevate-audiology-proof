@@ -211,11 +211,21 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   .check-list.cols-2 li { break-inside: avoid; }
 
   /* Patient story blockquote */
+  .patient-quote {
+    max-width: 880px;
+    margin: var(--sp-6) auto 0;
+    text-align: center;
+    background-color: var(--c-purple-50);
+    padding: var(--sp-7);
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--c-purple-100);
+  }
   .patient-quote blockquote {
     margin: 0;
     padding: 0;
     font-size: var(--text-base);
     line-height: 1.7;
+    color: var(--c-purple-900);
   }
   .patient-quote blockquote p { margin-bottom: var(--sp-3); }
   .patient-quote cite {
@@ -223,7 +233,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     margin-top: var(--sp-3);
     font-style: normal;
     font-size: var(--text-sm);
-    color: var(--c-teal-100);
+    color: var(--c-accent-2);
     font-weight: 600;
   }
 
@@ -405,7 +415,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </ul>
       </div>
     </div>
-    <div class="patient-quote" style="max-width: 880px; margin: var(--sp-6) auto 0; text-align: center;">
+    <div class="patient-quote">
       <blockquote>
         <p>“Excellent and thorough initial evaluation for my hearing and APD. Normal hearing tests don’t factor in typical background noises… but this does. More realistic and useful. Dr. Ooms explained things well and came up with a personalized plan that I can put into action.”</p>
         <cite>&mdash; Bobby L, Greenville patient</cite>
