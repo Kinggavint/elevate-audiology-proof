@@ -103,6 +103,21 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     font-size: var(--text-sm);
     color: var(--c-text-muted);
   }
+
+  /* Homepage footer color overrides (footer uses h3/footer-links/footer-brand
+     which base.css doesn't style for the dark background) */
+  .site-footer h3 { color: var(--c-white); font-family: var(--font-sans); font-size: var(--text-sm); font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: var(--sp-4); }
+  .site-footer .footer-brand p,
+  .site-footer .footer-grid > div > p { color: var(--c-purple-100); font-size: var(--text-sm); }
+  .site-footer .footer-links { list-style: none; padding: 0; margin: 0; }
+  .site-footer .footer-links li { margin-bottom: var(--sp-2); }
+  .site-footer .footer-links a { color: var(--c-purple-100); font-size: var(--text-sm); }
+  .site-footer .footer-links a:hover { color: var(--c-white); }
+  .site-footer .footer-grid > div > p strong { color: var(--c-white); }
+  .site-footer .footer-grid > div > p a { color: var(--c-purple-100); }
+  .site-footer .footer-bottom { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: var(--sp-4); padding-top: var(--sp-5); margin-top: var(--sp-6); border-top: 1px solid rgba(255,255,255,0.1); font-size: var(--text-xs); color: var(--c-purple-100); opacity: 0.85; }
+  .site-footer .footer-legal { display: flex; gap: var(--sp-4); }
+  .site-footer .footer-legal a { color: var(--c-purple-100); }
 </style>
 
     <meta name="google-site-verification" content="tWa3iR0Xw-M6nwLf_frGOoFxihwweMopd9JlgYEUPAk" />
@@ -739,7 +754,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div class="footer-grid">
       <div class="footer-brand">
         <a href="/" class="footer-logo">
-          <img src="/images/logo.png" alt="Elevate Audiology" width="1150" height="208" loading="lazy">
+          <img src="/images/logo.png" alt="Elevate Audiology" width="1150" height="208" loading="lazy" style="height:54px;width:auto;filter:brightness(0) invert(1);margin-bottom:1rem;">
         </a>
         <p>Doctors of Audiology providing independent, patient-first hearing and tinnitus care in Easley and Greenville, SC.</p>
       </div>
