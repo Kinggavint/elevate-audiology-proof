@@ -60,6 +60,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   .faq-item { border-bottom: 1px solid var(--c-border); padding-block: var(--sp-4); }
   .faq-item h3 { font-size: var(--text-lg); margin: 0 0 var(--sp-2); }
   .faq-item p { margin: 0; color: var(--c-text-soft); }
+  details.faq-item summary { cursor: pointer; }
+  details.faq-item summary h3 { display: inline; }
+  details.faq-item[open] summary { margin-bottom: var(--sp-2); }
   .directions-box { background: var(--c-purple-50); border-radius: var(--radius-lg); padding: var(--sp-5); margin-block: var(--sp-6); }
   .directions-box h3 { margin: 0 0 var(--sp-3); }
   .directions-box ul { margin: 0; padding-left: 1.25rem; color: var(--c-text-soft); }
@@ -139,15 +142,23 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       "name": "Where is Elevate Audiology located in Greenville, SC?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Our Greenville office is at 2086 Woodruff Rd Suite B, Greenville, SC 29607. We are on the Woodruff Road corridor near I-385, easy to reach from downtown Greenville, Simpsonville, Mauldin, and Five Forks. Free parking is available on site."
+        "text": "Our Greenville office is at 2086 Woodruff Rd Suite B, Greenville, SC 29607, on the Woodruff Road corridor near I-385. It is easy to reach from downtown Greenville, Simpsonville, Mauldin, and Five Forks. Free on-site parking is available."
       }
     },
     {
       "@type": "Question",
-      "name": "What are your hours at the Greenville office?",
+      "name": "What are your Greenville office hours?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Our Greenville office is open Monday through Thursday from 8:30 AM to 4:00 PM and Friday from 8:30 AM to 1:00 PM. We are closed on weekends. Call (864) 447-4183 to schedule."
+        "text": "Our Greenville office is open Monday through Thursday from 8:30 AM to 4:00 PM and Friday from 8:30 AM to 1:00 PM. We are closed on weekends."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do I need a referral to see an audiologist in Greenville?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "In most cases, no. You can book directly with our clinic. If your insurance plan requires a referral, we can explain what is needed when you schedule."
       }
     },
     {
@@ -155,87 +166,31 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       "name": "Do you accept new patients at the Greenville office?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Yes. We accept new patients of all ages. Adults can schedule a comprehensive hearing test directly. For children, we recommend a parent or guardian call ahead to discuss the right type of evaluation."
+        "text": "Yes. We accept new patients of all ages. Adults can schedule a comprehensive hearing test directly. For children, we recommend that a parent or guardian call ahead so we can discuss the appropriate evaluation."
       }
     },
     {
       "@type": "Question",
-      "name": "What insurance does the Greenville office accept?",
+      "name": "What happens at a hearing test appointment, and how long does it take?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "We are able to file insurance claims for hearing aids and related services upon request. Coverage depends on your insurance plan's in-network or out-of-network benefits. We are not providers for managed care plans. Call our Greenville office at (864) 447-4183 with questions about your benefits."
+        "text": "We begin by discussing your concerns, check your ears, and perform hearing tests in a sound booth. You leave with clear results and recommended next steps. Most comprehensive evaluations take about 60 minutes, although appointment length varies by service."
       }
     },
     {
       "@type": "Question",
-      "name": "Do you treat tinnitus at the Greenville office?",
+      "name": "Do you fit and service hearing aids in Greenville?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Yes. Our Greenville office offers full tinnitus evaluation and a range of treatments including FDA-approved Lenire bimodal neuromodulation therapy, hearing aids with built-in tinnitus support, and counseling-based approaches. We also offer FDA-cleared Lenire bimodal neuromodulation therapy for tinnitus, along with other options based on your evaluation results."
+        "text": "Yes. We provide hearing evaluations, help you select hearing aids based on your hearing profile and lifestyle, program and verify them for your needs, and provide follow-up adjustments and repairs. In many cases, we can also evaluate and service hearing aids you already own."
       }
     },
     {
       "@type": "Question",
-      "name": "Can children get auditory processing testing in Greenville?",
+      "name": "What hearing aid brands do you carry?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Yes. We perform Auditory Processing Disorder evaluations in our Greenville office for children age seven and up, and for adults. We use the Bellis and Ferre model and provide a written report you can share with schools and other providers."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Do you remove earwax in the office?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Yes. We can check for earwax buildup and remove it safely when it is appropriate."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Should I use cotton swabs to remove earwax?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "No. Cotton swabs can push wax deeper and can irritate the ear canal. It is safer to have your ears checked first."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "When should I schedule an appointment for earwax removal?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "If you have muffled hearing, ear fullness, or your hearing aid seems blocked, schedule a visit so we can look in your ears and guide the next step."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Do you sell hearing aids in Greenville?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Yes. We provide comprehensive hearing evaluations, expert fittings, and ongoing care for patients in Greenville and across the Upstate. We are not a big-box store. Every recommendation is made by a doctoral-level audiologist based on your individual results."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "What is the first step to getting hearing aids?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "A hearing evaluation. We need to understand the type, degree, and pattern of your hearing loss before recommending anything. That evaluation shapes every decision that follows, from technology level to programming to fit."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Do you work with hearing aids I already have?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "In many cases, yes. Bring them in. We can assess how well your current devices are performing, verify the fit, and make adjustments when it is clinically appropriate. Sometimes a small change makes a significant difference."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "How long does a hearing aid fitting take?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Your initial fitting is typically completed in one appointment. We also schedule follow-up visits to fine-tune your devices as your brain adjusts to hearing sounds it may not have heard clearly in a while. Getting it right takes a little time, and we build that into your care."
+        "text": "We work with leading hearing aid manufacturers rather than defaulting to one brand. We recommend options based on your hearing test results, daily listening environments, and personal preferences. Learn more at https://elevateaudiology.com/manufacturers/."
       }
     },
     {
@@ -243,31 +198,47 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       "name": "Can hearing aids help with tinnitus?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "For many patients, yes. Several hearing aid models include dedicated tinnitus management features, and improving overall hearing clarity often makes tinnitus less disruptive. If tinnitus is a primary concern for you, let us know at scheduling so we can make sure your evaluation addresses it fully."
+        "text": "For many patients, yes. Some hearing aids include tinnitus-management features, and improving access to everyday sounds can make tinnitus less disruptive. Your audiologist can determine whether hearing aids should be part of your tinnitus care plan."
       }
     },
     {
       "@type": "Question",
-      "name": "What brands do you carry?",
+      "name": "Do you treat tinnitus at the Greenville office?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "We work with the leading hearing aid manufacturers. View our manufacturers page at https://elevateaudiology.com/manufacturers/. Rather than defaulting to one brand, we recommend options based on your hearing test results, your daily listening environments, and your personal preferences. Our goal is the right fit for you, not the easiest sale for us."
+        "text": "Yes. Our Greenville office provides tinnitus evaluations and individualized care that may include counseling-based approaches, sound therapy, hearing aids with tinnitus support, and FDA-cleared Lenire bimodal neuromodulation therapy when appropriate."
       }
     },
     {
       "@type": "Question",
-      "name": "Do you take insurance for hearing aids?",
+      "name": "Do you treat earwax buildup and offer earwax removal?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "We are able to file insurance claims for hearing aids and related services upon request. Coverage depends on your insurance plan's in-network or out-of-network benefits. We are not providers for managed care plans."
+        "text": "Yes. We can assess earwax buildup and remove it safely when appropriate. Do not use cotton swabs, which can push wax deeper or irritate the ear canal. If you have pain, drainage, or sudden hearing loss, call us so we can guide you to the appropriate next step."
       }
     },
     {
       "@type": "Question",
-      "name": "How do I book an appointment?",
+      "name": "Can children get auditory processing testing in Greenville?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Call our Greenville office at (864) 447-4183 or schedule directly at https://elevateaudiology.com/schedule/. We will take it from there."
+        "text": "Yes. We perform Auditory Processing Disorder evaluations in our Greenville office for children age seven and older and for adults. We use the Bellis and Ferre model and provide a written report that can be shared with schools and other providers."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What insurance does the Greenville office accept?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "We can file insurance claims for hearing aids and related services upon request. Coverage depends on your plan's in-network or out-of-network benefits. We are not providers for managed care plans. Call (864) 447-4183 with questions about your benefits."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I schedule an appointment at the Greenville office?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Call the Greenville office at (864) 447-4183 or schedule online at https://elevateaudiology.com/schedule/."
       }
     }
   ]
@@ -345,27 +316,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 </div>
 </div>
 </header>
-<section aria-label="Greenville audiology FAQs" class="section" id="greenville-faq">
-<div class="container">
-<h2>Greenville audiology FAQs</h2>
-<div class="faq">
-<h3>Do I need a referral to see an audiologist in Greenville?</h3>
-<p>In most cases, no. You can book directly with our clinic. If your insurance plan requires a referral, we can tell you what is needed when you schedule.</p>
-<h3>What happens at a hearing test appointment?</h3>
-<p>We start by talking about your concerns, then check your ears and run hearing tests in a sound booth. You leave with clear results and next steps.</p>
-<h3>Can you help with tinnitus?</h3>
-<p>Yes. We offer tinnitus evaluations and care plans that may include counseling, sound therapy, and hearing devices when appropriate.</p>
-<h3>Do you treat earwax buildup and offer earwax removal?</h3>
-<p>Yes. If earwax is blocking the ear canal, we can assess it and remove it safely when appropriate. If you have pain, drainage, or sudden hearing loss, call us so we can guide you to the right next step.</p>
-<h3>Do you fit and service hearing aids?</h3>
-<p>Yes. We help you choose hearing aids, program them to your hearing needs, and provide follow-up care like adjustments and repairs.</p>
-<h3>How long does an appointment take?</h3>
-<p>Most evaluations take about 60 minutes. Some visits are shorter or longer depending on what you need.</p>
-<h3>Where are you located?</h3>
-<p>We serve patients in Greenville and the Upstate. When you schedule, we will confirm the best location and directions.</p>
-</div>
-</div>
-</section>
 <main id="main">
 <section class="loc-hero">
 <div class="container">
@@ -508,32 +458,63 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 </div>
 </div>
 </section>
-<section class="section">
+<section aria-labelledby="greenville-faq-heading" class="section" id="greenville-faq">
 <div class="container">
-<h2>Common questions about the Greenville office</h2>
-<div class="faq-item">
-<h3>Where is Elevate Audiology located in Greenville, SC?</h3>
-<p>Our Greenville office is at 2086 Woodruff Rd Suite B, Greenville, SC 29607. We are on the Woodruff Road corridor near I-385, easy to reach from downtown Greenville, Simpsonville, Mauldin, and Five Forks. Free parking is available on site.</p>
-</div>
-<div class="faq-item">
-<h3>What are your hours at the Greenville office?</h3>
-<p>Our Greenville office is open Monday through Thursday from 8:30 AM to 4:00 PM and Friday from 8:30 AM to 1:00 PM. We are closed on weekends. Call (864) 447-4183 to schedule.</p>
-</div>
-<div class="faq-item">
-<h3>Do you accept new patients at the Greenville office?</h3>
-<p>Yes. We accept new patients of all ages. Adults can schedule a comprehensive hearing test directly. For children, we recommend a parent or guardian call ahead to discuss the right type of evaluation.</p>
-</div>
-<div class="faq-item">
-<h3>What insurance does the Greenville office accept?</h3>
-<p>We are able to file insurance claims for hearing aids and related services upon request. Coverage depends on your insurance plan's in-network or out-of-network benefits. We are not providers for managed care plans. Call our Greenville office at <a href="tel:+18644474183">(864) 447-4183</a> with questions about your benefits.</p>
-</div>
-<div class="faq-item">
-<h3>Do you treat tinnitus at the Greenville office?</h3>
-<p>Yes. Our Greenville office offers full tinnitus evaluation and a range of treatments including FDA-approved Lenire bimodal neuromodulation therapy, hearing aids with built-in tinnitus support, and counseling-based approaches. We also offer FDA-cleared Lenire bimodal neuromodulation therapy for tinnitus, along with other options based on your evaluation results.</p>
-</div>
-<div class="faq-item">
-<h3>Can children get auditory processing testing in Greenville?</h3>
-<p>Yes. We perform Auditory Processing Disorder evaluations in our Greenville office for children age seven and up, and for adults. We use the Bellis and Ferre model and provide a written report you can share with schools and other providers.</p>
+<h2 id="greenville-faq-heading">Greenville audiology FAQs</h2>
+<p class="lead" style="max-width: 65ch; margin-bottom: var(--sp-6);">Answers about appointments, hearing care, insurance, and our Greenville office.</p>
+<div class="faq">
+<details class="faq-item">
+<summary><h3>Where is Elevate Audiology located in Greenville, SC?</h3></summary>
+<p>Our Greenville office is at 2086 Woodruff Rd Suite B, Greenville, SC 29607, on the Woodruff Road corridor near I-385. It is easy to reach from downtown Greenville, Simpsonville, Mauldin, and Five Forks. Free on-site parking is available.</p>
+</details>
+<details class="faq-item">
+<summary><h3>What are your Greenville office hours?</h3></summary>
+<p>Our Greenville office is open Monday through Thursday from 8:30 AM to 4:00 PM and Friday from 8:30 AM to 1:00 PM. We are closed on weekends.</p>
+</details>
+<details class="faq-item">
+<summary><h3>Do I need a referral to see an audiologist in Greenville?</h3></summary>
+<p>In most cases, no. You can book directly with our clinic. If your insurance plan requires a referral, we can explain what is needed when you schedule.</p>
+</details>
+<details class="faq-item">
+<summary><h3>Do you accept new patients at the Greenville office?</h3></summary>
+<p>Yes. We accept new patients of all ages. Adults can schedule a comprehensive hearing test directly. For children, we recommend that a parent or guardian call ahead so we can discuss the appropriate evaluation.</p>
+</details>
+<details class="faq-item">
+<summary><h3>What happens at a hearing test appointment, and how long does it take?</h3></summary>
+<p>We begin by discussing your concerns, check your ears, and perform hearing tests in a sound booth. You leave with clear results and recommended next steps. Most comprehensive evaluations take about 60 minutes, although appointment length varies by service.</p>
+</details>
+<details class="faq-item">
+<summary><h3>Do you fit and service hearing aids in Greenville?</h3></summary>
+<p>Yes. We provide hearing evaluations, help you select hearing aids based on your hearing profile and lifestyle, program and verify them for your needs, and provide follow-up adjustments and repairs. In many cases, we can also evaluate and service hearing aids you already own.</p>
+</details>
+<details class="faq-item">
+<summary><h3>What hearing aid brands do you carry?</h3></summary>
+<p>We work with <a href="/manufacturers/">leading hearing aid manufacturers</a> rather than defaulting to one brand. We recommend options based on your hearing test results, daily listening environments, and personal preferences.</p>
+</details>
+<details class="faq-item">
+<summary><h3>Can hearing aids help with tinnitus?</h3></summary>
+<p>For many patients, yes. Some hearing aids include <a href="/tinnitus/">tinnitus-management features</a>, and improving access to everyday sounds can make tinnitus less disruptive. Your audiologist can determine whether hearing aids should be part of your tinnitus care plan.</p>
+</details>
+<details class="faq-item">
+<summary><h3>Do you treat tinnitus at the Greenville office?</h3></summary>
+<p>Yes. Our Greenville office provides tinnitus evaluations and individualized care that may include counseling-based approaches, sound therapy, hearing aids with tinnitus support, and <a href="/lenire/">FDA-cleared Lenire bimodal neuromodulation therapy</a> when appropriate.</p>
+</details>
+<details class="faq-item">
+<summary><h3>Do you treat earwax buildup and offer earwax removal?</h3></summary>
+<p>Yes. We can assess earwax buildup and <a href="/earwax-removal/">remove it safely</a> when appropriate. Do not use cotton swabs, which can push wax deeper or irritate the ear canal. If you have pain, drainage, or sudden hearing loss, call us so we can guide you to the appropriate next step.</p>
+</details>
+<details class="faq-item">
+<summary><h3>Can children get auditory processing testing in Greenville?</h3></summary>
+<p>Yes. We perform <a href="/apd/">Auditory Processing Disorder evaluations</a> in our Greenville office for children age seven and older and for adults. We use the Bellis and Ferre model and provide a written report that can be shared with schools and other providers.</p>
+</details>
+<details class="faq-item">
+<summary><h3>What insurance does the Greenville office accept?</h3></summary>
+<p>We can file insurance claims for hearing aids and related services upon request. Coverage depends on your plan's in-network or out-of-network benefits. We are not providers for managed care plans. Call <a href="tel:+18644474183">(864) 447-4183</a> with questions about your benefits.</p>
+</details>
+<details class="faq-item">
+<summary><h3>How do I schedule an appointment at the Greenville office?</h3></summary>
+<p>Call the Greenville office at <a href="tel:+18644474183">(864) 447-4183</a> or <a href="/schedule/">schedule an appointment online</a>.</p>
+</details>
 </div>
 </div>
 </section>
@@ -544,65 +525,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <a class="btn btn-primary" href="/schedule/">Schedule Online</a>
 <a class="btn btn-outline" href="tel:+18644474183">Call (864) 447-4183</a>
 </div>
-</div>
-</section>
-
-<section id="earwax-removal-faq" class="faq-block" aria-label="Earwax removal FAQs">
-  <h2>Earwax removal FAQs</h2>
-  <div class="faq-item">
-    <h3>Do you remove earwax in the office?</h3>
-    <p>Yes. We can check for earwax buildup and remove it safely when it is appropriate.</p>
-  </div>
-  <div class="faq-item">
-    <h3>Should I use cotton swabs to remove earwax?</h3>
-    <p>No. Cotton swabs can push wax deeper and can irritate the ear canal. It is safer to have your ears checked first.</p>
-  </div>
-  <div class="faq-item">
-    <h3>When should I schedule an appointment for earwax removal?</h3>
-    <p>If you have muffled hearing, ear fullness, or your hearing aid seems blocked, schedule a visit so we can look in your ears and guide the next step.</p>
-  </div>
-  <p><a href="/earwax-removal/">Learn more about earwax removal</a></p>
-</section>
-
-<section class="section" id="hearing-aids-greenville-faq" aria-labelledby="hearing-aids-greenville-heading">
-<div class="container">
-<h2 id="hearing-aids-greenville-heading">Hearing aids in Greenville, SC</h2>
-<p class="lead" style="max-width: 65ch; margin-bottom: var(--sp-6);">Shopping for hearing aids starts with understanding your hearing. At Elevate Audiology, we match you to the right devices based on your hearing profile, lifestyle, and goals so you are not guessing.</p>
-<div class="faq">
-<details class="faq-item">
-<summary><h3>Do you sell hearing aids in Greenville?</h3></summary>
-<p>Yes. We provide comprehensive hearing evaluations, expert fittings, and ongoing care for patients in Greenville and across the Upstate. We are not a big-box store. Every recommendation is made by a doctoral-level audiologist based on your individual results.</p>
-</details>
-<details class="faq-item">
-<summary><h3>What is the first step to getting hearing aids?</h3></summary>
-<p>A hearing evaluation. We need to understand the type, degree, and pattern of your hearing loss before recommending anything. That evaluation shapes every decision that follows, from technology level to programming to fit.</p>
-</details>
-<details class="faq-item">
-<summary><h3>Do you work with hearing aids I already have?</h3></summary>
-<p>In many cases, yes. Bring them in. We can assess how well your current devices are performing, verify the fit, and make adjustments when it is clinically appropriate. Sometimes a small change makes a significant difference.</p>
-</details>
-<details class="faq-item">
-<summary><h3>How long does a hearing aid fitting take?</h3></summary>
-<p>Your initial fitting is typically completed in one appointment. We also schedule follow-up visits to fine-tune your devices as your brain adjusts to hearing sounds it may not have heard clearly in a while. Getting it right takes a little time, and we build that into your care.</p>
-</details>
-<details class="faq-item">
-<summary><h3>Can hearing aids help with tinnitus?</h3></summary>
-<p>For many patients, yes. Several hearing aid models include dedicated <a href="/tinnitus/">tinnitus management features</a>, and improving overall hearing clarity often makes tinnitus less disruptive. If tinnitus is a primary concern for you, let us know at scheduling so we can make sure your evaluation addresses it fully.</p>
-</details>
-<details class="faq-item">
-<summary><h3>What brands do you carry?</h3></summary>
-<p>We work with the <a href="/manufacturers/">leading hearing aid manufacturers</a>. Rather than defaulting to one brand, we recommend options based on your hearing test results, your daily listening environments, and your personal preferences. Our goal is the right fit for you, not the easiest sale for us.</p>
-</details>
-<details class="faq-item">
-<summary><h3>Do you take insurance for hearing aids?</h3></summary>
-<p>We are able to file insurance claims for hearing aids and related services upon request. Coverage depends on your insurance plan's in-network or out-of-network benefits. We are not providers for managed care plans.</p>
-</details>
-<details class="faq-item">
-<summary><h3>How do I book an appointment?</h3></summary>
-<p>Call our Greenville office at <a href="tel:+18644474183">(864) 447-4183</a> or <a href="/schedule/">schedule an appointment directly online</a>. We will take it from there.</p>
-</details>
-</div>
-<p style="margin-top: var(--sp-5);">Related: <a href="/hearing-aids/">Hearing aids</a> | <a href="/schedule/">Request an appointment</a></p>
 </div>
 </section>
 </main>
