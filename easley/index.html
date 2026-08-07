@@ -63,6 +63,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   .faq-item { border-bottom: 1px solid var(--c-border); padding-block: var(--sp-4); }
   .faq-item h3 { font-size: var(--text-lg); margin: 0 0 var(--sp-2); }
   .faq-item p { margin: 0; color: var(--c-text-soft); }
+  details.faq-item summary { cursor: pointer; }
+  details.faq-item summary h3 { display: inline; }
+  details.faq-item[open] summary { margin-bottom: var(--sp-2); }
   .directions-box { background: var(--c-purple-50); border-radius: var(--radius-lg); padding: var(--sp-5); margin-block: var(--sp-6); }
   .directions-box h3 { margin: 0 0 var(--sp-3); }
   .directions-box ul { margin: 0; padding-left: 1.25rem; color: var(--c-text-soft); }
@@ -150,21 +153,31 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 {
   "@context": "https://schema.org",
   "@type": "FAQPage",
+  "@id": "https://elevateaudiology.com/easley/#faq",
+  "url": "https://elevateaudiology.com/easley/",
   "mainEntity": [
     {
       "@type": "Question",
       "name": "Where is Elevate Audiology located in Easley, SC?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Our Easley office is at 424 Rock Springs Road, Easley, SC 29642. We are off Rock Springs Road just north of downtown Easley, about ten minutes from the Highway 123 corridor. Free parking is available on site."
+        "text": "Our Easley office is at 424 Rock Springs Road, Easley, SC 29642, off Rock Springs Road just north of downtown Easley, about ten minutes from the Highway 123 corridor. Free on-site parking is available."
       }
     },
     {
       "@type": "Question",
-      "name": "What are your hours at the Easley office?",
+      "name": "What are your Easley office hours?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Our Easley office is open Monday through Thursday from 8:30 AM to 4:00 PM and Friday from 8:30 AM to 1:00 PM. We are closed on weekends. Call (864) 447-6611 to schedule."
+        "text": "Our Easley office is open Monday through Thursday from 8:30 AM to 4:00 PM and Friday from 8:30 AM to 1:00 PM. We are closed on weekends."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do I need a referral to see an audiologist in Easley?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "In most cases, no. You can book directly with our clinic. If your insurance plan requires a referral, we can explain what is needed when you schedule."
       }
     },
     {
@@ -172,7 +185,63 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       "name": "Do you accept new patients at the Easley office?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Yes. We accept new patients of all ages. Adults can schedule a comprehensive hearing test directly. For children, we recommend a parent or guardian call ahead to discuss the right type of evaluation."
+        "text": "Yes. We accept new patients of all ages. Adults can schedule a comprehensive hearing test directly. For children, we recommend that a parent or guardian call ahead so we can discuss the appropriate evaluation."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What happens at a hearing test appointment, and how long does it take?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "We begin by discussing your concerns, check your ears, and perform hearing tests in a sound booth. You leave with clear results and recommended next steps. Most comprehensive evaluations take about 60 minutes, although appointment length varies by service."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do you fit and service hearing aids in Easley?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. We provide hearing evaluations, help you select hearing aids based on your hearing profile and lifestyle, program and verify them for your needs, and provide follow-up adjustments and repairs. In many cases, we can also evaluate and service hearing aids you already own."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What hearing aid brands do you carry?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "We work with leading hearing aid manufacturers rather than defaulting to one brand. We recommend options based on your hearing test results, daily listening environments, and personal preferences. Learn more at https://elevateaudiology.com/manufacturers/."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can hearing aids help with tinnitus?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "For many patients, yes. Some hearing aids include tinnitus-management features, and improving access to everyday sounds can make tinnitus less disruptive. Your audiologist can determine whether hearing aids should be part of your tinnitus care plan."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do you treat tinnitus at the Easley office?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Our Easley office provides tinnitus evaluations and individualized care that may include counseling-based approaches, sound therapy, hearing aids with tinnitus support, and FDA-cleared Lenire bimodal neuromodulation therapy when appropriate."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do you treat earwax buildup and offer earwax removal?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. We can assess earwax buildup and remove it safely when appropriate. Do not use cotton swabs, which can push wax deeper or irritate the ear canal. If you have pain, drainage, or sudden hearing loss, call us so we can guide you to the appropriate next step."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can children get auditory processing testing in Easley?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. We perform Auditory Processing Disorder evaluations in our Easley office for children age seven and older and for adults. We use the Bellis and Ferre model and provide a written report that can be shared with schools and other providers."
       }
     },
     {
@@ -185,18 +254,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     },
     {
       "@type": "Question",
-      "name": "Do you treat tinnitus at the Easley office?",
+      "name": "How do I schedule an appointment at the Easley office?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Yes. Our Easley office offers full tinnitus evaluation and a range of treatments including FDA-approved Lenire bimodal neuromodulation therapy, hearing aids with built-in tinnitus support, and counseling-based approaches."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Can children get auditory processing testing in Easley?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Yes. We perform Auditory Processing Disorder evaluations in our Easley office for children age seven and up, and for adults. We use the Bellis and Ferre model and provide a written report you can share with schools and other providers."
+        "text": "Call the Easley office at (864) 447-6611 or schedule online at https://elevateaudiology.com/schedule/."
       }
     }
   ]
@@ -417,34 +478,65 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </div>
 </section>
 
-<section class="section">
-  <div class="container">
-    <h2>Common questions about the Easley office</h2>
-    <div class="faq-item">
-      <h3>Where is Elevate Audiology located in Easley, SC?</h3>
-      <p>Our Easley office is at 424 Rock Springs Road, Easley, SC 29642. We are off Rock Springs Road just north of downtown Easley, about ten minutes from the Highway 123 corridor. Free parking is available on site.</p>
-    </div>
-    <div class="faq-item">
-      <h3>What are your hours at the Easley office?</h3>
-      <p>Our Easley office is open Monday through Thursday from 8:30 AM to 4:00 PM and Friday from 8:30 AM to 1:00 PM. We are closed on weekends. Call (864) 447-6611 to schedule.</p>
-    </div>
-    <div class="faq-item">
-      <h3>Do you accept new patients at the Easley office?</h3>
-      <p>Yes. We accept new patients of all ages. Adults can schedule a comprehensive hearing test directly. For children, we recommend a parent or guardian call ahead to discuss the right type of evaluation.</p>
-    </div>
-    <div class="faq-item">
-      <h3>What insurance does the Easley office accept?</h3>
-      <p>We work with most major insurance plans. Coverage for hearing tests, hearing aids, and tinnitus care varies by plan. Call our Easley office at (864) 447-6611 and our Patient Care Coordinators will verify your benefits before your visit.</p>
-    </div>
-    <div class="faq-item">
-      <h3>Do you treat tinnitus at the Easley office?</h3>
-      <p>Yes. Our Easley office offers full tinnitus evaluation and a range of treatments including FDA-approved Lenire bimodal neuromodulation therapy, hearing aids with built-in tinnitus support, and counseling-based approaches.</p>
-    </div>
-    <div class="faq-item">
-      <h3>Can children get auditory processing testing in Easley?</h3>
-      <p>Yes. We perform Auditory Processing Disorder evaluations in our Easley office for children age seven and up, and for adults. We use the Bellis and Ferre model and provide a written report you can share with schools and other providers.</p>
-    </div>
-  </div>
+<section aria-labelledby="easley-faq-heading" class="section" id="easley-faq">
+<div class="container">
+<h2 id="easley-faq-heading">Easley audiology FAQs</h2>
+<p class="lead" style="max-width: 65ch; margin-bottom: var(--sp-6);">Answers about appointments, hearing care, insurance, and our Easley office.</p>
+<div class="faq">
+<details class="faq-item">
+<summary><h3>Where is Elevate Audiology located in Easley, SC?</h3></summary>
+<p>Our Easley office is at 424 Rock Springs Road, Easley, SC 29642, off Rock Springs Road just north of downtown Easley, about ten minutes from the Highway 123 corridor. Free on-site parking is available.</p>
+</details>
+<details class="faq-item">
+<summary><h3>What are your Easley office hours?</h3></summary>
+<p>Our Easley office is open Monday through Thursday from 8:30 AM to 4:00 PM and Friday from 8:30 AM to 1:00 PM. We are closed on weekends.</p>
+</details>
+<details class="faq-item">
+<summary><h3>Do I need a referral to see an audiologist in Easley?</h3></summary>
+<p>In most cases, no. You can book directly with our clinic. If your insurance plan requires a referral, we can explain what is needed when you schedule.</p>
+</details>
+<details class="faq-item">
+<summary><h3>Do you accept new patients at the Easley office?</h3></summary>
+<p>Yes. We accept new patients of all ages. Adults can schedule a comprehensive hearing test directly. For children, we recommend that a parent or guardian call ahead so we can discuss the appropriate evaluation.</p>
+</details>
+<details class="faq-item">
+<summary><h3>What happens at a hearing test appointment, and how long does it take?</h3></summary>
+<p>We begin by discussing your concerns, check your ears, and perform hearing tests in a sound booth. You leave with clear results and recommended next steps. Most comprehensive evaluations take about 60 minutes, although appointment length varies by service.</p>
+</details>
+<details class="faq-item">
+<summary><h3>Do you fit and service hearing aids in Easley?</h3></summary>
+<p>Yes. We provide hearing evaluations, help you select hearing aids based on your hearing profile and lifestyle, program and verify them for your needs, and provide follow-up adjustments and repairs. In many cases, we can also evaluate and service hearing aids you already own.</p>
+</details>
+<details class="faq-item">
+<summary><h3>What hearing aid brands do you carry?</h3></summary>
+<p>We work with <a href="/manufacturers/">leading hearing aid manufacturers</a> rather than defaulting to one brand. We recommend options based on your hearing test results, daily listening environments, and personal preferences.</p>
+</details>
+<details class="faq-item">
+<summary><h3>Can hearing aids help with tinnitus?</h3></summary>
+<p>For many patients, yes. Some hearing aids include <a href="/tinnitus/">tinnitus-management features</a>, and improving access to everyday sounds can make tinnitus less disruptive. Your audiologist can determine whether hearing aids should be part of your tinnitus care plan.</p>
+</details>
+<details class="faq-item">
+<summary><h3>Do you treat tinnitus at the Easley office?</h3></summary>
+<p>Yes. Our Easley office provides tinnitus evaluations and individualized care that may include counseling-based approaches, sound therapy, hearing aids with tinnitus support, and <a href="/lenire/">FDA-cleared Lenire bimodal neuromodulation therapy</a> when appropriate.</p>
+</details>
+<details class="faq-item">
+<summary><h3>Do you treat earwax buildup and offer earwax removal?</h3></summary>
+<p>Yes. We can assess earwax buildup and <a href="/earwax-removal/">remove it safely</a> when appropriate. Do not use cotton swabs, which can push wax deeper or irritate the ear canal. If you have pain, drainage, or sudden hearing loss, call us so we can guide you to the appropriate next step.</p>
+</details>
+<details class="faq-item">
+<summary><h3>Can children get auditory processing testing in Easley?</h3></summary>
+<p>Yes. We perform <a href="/apd/">Auditory Processing Disorder evaluations</a> in our Easley office for children age seven and older and for adults. We use the Bellis and Ferre model and provide a written report that can be shared with schools and other providers.</p>
+</details>
+<details class="faq-item">
+<summary><h3>What insurance does the Easley office accept?</h3></summary>
+<p>We work with most major insurance plans. Coverage for hearing tests, hearing aids, and tinnitus care varies by plan. Call our Easley office at <a href="tel:+18644476611">(864) 447-6611</a> and our Patient Care Coordinators will verify your benefits before your visit.</p>
+</details>
+<details class="faq-item">
+<summary><h3>How do I schedule an appointment at the Easley office?</h3></summary>
+<p>Call the Easley office at <a href="tel:+18644476611">(864) 447-6611</a> or <a href="/schedule/">schedule an appointment online</a>.</p>
+</details>
+</div>
+</div>
 </section>
 
 <section class="ctas-band-home">
@@ -453,26 +545,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <p style="margin:0;">Ready to schedule at our Easley office?</p>
       <a href="/schedule/" class="btn btn-primary">Schedule Online</a>
       <a href="tel:+18644476611" class="btn btn-outline">Call (864) 447-6611</a>
-    </div>
-  </div>
-</section>
-
-
-<section id="location-faq" class="section">
-  <div class="container">
-    <h2>Common questions</h2>
-    <div class="faq">
-      <h3>Where is Elevate Audiology located in Easley, SC?</h3>
-      <p>Our Easley office is at 424 Rock Springs Road, Easley, SC 29642.</p>
-
-      <h3>Do you offer hearing tests in Easley?</h3>
-      <p>Yes. We offer comprehensive hearing evaluations for adults and children.</p>
-
-      <h3>Do you treat tinnitus?</h3>
-      <p>Yes. We offer tinnitus evaluations and treatment options, including Lenire when it is a fit.</p>
-
-      <h3>How do I schedule an appointment?</h3>
-      <p>You can call 864-447-6611 to schedule.</p>
     </div>
   </div>
 </section>
