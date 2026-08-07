@@ -44,6 +44,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   .page-body h3 { margin-block-start: var(--sp-6); }
   .page-body p, .page-body li { color: var(--c-text); font-size: var(--text-base); line-height: 1.65; }
   .page-body ul { padding-left: 1.25rem; }
+  .misophonia-video { margin-block: var(--sp-6) var(--sp-7); overflow: hidden; border-radius: var(--radius-lg); box-shadow: var(--shadow); background: var(--c-purple-900); }
+  .misophonia-video-inner { padding: 55.56% 0 0 0; position: relative; }
+  .misophonia-video iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; }
   .policies-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: var(--sp-5); margin-block: var(--sp-7); }
   .policy-card { background: var(--c-white); border: 1px solid var(--c-border); border-radius: var(--radius-lg); padding: var(--sp-6); box-shadow: var(--shadow-sm); transition: transform .15s, box-shadow .15s; text-decoration: none; color: inherit; display: block; }
   .policy-card:hover { transform: translateY(-2px); box-shadow: var(--shadow-md); }
@@ -222,6 +225,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <h2>Misophonia</h2>
       <p>Hearing disorders take many different forms. An estimated 15 percent of adults are extremely bothered by everyday noises that most people don&rsquo;t even give a second thought. The name for this condition is misophonia, and it can impact many facets of your daily life &ndash; but help is available.</p>
 
+      <div class="misophonia-video">
+        <div class="misophonia-video-inner">
+          <iframe src="https://player.vimeo.com/video/1216520305?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" referrerpolicy="strict-origin-when-cross-origin" title="What is Misophonia?" loading="lazy" allowfullscreen></iframe>
+        </div>
+      </div>
+
       <h3>Explaining Misophonia</h3>
       <p>Misophonia is a disorder that causes an aversion to common sounds. It can generate intense emotional or physiological reactions such as fear, rage or panic. The disorder is sometimes referred to as selective sound sensitivity syndrome and is thought to be a survival mechanism employed by the brain in response to a perceived threat.</p>
       <p>Common misophonia triggers include oral sounds such as chewing, throat clearing, coughing and nose blowing; finger or keyboard tapping; clicking a pen; humming and even breathing. Sometimes, small repetitive motions &ndash; somebody fidgets, wriggles a foot or accidentally brushes against you &ndash; are enough to provoke an exaggerated response.</p>
@@ -330,6 +339,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 <script src="/js/site.js" defer></script>
 <script>document.getElementById('footer-year').textContent = new Date().getFullYear();</script>
+<script src="https://player.vimeo.com/api/player.js"></script>
   <script src="https://widgets.leadconnectorhq.com/loader.js" data-resources-url="https://widgets.leadconnectorhq.com/chat-widget/loader.js" data-widget-id="675c85501f70dc5e18fac08b"></script>
 </body>
 </html>
