@@ -34,6 +34,23 @@ aws cloudfront publish-function --name elevate-audiology-redirects \
   --if-match "$NEW_ETAG"
 ```
 
+### Added 2026-08-10 (second batch)
+
+Five legacy URLs Dr. Tarvin listed in her 23 June email, with the destinations she and
+Apex had already agreed in that thread. They had been returning 404 for 48 days.
+
+| Old URL | Destination |
+|---|---|
+| `/audiology-services/` | `/hearing-testing/` |
+| `/products/` | `/hearing-aids/` |
+| `/about-us/our-team/` | `/our-team/` |
+| `/tinnitus-management/` | `/tinnitus/` |
+| `/lenire-tinnitus/` | `/lenire/` |
+
+Note the single-segment ones (`/products/`, `/tinnitus-management/`, `/lenire-tinnitus/`,
+`/audiology-services/`) are matched by `manualMap`, which runs before the blog-slug rule,
+so they resolve correctly rather than falling through to `/blog/<slug>/`.
+
 ### Deliberately NOT handled
 
 `/product/` and `/product-category/` — 153 URLs carrying roughly 17% of the
