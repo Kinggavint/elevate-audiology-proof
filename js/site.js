@@ -1,5 +1,26 @@
 // Elevate Audiology v2 — site behavior
 (function () {
+  // Keep the shared Hearing navigation consistent across every page.
+  document.querySelectorAll('.has-drop').forEach(function (item) {
+    var trigger = item.querySelector(':scope > a');
+    var dropdown = item.querySelector(':scope > .dropdown');
+    if (!trigger || !dropdown || trigger.getAttribute('href') !== '/hearing-loss/') return;
+
+    var earwaxLink = dropdown.querySelector('a[href="/earwax-removal/"]');
+    if (!earwaxLink) {
+      earwaxLink = document.createElement('a');
+      earwaxLink.setAttribute('href', '/earwax-removal/');
+      earwaxLink.textContent = 'Earwax Removal';
+
+      var financingLink = dropdown.querySelector('a[href="/financing/"]');
+      if (financingLink) {
+        dropdown.insertBefore(earwaxLink, financingLink);
+      } else {
+        dropdown.appendChild(earwaxLink);
+      }
+    }
+  });
+
   // Mobile nav toggle
   var toggle = document.querySelector('.nav-toggle');
   var navList = document.querySelector('.nav-list');

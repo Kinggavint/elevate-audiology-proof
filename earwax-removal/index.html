@@ -24,7 +24,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <title>Earwax Removal · Safe, Professional Cerumen Management · Elevate Audiology</title>
 <meta name="description" content="Safe, gentle, professional earwax (cerumen) removal performed by Doctors of Audiology at Elevate Audiology in Easley and Greenville, SC.">
 <meta name="theme-color" content="#4a0055">
-<link rel="icon" type="image/png" href="/images/logo.png">
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="/images/favicons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/images/favicons/favicon-16x16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/images/favicons/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -34,6 +38,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   .page-hero .eyebrow { color: var(--c-teal-100); }
   .page-hero h1 { color: #fff; margin-block-end: var(--sp-3); }
   .page-hero p.lead { color: rgba(255,255,255,.92); font-size: clamp(1.0625rem, 1.4vw, 1.25rem); max-width: 64ch; }
+  .page-hero .btn-hero { background: #fff; color: var(--c-purple-900); font-weight: 600; text-decoration: none; border: none; }
+  .page-hero .btn-hero:hover { background: var(--c-purple-50); color: var(--c-purple-700); transform: translateY(-1px); }
   .page-body { padding-block: var(--sp-8); background: var(--c-bg); }
   .page-body article { max-width: 760px; margin: 0 auto; }
   .page-body h2 { margin-block-start: var(--sp-7); }
@@ -110,13 +116,15 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 {
   "@context": "https://schema.org",
   "@type": "FAQPage",
+  "@id": "https://elevateaudiology.com/earwax-removal/#faq",
+  "url": "https://elevateaudiology.com/earwax-removal/#earwax-faq",
   "mainEntity": [
     {
       "@type": "Question",
       "name": "Is it safe to remove earwax at home?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Sometimes, but it depends on your ears. If you have pain, drainage, a hole in your eardrum, ear tubes, or sudden hearing loss, do not try home removal. A quick exam helps us choose the safest option."
+        "text": "It depends on your ears, and that is exactly the problem with doing it yourself. If you have ear pain, drainage, a history of ear tubes, a perforated eardrum, or sudden changes in hearing, home removal is not safe. Even when none of those are present, most at-home methods move wax around more than they remove it. A professional visit usually takes less than 15 minutes and eliminates the guesswork entirely."
       }
     },
     {
@@ -124,15 +132,15 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       "name": "Should I use cotton swabs?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "No. Cotton swabs often push wax deeper and can irritate the ear canal. That can make symptoms worse."
+        "text": "No. Cotton swabs are one of the most common causes of impacted earwax. They push wax deeper into the canal rather than removing it, which can make pressure, fullness, and muffled hearing significantly worse. If you are reaching for a swab because your ears feel blocked, that is a sign it is time to come in."
       }
     },
     {
       "@type": "Question",
-      "name": "How do you remove earwax in the clinic?",
+      "name": "How do you remove earwax at Elevate Audiology?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "We look in your ears first, then use the method that fits your ear canal and the wax type. Common options include gentle suction, small instruments, or irrigation when appropriate."
+        "text": "We start by looking in your ears with an otoscope (you can ask to see in your own ears, too!) so you can see exactly what we see. From there, we use the method best suited to your ear canal and the type of wax present. That may include gentle microsuction, small instruments, or irrigation when appropriate. Everything is done with precision and care by a trained clinician, not a one-size-fits-all approach."
       }
     },
     {
@@ -140,7 +148,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       "name": "How long does an earwax removal visit take?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Most visits take about 20 to 30 minutes. If wax is deep or very hard, it can take longer."
+        "text": "Most visits are completed in under 15 minutes. If wax is particularly deep or hardened, it may take a little longer. Either way, most patients leave the same day feeling immediate relief."
       }
     },
     {
@@ -148,7 +156,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       "name": "When should I schedule an appointment?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Schedule a visit if you have clogged ears, muffled hearing, ringing, fullness, or hearing aid feedback and you think wax could be the cause."
+        "text": "If your ears feel full, your hearing sounds muffled, your hearing aids are whistling more than usual, or you have ringing that came on recently, earwax could be the cause. Do not wait it out. Wax does not resolve on its own once it is impacted, and the longer it sits, the harder it becomes to remove comfortably. Scheduling is quick and most visits are same-week."
       }
     }
   ]
@@ -222,7 +230,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           </li>
           <li><a href="/apd/">Auditory Processing</a></li>
           <li><a href="/blog/">Blog</a></li>
-          <li></li>
+          <li><a href="/contact/">Contact</a></li>
         </ul>
       </nav>
       <div class="nav-cta">
@@ -239,6 +247,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <span class="eyebrow">What we treat</span>
     <h1>Earwax Removal</h1>
     <p class="lead">Safe, gentle, professional cerumen removal performed by Doctors of Audiology — with the right tools and the right training to protect your hearing.</p>
+    <div style="margin-top: var(--sp-5);">
+      <a href="#earwax-faq" class="btn btn-hero">Read the Earwax Removal FAQ</a>
+    </div>
   </div>
 </section>
 
@@ -257,6 +268,15 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <li><strong>Irrigation</strong> — controlled, lukewarm-water lavage when the wax is soft and the eardrum is healthy.</li>
       </ul>
       <p>We always start by looking inside both ears, talking through what we see, and explaining the plan before we begin. If we discover something that warrants a referral — an active infection, a perforation, or another medical concern — we&rsquo;ll get you to the right provider quickly.</p>
+
+      <div style="margin-block: var(--sp-6); text-align: center;">
+        <img src="/uploads/liwc/ab7fe373-8458-468a-8cdd-d2c124fd5c7c/1786139537140-PXL_20260729_142608841-2.jpg" alt="Doctor of Audiology performing professional earwax removal" style="width: 50%; height: auto; border-radius: var(--radius-lg); box-shadow: var(--shadow-sm); display: inline-block;">
+      </div>
+
+      <section class="answer-callout" aria-labelledby="earwax-local-heading" style="margin-block:var(--sp-7); padding:var(--sp-6); background:var(--c-white); border:1px solid var(--c-border); border-radius:var(--radius-lg); box-shadow:var(--shadow-sm);">
+        <h2 id="earwax-local-heading" style="margin-top:0;">Professional earwax removal in Easley and Greenville</h2>
+        <p>If clogged ears, muffled hearing, or hearing-aid feedback may be caused by earwax, Elevate Audiology can check your ears and recommend the safest next step. Our Doctors of Audiology provide in-office earwax care for patients at both the <a href="/easley/">Easley office</a> and the <a href="/greenville/">Greenville office</a>. We look inside the ear before treatment, explain the options, and share care instructions after the visit. <a href="/schedule/">Schedule an earwax check</a> to get started.</p>
+      </section>
 
       <h2>When to Schedule</h2>
       <p>Consider an earwax check if you notice any of these symptoms:</p>
@@ -288,19 +308,19 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <h2>Earwax removal FAQs</h2>
     <div class="faq">
       <h3>Is it safe to remove earwax at home?</h3>
-      <p>Sometimes, but it depends on your ears. If you have pain, drainage, a hole in your eardrum, ear tubes, or sudden hearing loss, do not try home removal. A quick exam helps us choose the safest option.</p>
+      <p>It depends on your ears, and that is exactly the problem with doing it yourself. If you have ear pain, drainage, a history of ear tubes, a perforated eardrum, or sudden changes in hearing, home removal is not safe. Even when none of those are present, most at-home methods move wax around more than they remove it. A professional visit usually takes less than 15 minutes and eliminates the guesswork entirely.</p>
 
       <h3>Should I use cotton swabs?</h3>
-      <p>No. Cotton swabs often push wax deeper and can irritate the ear canal. That can make symptoms worse.</p>
+      <p>No. Cotton swabs are one of the most common causes of impacted earwax. They push wax deeper into the canal rather than removing it, which can make pressure, fullness, and muffled hearing significantly worse. If you are reaching for a swab because your ears feel blocked, that is a sign it is time to come in.</p>
 
-      <h3>How do you remove earwax in the clinic?</h3>
-      <p>We look in your ears first, then use the method that fits your ear canal and the wax type. Common options include gentle suction, small instruments, or irrigation when appropriate.</p>
+      <h3>How do you remove earwax at Elevate Audiology?</h3>
+      <p>We start by looking in your ears with an otoscope (you can ask to see in your own ears, too!) so you can see exactly what we see. From there, we use the method best suited to your ear canal and the type of wax present. That may include gentle microsuction, small instruments, or irrigation when appropriate. Everything is done with precision and care by a trained clinician, not a one-size-fits-all approach.</p>
 
       <h3>How long does an earwax removal visit take?</h3>
-      <p>Most visits take about 20 to 30 minutes. If wax is deep or very hard, it can take longer.</p>
+      <p>Most visits are completed in under 15 minutes. If wax is particularly deep or hardened, it may take a little longer. Either way, most patients leave the same day feeling immediate relief.</p>
 
       <h3>When should I schedule an appointment?</h3>
-      <p>Schedule a visit if you have clogged ears, muffled hearing, ringing, fullness, or hearing aid feedback and you think wax could be the cause.</p>
+      <p>If your ears feel full, your hearing sounds muffled, your hearing aids are whistling more than usual, or you have ringing that came on recently, earwax could be the cause. Do not wait it out. Wax does not resolve on its own once it is impacted, and the longer it sits, the harder it becomes to remove comfortably. Scheduling is quick and most visits are same-week.</p>
     </div>
   </div>
 </section>
@@ -371,7 +391,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <li><a href="/what-is-an-audiologist/">What is an Audiologist</a></li>
           <li><a href="/reviews/">Reviews</a></li>
           <li><a href="/blog/">Blog</a></li>
-          <li></li>
+          <li><a href="/contact/">Contact</a></li>
         </ul>
       </div>
     </div>
@@ -390,5 +410,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 <script src="/js/site.js" defer></script>
 <script>document.getElementById('footer-year').textContent = new Date().getFullYear();</script>
+  <script src="https://widgets.leadconnectorhq.com/loader.js" data-resources-url="https://widgets.leadconnectorhq.com/chat-widget/loader.js" data-widget-id="675c85501f70dc5e18fac08b"></script>
 </body>
 </html>

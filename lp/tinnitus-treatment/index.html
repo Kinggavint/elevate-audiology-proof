@@ -25,7 +25,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <meta name="description" content="Greenville's evidence-based tinnitus specialists. Certified Lenire® provider — FDA De Novo–approved bimodal neuromodulation. Schedule your tinnitus evaluation.">
 <meta name="theme-color" content="#4a0055">
 <meta name="robots" content="noindex,follow">
-<link rel="icon" type="image/png" href="/images/logo.png">
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="/images/favicons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/images/favicons/favicon-16x16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/images/favicons/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -38,10 +42,20 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     background: var(--c-white);
     position: sticky; top: 0; z-index: 50;
   }
-  .lp-header .container { display: flex; align-items: center; justify-content: space-between; gap: var(--sp-4); }
-  .lp-header img { height: 44px; width: auto; }
-  .lp-header .lp-phone { font-weight: 600; color: var(--c-purple-700); font-size: var(--text-sm); text-decoration: none; }
+  .lp-header .container { display: flex; align-items: center; justify-content: space-between; gap: var(--sp-4); flex-wrap: nowrap; padding-inline: var(--sp-4); }
+  .lp-header img { height: 44px; width: auto; flex-shrink: 0; }
+  .lp-header .lp-phone { font-weight: 600; color: var(--c-purple-700); font-size: var(--text-sm); text-decoration: none; white-space: nowrap; display: inline-flex; align-items: center; line-height: 1; }
   .lp-header .lp-phone:hover { color: var(--c-purple-900); }
+  @media (max-width: 600px) {
+    .lp-header { padding: var(--sp-3) 0; }
+    .lp-header .container { gap: var(--sp-3); padding-inline: var(--sp-3); }
+    .lp-header img { height: 34px; }
+    .lp-header .lp-phone { font-size: 0.9375rem; }
+  }
+  @media (max-width: 380px) {
+    .lp-header img { height: 30px; }
+    .lp-header .lp-phone { font-size: 0.875rem; }
+  }
 
   .lp-hero {
     position: relative;
@@ -62,7 +76,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     display: flex; gap: var(--sp-4); flex-wrap: wrap; align-items: center;
     margin-top: var(--sp-5); font-size: var(--text-sm); opacity: 0.95;
   }
-  .lp-hero .trust-row span { display: inline-1eg2YPU1z4Ukgh8XwU2E; align-items: center; gap: 0.4rem; }
+  .lp-hero .trust-row span { display: inline-flex; align-items: center; gap: 0.4rem; }
   .lp-hero .stars { color: #ffc857; letter-spacing: 0.06em; }
 
   .lp-section { padding-block: clamp(3rem, 6vw, 5rem); }
@@ -79,7 +93,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     text-align: center;
   }
   .step-card-lp .step-num {
-    display: inline-1eg2YPU1z4Ukgh8XwU2E; align-items: center; justify-content: center;
+    display: inline-flex; align-items: center; justify-content: center;
     width: 56px; height: 56px;
     background: var(--c-teal-100); color: var(--c-purple-900);
     border-radius: 50%;
@@ -188,7 +202,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     display: flex; gap: var(--sp-4); justify-content: center; margin-top: var(--sp-4);
   }
   .social-row a {
-    display: inline-1eg2YPU1z4Ukgh8XwU2E; align-items: center; justify-content: center;
+    display: inline-flex; align-items: center; justify-content: center;
     width: 44px; height: 44px; border-radius: 50%;
     background: var(--c-purple-50); color: var(--c-purple-700);
     transition: all .15s var(--ease);
@@ -198,7 +212,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
 <link rel="canonical" href="https://elevateaudiology.com/lp/tinnitus-treatment/">
 </head>
-<body>
+<body data-thank-you="/lp/tinnitus-treatment/thank-you/">
 <!-- Google Tag Manager (noscript) -->
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NKQGRBVK"
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
@@ -208,7 +222,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <header class="lp-header">
   <div class="container">
     <a href="/" aria-label="Elevate Audiology home"><img src="/images/logo.png" alt="Elevate Audiology" width="220" height="44"></a>
-    <a href="tel:+18644474183" class="lp-phone">📞 (864) 447-4183</a>
+    <a href="tel:+18649474636" class="lp-phone">(864) 947-4636</a>
   </div>
 </header>
 
@@ -442,11 +456,94 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 <footer class="lp-footer">
   <div class="container">
-    <p style="margin: 0;">© Elevate Audiology · Easley &amp; Greenville, SC · <a href="tel:+18644474183">(864) 447-4183</a> · <a href="/policies/privacy/">Privacy</a></p>
+    <p style="margin: 0;">© Elevate Audiology · Easley &amp; Greenville, SC · <a href="tel:+18644474183">(864) 447-4183</a> · <a href="/policies/privacy-policy/">Privacy</a></p>
   </div>
 </footer>
 
 
 
+  <script src="https://widgets.leadconnectorhq.com/loader.js" data-resources-url="https://widgets.leadconnectorhq.com/chat-widget/loader.js" data-widget-id="675c85501f70dc5e18fac08b"></script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Do you offer tinnitus treatment in Easley and Greenville?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Elevate Audiology provides tinnitus care for patients in Easley, Greenville, and nearby Upstate South Carolina communities. Your first visit is focused on understanding your tinnitus and building a plan that fits your goals."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What happens at a tinnitus evaluation?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A tinnitus evaluation usually includes a conversation about your symptoms, a hearing test, and a review of factors that can affect tinnitus. We then explain what we found and outline next steps."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can tinnitus go away?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "For some people tinnitus improves over time. For others it can be managed so it is less noticeable and less stressful. The right plan depends on what is causing your tinnitus and how it affects your daily life."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do hearing aids help with tinnitus?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Hearing aids can help many people who have both hearing loss and tinnitus. Better hearing can reduce strain and make tinnitus less intrusive. We can also recommend sound therapy options when appropriate."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is Lenire available at Elevate Audiology?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Availability can change. If you are interested in Lenire, ask during your visit and we will confirm whether it is an option for you and discuss alternatives if needed."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I schedule a tinnitus appointment?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Use the form on this page to request more information, or call the phone number shown on the page. Our team will help you pick the right appointment type and location."
+      }
+    }
+  ]
+}
+</script>
 </body>
 </html>
+
+<section class="section" id="tinnitus-faq">
+  <div class="container">
+    <h2>Tinnitus treatment FAQ</h2>
+    <div class="faq">
+      <h3>Do you offer tinnitus treatment in Easley and Greenville?</h3>
+      <p>Yes. Elevate Audiology provides tinnitus care for patients in Easley, Greenville, and nearby Upstate South Carolina communities. Your first visit is focused on understanding your tinnitus and building a plan that fits your goals.</p>
+
+      <h3>What happens at a tinnitus evaluation?</h3>
+      <p>A tinnitus evaluation usually includes a conversation about your symptoms, a hearing test, and a review of factors that can affect tinnitus. We then explain what we found and outline next steps.</p>
+
+      <h3>Can tinnitus go away?</h3>
+      <p>For some people tinnitus improves over time. For others it can be managed so it is less noticeable and less stressful. The right plan depends on what is causing your tinnitus and how it affects your daily life.</p>
+
+      <h3>Do hearing aids help with tinnitus?</h3>
+      <p>Hearing aids can help many people who have both hearing loss and tinnitus. Better hearing can reduce strain and make tinnitus less intrusive. We can also recommend sound therapy options when appropriate.</p>
+
+      <h3>Is Lenire available at Elevate Audiology?</h3>
+      <p>Availability can change. If you are interested in Lenire, ask during your visit and we will confirm whether it is an option for you and discuss alternatives if needed.</p>
+
+      <h3>How do I schedule a tinnitus appointment?</h3>
+      <p>Use the form on this page to request more information, or call the phone number shown on the page. Our team will help you pick the right appointment type and location.</p>
+    </div>
+  </div>
+</section>

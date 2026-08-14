@@ -25,7 +25,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <meta name="description" content="Schedule your hearing evaluation at Elevate Audiology in Greenville, SC. Locally owned. Evidence-based care. The Elevated Hearing Pathway — six advanced real-world assessments.">
 <meta name="theme-color" content="#4a0055">
 <meta name="robots" content="noindex,follow">
-<link rel="icon" type="image/png" href="/images/logo.png">
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="/images/favicons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/images/favicons/favicon-16x16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/images/favicons/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -41,13 +45,29 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   }
   .lp-header .container {
     display: flex; align-items: center; justify-content: space-between; gap: var(--sp-4);
+    flex-wrap: nowrap;
+    padding-inline: var(--sp-4);
   }
-  .lp-header img { height: 44px; width: auto; }
+  .lp-header img { height: 44px; width: auto; flex-shrink: 0; }
   .lp-header .lp-phone {
     font-weight: 600; color: var(--c-purple-700); font-size: var(--text-sm);
     text-decoration: none;
+    white-space: nowrap;
+    display: inline-flex;
+    align-items: center;
+    line-height: 1;
   }
   .lp-header .lp-phone:hover { color: var(--c-purple-900); }
+  @media (max-width: 600px) {
+    .lp-header { padding: var(--sp-3) 0; }
+    .lp-header .container { gap: var(--sp-3); padding-inline: var(--sp-3); }
+    .lp-header img { height: 34px; }
+    .lp-header .lp-phone { font-size: 0.9375rem; }
+  }
+  @media (max-width: 380px) {
+    .lp-header img { height: 30px; }
+    .lp-header .lp-phone { font-size: 0.875rem; }
+  }
 
   .lp-hero {
     position: relative;
@@ -173,8 +193,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
 <!-- Conversion tracking placeholders — to be replaced with actual GA4 + Google Ads tags -->
 <!-- <script>gtag('event','page_view',{page_path:'/lp/hearing-evaluation/'});</script> -->
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "How long does a hearing evaluation take?", "acceptedAnswer": {"@type": "Answer", "text": "Most appointments take about 45 to 60 minutes, depending on your history and which tests you need."}}, {"@type": "Question", "name": "Do I need a referral?", "acceptedAnswer": {"@type": "Answer", "text": "No. You can schedule directly. If you have insurance questions, our team can help you confirm what your plan covers."}}, {"@type": "Question", "name": "What happens during the visit?", "acceptedAnswer": {"@type": "Answer", "text": "We start with questions about your hearing, tinnitus, noise exposure, and medical history. Then we run a few comfortable listening tests in a quiet booth."}}, {"@type": "Question", "name": "What should I bring?", "acceptedAnswer": {"@type": "Answer", "text": "Bring a list of medications, any prior hearing test results, and your insurance card if you plan to use insurance."}}, {"@type": "Question", "name": "Can I get a same-week appointment in Easley or Greenville?", "acceptedAnswer": {"@type": "Answer", "text": "Often, yes. Availability changes week to week, so the best next step is to request an appointment and we will confirm the soonest opening."}}, {"@type": "Question", "name": "What if I have tinnitus too?", "acceptedAnswer": {"@type": "Answer", "text": "Tell us. We can include tinnitus-specific questions and help you understand what your test results mean for tinnitus treatment options."}}, {"@type": "Question", "name": "Will I get results the same day?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. We review your results with you before you leave and talk through next steps."}}]}</script>
 </head>
-<body>
+<body data-thank-you="/lp/hearing-evaluation/thank-you/">
 <!-- Google Tag Manager (noscript) -->
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NKQGRBVK"
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
@@ -184,7 +205,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <header class="lp-header">
   <div class="container">
     <a href="/" aria-label="Elevate Audiology home"><img src="/images/logo.png" alt="Elevate Audiology" width="220" height="44"></a>
-    <a href="tel:+18644474183" class="lp-phone">📞 (864) 447-4183</a>
+    <a href="tel:+18649474636" class="lp-phone">(864) 947-4636</a>
   </div>
 </header>
 
@@ -195,7 +216,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <span class="eyebrow" style="color: var(--c-teal-100);">Greenville & Easley · Locally Owned</span>
       <h1>Hear What You've Been Missing.</h1>
       <p class="lead">Most hearing clinics give you a test and a hearing aid. At Elevate Audiology, we give you a personalized pathway — backed by evidence, built by a team, and designed around how you actually live.</p>
-      <a href="#lp-form" class="btn btn-accent" data-cta="hero">Schedule Your Hearing Evaluation →</a>
       <div class="trust-row">
         <span class="stars">★★★★★</span>
         <span>Five-Star Reviewed</span>
@@ -254,7 +274,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       </div>
     </div>
     <div style="text-align:center; margin-top: var(--sp-7);">
-      <a href="#lp-form" class="btn btn-primary" data-cta="pathway-mid">See If the Pathway Is Right for You →</a>
+      <a href="#lp-form-2" class="btn btn-primary" data-cta="pathway-mid">See If the Pathway Is Right for You →</a>
     </div>
   </div>
 </section>
@@ -369,18 +389,46 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <div class="container">
     <h2>Ready to Find Out How Well You're Really Hearing?</h2>
     <p class="sub">Your time with our audiologist will be for an hour and a half. The clarity can last a lifetime.</p>
-    <a href="#lp-form" class="btn btn-on-dark" style="font-size: var(--text-base); padding: 1.1rem 1.75rem; min-height: 48px;" data-cta="final">Book My Hearing Evaluation</a>
+    <a href="#lp-form-2" class="btn btn-on-dark" style="font-size: var(--text-base); padding: 1.1rem 1.75rem; min-height: 48px;" data-cta="final">Book My Hearing Evaluation</a>
     <p class="micro">No pressure. No obligation. Just answers.</p>
   </div>
 </section>
 
 <footer class="lp-footer">
   <div class="container">
-    <p style="margin: 0;">© Elevate Audiology · Easley &amp; Greenville, SC · Greenville: <a href="tel:+18644474183">(864) 447-4183</a> · Easley: <a href="tel:+18644476611">(864) 447-6611</a> · <a href="/policies/privacy/">Privacy</a></p>
+    <p style="margin: 0;">© Elevate Audiology · Easley &amp; Greenville, SC · Greenville: <a href="tel:+18644474183">(864) 447-4183</a> · Easley: <a href="tel:+18644476611">(864) 447-6611</a> · <a href="/policies/privacy-policy/">Privacy</a></p>
   </div>
 </footer>
 
 
+
+  <script src="https://widgets.leadconnectorhq.com/loader.js" data-resources-url="https://widgets.leadconnectorhq.com/chat-widget/loader.js" data-widget-id="675c85501f70dc5e18fac08b"></script>
+<section class="faq" id="hearing-evaluation-faq" style="max-width: 960px; margin: 40px auto; padding: 0 20px;">
+  <h2>Hearing Evaluation FAQ</h2>
+  <p><strong>Short answer:</strong> A hearing evaluation is a set of tests that measures how well you hear different sounds and how your ears respond. It helps us find the cause of hearing trouble and build a clear treatment plan.</p>
+  <div class="faq-items" style="margin-top: 18px;">
+    <h3>How long does a hearing evaluation take?</h3>
+    <p>Most appointments take about 45 to 60 minutes, depending on your history and which tests you need.</p>
+
+    <h3>Do I need a referral?</h3>
+    <p>No. You can schedule directly. If you have insurance questions, our team can help you confirm what your plan covers.</p>
+
+    <h3>What happens during the visit?</h3>
+    <p>We start with questions about your hearing, tinnitus, noise exposure, and medical history. Then we run a few comfortable listening tests in a quiet booth.</p>
+
+    <h3>What should I bring?</h3>
+    <p>Bring a list of medications, any prior hearing test results, and your insurance card if you plan to use insurance.</p>
+
+    <h3>Can I get a same-week appointment in Easley or Greenville?</h3>
+    <p>Often, yes. Availability changes week to week, so the best next step is to request an appointment and we will confirm the soonest opening.</p>
+
+    <h3>What if I have tinnitus too?</h3>
+    <p>Tell us. We can include tinnitus-specific questions and help you understand what your test results mean for tinnitus treatment options.</p>
+
+    <h3>Will I get results the same day?</h3>
+    <p>Yes. We review your results with you before you leave and talk through next steps.</p>
+  </div>
+</section>
 
 </body>
 </html>
