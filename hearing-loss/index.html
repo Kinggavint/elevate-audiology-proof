@@ -304,6 +304,12 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     content: '✓'; position: absolute; left: 0; top: 0;
     color: var(--c-accent-2); font-weight: 700;
   }
+
+  .hearing-loss-visual { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:var(--sp-4); margin-top:var(--sp-5); }
+  .hearing-loss-visual .visual-node { min-height:180px; display:flex; flex-direction:column; justify-content:center; padding:var(--sp-5); border-radius:var(--radius-lg); border:2px solid var(--c-purple-100); background:linear-gradient(160deg,var(--c-white),var(--c-purple-50)); box-shadow:var(--shadow-sm); }
+  .hearing-loss-visual .visual-node strong { color:var(--c-purple-700); font-family:var(--font-display); font-size:var(--text-xl); margin-bottom:var(--sp-2); }
+  .hearing-loss-visual .visual-node span { color:var(--c-text-soft); font-size:var(--text-sm); }
+  @media (max-width:700px) { .hearing-loss-visual { grid-template-columns:1fr; } .hearing-loss-visual .visual-node { min-height:0; } }
 </style>
 
 
@@ -444,6 +450,22 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <div class="stat"><div class="num">1 in 3</div><div class="label">Adults age 65+ has age-related hearing loss</div></div>
       <div class="stat"><div class="num">7 yrs</div><div class="label">Average delay before seeking treatment</div></div>
     </div>
+  </div>
+</section>
+
+<section class="section section-alt" id="hearing-loss-map">
+  <div class="container">
+    <div class="section-head center text-center">
+      <span class="eyebrow">A clearer way to understand it</span>
+      <h2>Where hearing loss can happen</h2>
+      <p>This quick visual guide shows the three broad patterns we look for. A complete hearing evaluation tells us which pattern is present and what to do next.</p>
+    </div>
+    <div class="hearing-loss-visual" role="img" aria-label="Three hearing loss categories: sensorineural, conductive, and mixed">
+      <div class="visual-node"><strong>Sensorineural</strong><span>Inner ear or auditory nerve changes. Often managed with hearing technology and communication support.</span></div>
+      <div class="visual-node"><strong>Conductive</strong><span>Sound is blocked in the outer or middle ear. Medical treatment may help in some cases.</span></div>
+      <div class="visual-node"><strong>Mixed</strong><span>Both patterns are present. Your test results guide the right combination of care.</span></div>
+    </div>
+    <p class="text-center" style="margin-top:var(--sp-6);"><a class="btn btn-primary" href="/hearing-testing/">Schedule a complete hearing evaluation</a></p>
   </div>
 </section>
 
