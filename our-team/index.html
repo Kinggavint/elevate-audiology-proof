@@ -49,7 +49,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       "@type": "Person",
       "name": "Alexandra Tarvin",
       "honorificPrefix": "Dr.",
-      "honorificSuffix": "Au.D.",
+      "honificSuffix": "Au.D.",
       "jobTitle": "Founder and Doctor of Audiology",
       "worksFor": {
         "@id": "https://elevateaudiology.com/#organization"
@@ -255,8 +255,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <h3>Dr. Alex Tarvin</h3>
           <p class="role">Doctor of Audiology · Founder</p>
           <p class="role">Licensed in South Carolina and North Carolina</p>
+          <p class="team-quote">Favorite Sound: horse hooves on a brick road</p>
         </div>
-        <p class="team-quote">Favorite Sound: horse hooves on a brick road</p>
       </button>
 
       <button class="team-card" type="button"
@@ -271,8 +271,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <h3>Dr. Katelyn Ooms</h3>
           <p class="role">Doctor of Audiology</p>
           <p class="role">Licensed in South Carolina and North Carolina</p>
+          <p class="team-quote">Favorite Sound: her dog snoring</p>
         </div>
-        <p class="team-quote">Favorite Sound: her dog snoring</p>
       </button>
 
       <button class="team-card" type="button"
@@ -288,8 +288,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <h3>Dr. Khori Cioli</h3>
           <p class="role">Doctor of Audiology</p>
           <p class="role">Licensed in South Carolina</p>
+          <p class="team-quote">Favorite Sound: wind blowing through trees</p>
         </div>
-        <p class="team-quote">Favorite Sound: wind blowing through trees</p>
       </button>
 
       <button class="team-card" type="button"
@@ -304,8 +304,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <h3>Dr. Scott Capece</h3>
           <p class="role">Doctor of Audiology</p>
           <p class="role">Licensed in South Carolina</p>
+          <p class="team-quote">Favorite Sound: The sound of bowling a strike!</p>
         </div>
-        <p class="team-quote">Favorite Sound: The sound of bowling a strike!</p>
       </button>
     </div>
 
@@ -322,8 +322,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <div class="team-info">
           <h3>Jaymee Morgan</h3>
           <p class="role">Audiology Assistant and Operations Lead</p>
+          <p class="team-quote">Favorite Sound: rain and thunderstorms</p>
         </div>
-        <p class="team-quote">Favorite Sound: rain and thunderstorms</p>
       </button>
 
       <button class="team-card" type="button"
@@ -337,8 +337,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <div class="team-info">
           <h3>Shannon Williamson</h3>
           <p class="role">Audiology Assistant</p>
+          <p class="team-quote">Quote coming soon.</p>
         </div>
-        <p class="team-quote">Quote coming soon.</p>
       </button>
     </div>
 
@@ -355,8 +355,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <div class="team-info">
           <h3>Eliza Young</h3>
           <p class="role">Patient Care Coordinator</p>
+          <p class="team-quote">Quote coming soon.</p>
         </div>
-        <p class="team-quote">Quote coming soon.</p>
       </button>
 
       <button class="team-card" type="button"
@@ -370,8 +370,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <div class="team-info">
           <h3>Ashley Harclerode</h3>
           <p class="role">Patient Care Coordinator</p>
+          <p class="team-quote">Favorite Sound: baby and toddler giggles</p>
         </div>
-        <p class="team-quote">Favorite Sound: baby and toddler giggles</p>
       </button>
     </div>
   </div>
@@ -467,7 +467,28 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   .team-modal--single .modal-body::-webkit-scrollbar-thumb { background: #c9b5d1; border-radius: 6px; }
   .team-modal--single .modal-body::-webkit-scrollbar-track { background: transparent; }
 
-  .team-card { cursor: pointer; }
+  .team-card {
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    height: auto;
+    overflow: hidden;
+  }
+  .team-card .team-info {
+    box-sizing: border-box;
+    width: 100%;
+    min-width: 0;
+    padding-bottom: 1rem;
+    text-align: center;
+  }
+  .team-card .team-info h3,
+  .team-card .team-info .role,
+  .team-card .team-info .team-quote {
+    max-width: 100%;
+    overflow-wrap: anywhere;
+    word-break: normal;
+  }
   /* Per-photo positioning so faces fill the rounded rectangle and names line up */
   .team-photo--katelyn img { object-position: center 22%; }
   .team-photo--khori img { object-position: center 12%; }
@@ -480,7 +501,16 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     .team-modal.team-modal--single { border-radius: 14px; max-height: calc(100vh - 1rem); }
     .team-modal--single .modal-body { padding: 1.25rem; padding-right: 3rem; max-height: calc(100vh - 1rem); }
   }
-  .team-quote { margin: .55rem 0 0; color: #6b3a78; font-size: .88rem; font-style: italic; }
+  .team-card .team-info .team-quote {
+    margin: .55rem auto 0;
+    padding: 0 .25rem;
+    color: #6b3a78;
+    font-size: .88rem;
+    font-style: italic;
+    line-height: 1.45;
+    text-align: center;
+    white-space: normal;
+  }
 </style>
 
 </main>
