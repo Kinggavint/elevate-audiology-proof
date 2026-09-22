@@ -1,51 +1,34 @@
 #!/bin/bash
-# Deploy GA4 injection to elevateaudiology.com
+# Deploy elevateaudiology.com — GATED, not a blind sync.
+#
+# History: this used to be `aws s3 sync . s3://elevate-audiology --include
+# "*.html"` with no diff check at all. That's how 22 pages of real,
+# already-shipped SEO/AEO content silently rotted for weeks — an
+# out-of-band agent kept publishing straight to S3 without ever committing
+# back, and this script would have blind-overwritten every one of those
+# pages with the stale repo copy the moment anyone ran it. See
+# AIS-OS/context/projects/elevate-drift-2026-09-22/ for the full incident.
+#
+# Now: every file is checked against gated_deploy.py's per-file baseline
+# (deploy-baseline.json) before it's touched. If live doesn't match what we
+# last confirmed was there, that file is refused and named — not
+# overwritten — and the run keeps going for everything else. A blind sync
+# is no longer possible through this script.
+#
 # Run from inside the elevate-audiology-proof repo root.
-# Requires AWS CLI configured with creds that can write to s3://elevate-audiology
-# and invalidate CloudFront distribution E1DNI6M0NO4BBS.
+# Requires AWS CLI configured with creds that can read/write
+# s3://elevate-audiology and invalidate CloudFront E1DNI6M0NO4BBS.
+#
+# Usage:
+#   ./deploy-ga4.sh --dry-run                       # see what would happen, touch nothing
+#   ./deploy-ga4.sh                                  # real deploy (needs deploy-baseline.json)
+#   ./deploy-ga4.sh --baseline-dir /path/to/snapshot  # first run only, or to add new files
 
 set -euo pipefail
-
-BUCKET="elevate-audiology"
-REGION="us-east-2"
-DISTRIBUTION_ID="E1DNI6M0NO4BBS"
 
 echo "==> Verifying AWS identity"
 aws sts get-caller-identity
 
 echo ""
-echo "==> Counting HTML files in proof repo"
-HTML_COUNT=$(find . -name "*.html" -not -path "./.git/*" | wc -l | tr -d ' ')
-echo "Found $HTML_COUNT HTML files to sync"
-
-echo ""
-echo "==> Syncing HTML files to s3://$BUCKET (region: $REGION)"
-# Only HTML files; preserve correct content-type and short cache so future
-# changes propagate quickly. CloudFront invalidation below handles current cache.
-aws s3 sync . "s3://$BUCKET/" \
-  --region "$REGION" \
-  --exclude "*" \
-  --include "*.html" \
-  --exclude ".git/*" \
-  --exclude ".claude/*" \
-  --exclude "deploy-ga4.sh" \
-  --content-type "text/html; charset=utf-8" \
-  --cache-control "public, max-age=300, must-revalidate" \
-  --no-progress
-
-echo ""
-echo "==> Creating CloudFront invalidation for HTML paths"
-INVALIDATION_ID=$(aws cloudfront create-invalidation \
-  --distribution-id "$DISTRIBUTION_ID" \
-  --paths "/*.html" "/" "/*/index.html" "/*/" "/*/*/index.html" "/*/*/" \
-  --query 'Invalidation.Id' \
-  --output text)
-
-echo "Invalidation ID: $INVALIDATION_ID"
-echo "Status: in progress (typically completes in 2-5 minutes)"
-
-echo ""
-echo "==> Done. Live site will reflect GA4 install once invalidation completes."
-echo ""
-echo "Verify with:"
-echo "  curl -s https://elevateaudiology.com/ | grep -A2 'gtag/js?id=G-9R5LCWET23'"
+echo "==> Running gated deploy"
+exec python3 "$(dirname "$0")/gated_deploy.py" "$@"
