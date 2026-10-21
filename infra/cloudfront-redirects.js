@@ -10,6 +10,7 @@ function handler(event) {
 
   // Explicit redirect map (handles structural URL changes)
   var manualMap = {
+    "/about/": "/about-us/",
     "/about-us/advocacy/": "/about-us/",
     "/about-us/best-practice-pro-network/": "/about-us/",
     "/about-us/evidence-based-practices/": "/about-us/",
@@ -26,6 +27,7 @@ function handler(event) {
     "/auditory-processing-disorder-apd-faq/": "/apd/",
     "/auditory-processing-disorder/": "/apd/",
     "/aural-rehabilitation/": "/hearing-loss/",
+    "/bio/dr-alexandra-tarvin/": "/our-team/",
     "/blog/page/2/": "/blog/",
     "/encouraging-a-loved-one-to-take-a-hearing-test/": "/blog/encouraging-a-loved-one-to-take-a-hearing-test-2/",
     "/evidence-based-practices/": "/about-us/",
@@ -60,6 +62,7 @@ function handler(event) {
     "/how-treating-hearing-loss-improves-your-relationships/": "/blog/how-treating-hearing-loss-improves-your-relationships-2/",
     "/hyperacusis/": "/sound-sensitivity/",
     "/lenire-tinnitus/": "/lenire/",
+    "/locations/easley/": "/easley/",
     "/location/elevate-audiology/": "/contact/",
     "/location/greenville-office/": "/greenville/",
     "/occupational-hearing-hazards/": "/blog/occupational-hearing-hazards-2/",
@@ -78,6 +81,7 @@ function handler(event) {
     "/terms-conditions/": "/policies/terms-conditions/",
     "/the-risks-of-untreated-hearing-loss/": "/blog/the-risks-of-untreated-hearing-loss-2/",
     "/things-people-with-hearing-loss-wish-you-knew/": "/blog/things-people-with-hearing-loss-wish-you-knew-2/",
+    "/tinnitus-treatment/": "/tinnitus/",
     "/tinnitus-assessment/": "/tinnitus/",
     "/tinnitus-management/": "/tinnitus/",
     "/tinnitus/faq/": "/tinnitus/",
