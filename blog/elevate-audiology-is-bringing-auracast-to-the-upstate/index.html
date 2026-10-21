@@ -1,86 +1,332 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Elevate Audiology Is Bringing Auracast to the Upstate | Elevate Audiology</title>
-<meta name="description" content="Elevate Audiology is working to expand Auracast technology into public spaces throughout Easley, Greenville, and the surrounding Upstate.">
+<!-- Lead attribution (client-supplied, Dr. Tarvin 2026-09-21) -->
+<script src="https://track.asyncthing.com/attr.js"></script>
+<!-- End lead attribution -->
+
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-NKQGRBVK');</script>
+<!-- End Google Tag Manager -->
+
+<!-- Google tag (gtag.js) — GA4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-9R5LCWET23"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-9R5LCWET23');
+</script>
+<!-- End Google tag (gtag.js) -->
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="canonical" href="https://elevateaudiology.com/blog/elevate-audiology-is-bringing-auracast-to-the-upstate/">
-<link rel="stylesheet" href="../../assets/css/style.css">
-<meta property="og:title" content="Elevate Audiology Is Bringing Auracast to the Upstate">
-<meta property="og:description" content="Auracast technology is coming to public spaces across Easley, Greenville, and the Upstate.">
-<meta property="og:type" content="article">
-<meta property="article:published_time" content="2026-10-01">
+<title>Elevate Audiology Is Bringing Auracast to the Upstate — Elevate Audiology</title>
+<meta name="description" content="Elevate Audiology is working to expand Auracast technology into public spaces throughout Easley, Greenville, and the surrounding Upstate.">
+<meta name="theme-color" content="#4a0055">
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="/images/favicons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/images/favicons/favicon-16x16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/images/favicons/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/base.css">
+<style>
+.blog-hero { background: linear-gradient(135deg, var(--c-purple-900) 0%, var(--c-purple-700) 50%, var(--c-purple-600) 100%); color: #fff; padding: 5rem 0 4rem; }
+.blog-hero h1 { color: #fff; max-width: 56rem; }
+.blog-hero p.lead { color: var(--c-purple-100); max-width: 50rem; }
+
+.post-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 2rem; }
+.post-card { background: #fff; border: 1px solid var(--c-gray-200); border-radius: 12px; overflow: hidden; display: flex; flex-direction: column; transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease; }
+.post-card:hover { transform: translateY(-2px); box-shadow: 0 12px 28px rgba(43,23,71,0.08); border-color: var(--c-purple-200); }
+.post-card a.cover { display: block; aspect-ratio: 16/10; overflow: hidden; background: var(--c-gray-100); }
+.post-card a.cover img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform .4s ease; }
+.post-card:hover a.cover img { transform: scale(1.04); }
+.post-card .body { padding: 1.25rem 1.25rem 1.5rem; display: flex; flex-direction: column; gap: .5rem; flex: 1; }
+.post-card .meta { font-size: .8125rem; color: var(--c-gray-500); text-transform: uppercase; letter-spacing: .05em; font-weight: 600; }
+.post-card h3 { font-size: 1.25rem; line-height: 1.3; margin: 0; }
+.post-card h3 a { color: var(--c-purple-900); text-decoration: none; }
+.post-card h3 a:hover { color: var(--c-accent-2); }
+.post-card .excerpt { color: var(--c-gray-700); font-size: .9375rem; line-height: 1.55; margin-top: .25rem; }
+.post-card .read-more { margin-top: auto; padding-top: .75rem; font-weight: 600; color: var(--c-accent-2); font-size: .9375rem; }
+.post-card .read-more::after { content: ' →'; }
+
+.post-card.no-img a.cover { display: none; }
+
+/* Single post page */
+.post-header { background: linear-gradient(135deg, var(--c-purple-900) 0%, var(--c-purple-700) 60%, var(--c-purple-600) 100%); color: #fff; padding: 4rem 0 3rem; }
+.post-header h1 { color: #fff; max-width: 50rem; line-height: 1.15; }
+.post-header .post-meta { color: var(--c-purple-100); font-size: .9375rem; text-transform: uppercase; letter-spacing: .06em; font-weight: 600; margin-bottom: 1rem; }
+.post-feature-img { max-width: 56rem; margin: -2.5rem auto 0; padding: 0 1.5rem; position: relative; }
+.post-feature-img img { width: 100%; height: auto; border-radius: 14px; box-shadow: 0 18px 38px rgba(43,23,71,0.18); display: block; }
+.post-content { max-width: 44rem; margin: 0 auto; padding: 3rem 1.5rem 4rem; font-size: 1.0625rem; line-height: 1.75; color: var(--c-gray-800); }
+.post-content h2 { font-size: 1.625rem; margin-top: 2.5rem; margin-bottom: .75rem; color: var(--c-purple-900); }
+.post-content h3 { font-size: 1.25rem; margin-top: 1.75rem; margin-bottom: .5rem; color: var(--c-purple-800); }
+.post-content p { margin: 0 0 1.15rem; }
+.post-content a { color: var(--c-accent-2); text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 3px; }
+.post-content a:hover { color: var(--c-purple-700); }
+.post-content ul, .post-content ol { margin: 0 0 1.25rem 1.25rem; padding-left: 1rem; }
+.post-content li { margin-bottom: .35rem; }
+.post-content blockquote { border-left: 4px solid var(--c-purple-300); padding: .25rem 0 .25rem 1.25rem; color: var(--c-gray-700); font-style: italic; margin: 1.5rem 0; }
+.post-content strong { color: var(--c-purple-900); }
+.post-back { display: inline-flex; align-items: center; gap: .35rem; color: var(--c-purple-100); text-decoration: none; font-weight: 600; font-size: .9375rem; margin-top: .75rem; }
+.post-back:hover { color: #fff; }
+
+.post-cta { background: var(--c-gray-50); border-top: 1px solid var(--c-gray-200); padding: 3rem 0; text-align: center; }
+.post-cta h2 { color: var(--c-purple-900); margin-bottom: .75rem; }
+.post-cta p { color: var(--c-gray-700); max-width: 38rem; margin: 0 auto 1.5rem; }
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Elevate Audiology Is Bringing Auracast to the Upstate",
+  "description": "Elevate Audiology is working to expand Auracast technology into public spaces throughout Easley, Greenville, and the surrounding Upstate.",
+  "url": "https://elevateaudiology.com/blog/elevate-audiology-is-bringing-auracast-to-the-upstate/",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://elevateaudiology.com/blog/elevate-audiology-is-bringing-auracast-to-the-upstate/"
+  },
+  "author": {
+    "@type": "Organization",
+    "name": "Elevate Audiology",
+    "url": "https://elevateaudiology.com/"
+  },
+  "publisher": {
+    "@type": "MedicalOrganization",
+    "name": "Elevate Audiology",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://elevateaudiology.com/images/logo.png"
+    }
+  },
+  "datePublished": "2026-10-21",
+  "dateModified": "2026-10-21"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://elevateaudiology.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Blog",
+      "item": "https://elevateaudiology.com/blog/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Elevate Audiology Is Bringing Auracast to the Upstate",
+      "item": "https://elevateaudiology.com/blog/elevate-audiology-is-bringing-auracast-to-the-upstate/"
+    }
+  ]
+}
+</script>
+
 </head>
 <body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NKQGRBVK"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
 
+<a class="skip-link" href="#main">Skip to main content</a>
+<a class="sr-only" href="#main">Skip to main content</a>
 <header class="site-header">
-  <div class="container header-inner">
-    <a href="../../" class="logo">Elevate Audiology</a>
-    <nav class="main-nav" aria-label="Primary navigation">
-      <ul>
-        <li><a href="../../">Home</a></li>
-        <li><a href="../../about/">About Us</a></li>
-        <li><a href="../../our-team/">Our Team</a></li>
-        <li><a href="../../services/">Services</a></li>
-        <li><a href="../../blog/">Blog</a></li>
-        <li><a href="../../schedule/">Schedule</a></li>
-        <li><a href="../../contact/">Contact</a></li>
-      </ul>
-    </nav>
+  <div class="utility-bar">
+    <div class="container-wide">
+      <div class="util-left">
+        <a href="tel:+18644476611" aria-label="Call Easley office"><svg class="util-phone" viewBox="0 0 24 24" width="14" height="14" aria-hidden="true" style="display:inline-block;vertical-align:-2px;margin-right:4px;fill:#e02424;"><path d="M6.62 10.79a15.05 15.05 0 0 0 6.59 6.59l2.2-2.2a1 1 0 0 1 1.05-.24 11.36 11.36 0 0 0 3.58.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1 11.36 11.36 0 0 0 .57 3.58 1 1 0 0 1-.24 1.05z"/></svg>Easley (864) 447-6611</a>
+        <span>·</span>
+        <a href="tel:+18644474183" aria-label="Call Greenville office"><svg class="util-phone" viewBox="0 0 24 24" width="14" height="14" aria-hidden="true" style="display:inline-block;vertical-align:-2px;margin-right:4px;fill:#e02424;"><path d="M6.62 10.79a15.05 15.05 0 0 0 6.59 6.59l2.2-2.2a1 1 0 0 1 1.05-.24 11.36 11.36 0 0 0 3.58.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1 11.36 11.36 0 0 0 .57 3.58 1 1 0 0 1-.24 1.05z"/></svg>Greenville (864) 447-4183</a>
+      </div>
+      <div class="util-right">
+
+        <a href="/reviews/" class="util-reviews-link" aria-label="Read our 5-star reviews"><span class="util-stars" aria-hidden="true" style="color:#f5b400;letter-spacing:1px;margin-right:6px;text-shadow:0 0 1px rgba(0,0,0,0.15);">★★★★★</span>Reviews</a>
+      </div>
+    </div>
+  </div>
+  <div class="container-wide">
+    <div class="nav-row">
+      <a href="/" class="nav-logo" aria-label="Elevate Audiology home">
+        <img src="/images/logo.png" alt="Elevate Audiology" width="1150" height="208" decoding="async">
+      </a>
+      <button class="nav-toggle" aria-label="Toggle navigation menu" aria-controls="primary-nav" aria-expanded="false">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+      </button>
+      <nav aria-label="Primary">
+        <ul class="nav-list" id="primary-nav">
+          <li class="has-drop">
+            <a href="/about-us/">About <svg width="10" height="10" viewBox="0 0 12 12"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" fill="none"/></svg></a>
+            <div class="dropdown">
+              <a href="/about-us/">About Us</a>
+              <a href="/our-team/">Our Team</a>
+              <a href="/what-is-an-audiologist/">What is an Audiologist</a>
+              <a href="/about-us/hearing-up-network/">Hearing Up Network</a>
+              <a href="/about-us/giving-back/">Giving Back</a>
+              <a href="/reviews/">Reviews</a>
+            </div>
+          </li>
+          <li class="has-drop">
+            <a href="/hearing-loss/">Hearing <svg width="10" height="10" viewBox="0 0 12 12"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" fill="none"/></svg></a>
+            <div class="dropdown">
+              <a href="/hearing-loss/">Hearing Loss</a>
+              <a href="/hearing-testing/">Hearing Testing</a>
+              <a href="/hearing-aids/">Hearing Aids</a>
+              <a href="/manufacturers/">Manufacturers</a>
+              <a href="/benefits-of-hearing-aids/">Benefits of Hearing Aids</a>
+              <a href="/earwax-removal/">Earwax Removal</a>
+              <a href="/financing/">Insurance and Financing</a>
+              <a href="/repair/">Repair &amp; Service</a>
+              <a href="/batteries/">Batteries</a>
+              <a href="/about-us/veteran-services/">Veteran Services</a>
+            </div>
+          </li>
+          <li class="has-drop">
+            <a href="/tinnitus/">Tinnitus and Sound Sensitivity <svg width="10" height="10" viewBox="0 0 12 12"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" fill="none"/></svg></a>
+            <div class="dropdown">
+              <a href="/tinnitus/">Tinnitus Care</a>
+              <a href="/lenire/">Lenire Treatment</a>
+              <a href="/sound-sensitivity/">Sound Sensitivity Disorders</a>
+            </div>
+          </li>
+          <li><a href="/apd/">Auditory Processing</a></li>
+          <li><a href="/blog/">Blog</a></li>
+          <li><a href="/contact/">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="nav-cta">
+        <a href="/schedule/" class="btn btn-primary">Schedule</a>
+      </div>
+    </div>
   </div>
 </header>
 
-<main>
-  <article class="blog-post container">
-    <header class="blog-post-header">
-      <h1>Elevate Audiology Is Bringing Auracast to the Upstate</h1>
-      <p class="blog-post-meta">
-        <time datetime="2026-10-01">October 2026</time>
-      </p>
-    </header>
+<main id="main">
 
-    <figure class="blog-post-image">
-      <img src="../../assets/images/blog/auracast-technology-demonstration.jpg" alt="Auracast technology demonstration">
-      <figcaption>Auracast technology demonstrated for streaming audio directly to compatible hearing devices.</figcaption>
-    </figure>
+        <article>
+          <header class="post-header">
+            <div class="container-wide">
+              <a class="post-back" href="/blog/">← All articles</a>
+              <div class="post-meta" style="margin-top: 1.5rem;">October 2026 · News</div>
+              <h1>Elevate Audiology Is Bringing Auracast to the Upstate</h1>
+            </div>
+          </header>
 
-    <div class="blog-post-content">
-      <p>At Elevate Audiology, our mission has always gone beyond the exam room. That's why we're working to expand Auracast technology into public spaces throughout Easley, Greenville, and the surrounding Upstate.</p>
-
-      <p>Auracast is a next-generation Bluetooth standard that lets compatible hearing aids and devices stream audio directly from TVs, speakers, and public address systems in places like venues, houses of worship, and community spaces — making it easier for people with hearing loss to stay connected wherever they go.</p>
-
-      <figure class="blog-post-image">
-        <img src="../../assets/images/blog/public-venue-with-auracast-support.jpg" alt="Public venue with Auracast support">
-        <figcaption>A public venue equipped with Auracast support for improved accessibility.</figcaption>
-      </figure>
-
-      <p>This is part of a broader commitment we've made to the Upstate: complimentary services at Samaritan Health Clinic of Pickens County, active membership in the Greenville and Easley Chambers of Commerce, and ongoing support for local organizations and initiatives through our time, talent, and treasure.</p>
-
-      <p>We'll share updates here as new Auracast locations go live. If your organization is interested in bringing Auracast to your venue, please contact us at <a href="mailto:info@elevateaudiology.com">info@elevateaudiology.com</a>.</p>
-    </div>
-
-    <footer class="blog-post-footer">
-      <a href="../../blog/" class="back-to-blog">&larr; Back to Blog</a>
-    </footer>
-  </article>
+          <div class="post-content">
+            <p>At Elevate Audiology, our mission has always gone beyond the exam room. That's why we're working to expand Auracast technology into public spaces throughout Easley, Greenville, and the surrounding Upstate.</p>
+            <p>Auracast is a next-generation Bluetooth standard that lets compatible hearing aids and devices stream audio directly from TVs, speakers, and public address systems in places like venues, houses of worship, and community spaces — making it easier for people with hearing loss to stay connected wherever they go.</p>
+            <p>This is part of a broader commitment we've made to the Upstate: complimentary services at Samaritan Health Clinic of Pickens County, active membership in the Greenville and Easley Chambers of Commerce, and ongoing support for local organizations and initiatives through our time, talent, and treasure. <a href="/about-us/giving-back/">See how we give back</a>.</p>
+            <p>We'll share updates here as new Auracast locations go live. If your organization is interested in bringing Auracast to your venue, please <a href="/contact/">contact us</a>.</p>
+          </div>
+          <section class="post-cta">
+            <div class="container">
+              <h2>Talk with our team.</h2>
+              <p>Have questions about Auracast or your hearing devices? Our audiologists are here to help — at our Easley or Greenville office.</p>
+              <a class="btn btn-accent" href="/schedule/">Schedule a Consultation</a>
+            </div>
+          </section>
+        </article>
+        
 </main>
-
-<footer class="site-footer">
+<section class="affiliations" aria-label="Affiliations and awards">
   <div class="container">
-    <p>&copy; 2026 Elevate Audiology. All rights reserved.</p>
-    <nav class="footer-nav" aria-label="Footer navigation">
-      <ul>
-        <li><a href="../../about/">About Us</a></li>
-        <li><a href="../../our-team/">Our Team</a></li>
-        <li><a href="../../services/">Services</a></li>
-        <li><a href="../../blog/">Blog</a></li>
-        <li><a href="../../schedule/">Schedule</a></li>
-        <li><a href="../../contact/">Contact</a></li>
-      </ul>
-    </nav>
+    <div class="affiliations-row">
+      <img src="/images/affiliations/ada-logo.png" alt="Academy of Doctors of Audiology" width="143" height="79" loading="lazy" decoding="async">
+      <img src="/images/affiliations/easley-chamber.jpg" alt="Easley Chamber of Commerce member" width="223" height="140" loading="lazy" decoding="async">
+      <img src="/images/affiliations/hearingup.jfif" alt="HearingUp Network provider" width="1200" height="421" loading="lazy" decoding="async">
+      <img src="/images/affiliations/ata-logo.png" alt="American Tinnitus Association member" width="186" height="121" loading="lazy" decoding="async">
+      <img src="/images/affiliations/investor-icon-2026.png" alt="2026 Investor Icon — Easley" width="2305" height="1170" loading="lazy" decoding="async">
+      <img src="/images/offices/bosc-best-2025.png" alt="Voted Best of South Carolina 2025" class="award-logo" width="342" height="101" loading="lazy" decoding="async">
+      <img src="/images/awards/kaboom-2026.png" alt="Kidding Around Greenville KABOOM 2026 First Place winner" class="award-logo" width="400" height="400" loading="lazy" decoding="async">
+    </div>
+  </div>
+</section>
+<footer class="site-footer">
+  <div class="container-wide">
+    <div class="footer-grid">
+      <div>
+        <img src="/images/logo.png" alt="Elevate Audiology" style="height:54px; margin-bottom:1rem; filter: brightness(0) invert(1);" width="1150" height="208" loading="lazy" decoding="async">
+        <p style="font-size:.9375rem;">Offices in Easley and Greenville, with telehealth throughout South Carolina.</p>
+        <div class="footer-social">
+          <a href="https://www.facebook.com/ElevateAudiology/" aria-label="Facebook" target="_blank" rel="noopener">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.84 3.44 8.87 8 9.8V15H8v-3h2V9.5C10 7.57 11.57 6 13.5 6H16v3h-2c-.55 0-1 .45-1 1v2h3v3h-3v6.95c5.05-.5 9-4.76 9-9.95z"/></svg>
+          </a>
+          <a href="https://www.youtube.com/channel/UCFS-1xMoY_lE6I3tUSiRzPQ/featured" aria-label="YouTube" target="_blank" rel="noopener">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 0 0 .5 6.2C0 8.1 0 12 0 12s0 3.9.5 5.8a3 3 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1c.5-1.9.5-5.8.5-5.8s0-3.9-.5-5.8zM9.6 15.6V8.4l6.3 3.6-6.3 3.6z"/></svg>
+          </a>
+        </div>
+      </div>
+      <div>
+        <h4>Locations</h4>
+        <div class="footer-locations">
+          <div class="footer-loc">
+            <strong>Easley</strong>
+            <p>424 Rock Springs Road<br>Easley, SC 29642</p>
+            <p><a href="tel:+18644476611">(864) 447-6611</a></p>
+            <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=424+Rock+Springs+Road+Easley+SC+29642" target="_blank" rel="noopener">Directions →</a>
+          </div>
+          <div class="footer-loc">
+            <strong>Greenville</strong>
+            <p>2086 Woodruff Rd Suite B<br>Greenville, SC 29607</p>
+            <p><a href="tel:+18644474183">(864) 447-4183</a></p>
+            <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=2086+Woodruff+Rd+Suite+B+Greenville+SC+29607" target="_blank" rel="noopener">Directions →</a>
+          </div>
+        </div>
+      </div>
+      <div>
+        <h4>Services</h4>
+        <ul class="footer-list">
+          <li><a href="/hearing-testing/">Hearing Testing</a></li>
+          <li><a href="/hearing-aids/">Hearing Aids</a></li>
+          <li><a href="/tinnitus/">Tinnitus Care</a></li>
+          <li><a href="/lenire/">Lenire Treatment</a></li>
+          <li><a href="/apd/">Auditory Processing Evaluations</a></li>
+          <li><a href="/repair/">Repair &amp; Service</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Practice</h4>
+        <ul class="footer-list">
+          <li><a href="/about-us/">About Us</a></li>
+          <li><a href="/our-team/">Our Team</a></li>
+          <li><a href="/what-is-an-audiologist/">What is an Audiologist</a></li>
+          <li><a href="/reviews/">Reviews</a></li>
+          <li><a href="/blog/">Blog</a></li>
+          <li><a href="/contact/">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div>© <span id="footer-year">2026</span> Elevate Audiology, LLC. All rights reserved. · <a href="/policies/" style="color:inherit;">Policies</a></div>
+      <div>
+        <a href="mailto:info@elevateaudiology.com">info@elevateaudiology.com</a>
+        &nbsp;|&nbsp;
+        <a href="tel:+18644476611">Easley (864) 447-6611</a>
+        &nbsp;·&nbsp;
+        <a href="tel:+18644474183">Greenville (864) 447-4183</a>
+      </div>
+    </div>
   </div>
 </footer>
+<script src="/js/site.js" defer></script>
+<script>var fy=document.getElementById('footer-year'); if(fy) fy.textContent=new Date().getFullYear();</script>
 
+  <script src="https://widgets.leadconnectorhq.com/loader.js" data-resources-url="https://widgets.leadconnectorhq.com/chat-widget/loader.js" data-widget-id="675c85501f70dc5e18fac08b"></script>
 </body>
 </html>
