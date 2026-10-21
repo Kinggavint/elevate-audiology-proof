@@ -1,0 +1,10 @@
+{
+  "_comment": "Single source of truth for Elevate Audiology phones. Easley and Greenville per-location numbers (header phones shipped May 4). (864) 947-4636 is the call-tracking number for noindex /lp/ pages only; keep it off indexed pages and schema. (844) 810-8866 is the fax. (864) 442-5555 is not an Elevate number.",
+  "name": "Elevate Audiology",
+  "phones": [
+    {"label": "Easley", "display": "(864) 447-6611", "e164": "+18644476611"},
+    {"label": "Greenville", "display": "(864) 447-4183", "e164": "+18644474183"}
+  ],
+  "other_allowed_tel": ["+18649474636", "+18448108866"],
+  "banned_numbers": ["8644425555"]
+}

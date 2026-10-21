@@ -36,7 +36,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <link rel="manifest" href="/site.webmanifest">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://i.ytimg.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+<noscript><link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"></noscript>
 <link rel="stylesheet" href="/css/base.css">
 
 <style>
@@ -407,6 +409,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
               <a href="/our-team/">Our Team</a>
               <a href="/what-is-an-audiologist/">What is an Audiologist</a>
               <a href="/about-us/hearing-up-network/">Hearing Up Network</a>
+              <a href="/about-us/giving-back/">Giving Back</a>
               <a href="/reviews/">Reviews</a>
             </div>
           </li>
@@ -467,12 +470,37 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </div>
         <div class="hero-media hero-media-team">
           <div class="hero-media-main" style="aspect-ratio: 16 / 9; background:#000; border-radius: 12px; overflow: hidden;">
-            <div class="yt-facade" data-id="aj8Cmx4Ucfk" data-title="Welcome to Elevate Audiology" role="button" tabindex="0" aria-label="Welcome to Elevate Audiology"><img src="https://i.ytimg.com/vi/aj8Cmx4Ucfk/hqdefault.jpg" alt="Welcome to Elevate Audiology" loading="lazy" decoding="async"></div>
+            <div class="yt-facade" data-id="aj8Cmx4Ucfk" data-title="Welcome to Elevate Audiology" role="button" tabindex="0" aria-label="Welcome to Elevate Audiology"><img src="https://i.ytimg.com/vi/aj8Cmx4Ucfk/hqdefault.jpg" alt="Welcome to Elevate Audiology" width="480" height="360" loading="eager" fetchpriority="high" decoding="async"></div>
           </div>
         </div>
       </div>
     </div>
   </section>
+
+  <!-- AWARDS BANNER (prominent) -->
+  <section class="section section-alt" aria-label="Recent awards" style="padding-block: var(--sp-7);">
+    <div class="container">
+      <div class="section-head center text-center" style="margin-bottom: var(--sp-5);">
+        <span class="eyebrow">Recently honored</span>
+        <h2 style="font-size: clamp(1.5rem, 2.4vw, 2rem);">Award-winning audiology care in the Upstate</h2>
+      </div>
+      <div style="display:flex; gap: var(--sp-6); justify-content:center; align-items:center; flex-wrap:wrap;">
+        <figure style="text-align:center; max-width: 240px;">
+          <img src="/images/awards/best-of-sc-2026.jpg" alt="Voted Best of South Carolina 2026" style="width: 200px; height:auto;" width="1000" height="294" loading="lazy" decoding="async">
+          <figcaption style="margin-top: var(--sp-3); font-weight: 600; color: var(--c-text);">Best of South Carolina 2026</figcaption>
+        </figure>
+        <figure style="text-align:center; max-width: 240px;">
+          <img src="/images/offices/bosc-best-2025.png" alt="Voted Best of South Carolina 2025" style="width: 200px; height:auto;" width="342" height="101" loading="lazy" decoding="async">
+          <figcaption style="margin-top: var(--sp-3); font-weight: 600; color: var(--c-text);">Best of South Carolina 2025</figcaption>
+        </figure>
+        <figure style="text-align:center; max-width: 240px;">
+          <img src="/images/awards/kaboom-2026.png" alt="Kidding Around Greenville KABOOM 2026 First Place winner" style="width: 200px; height:auto;" width="400" height="400" loading="lazy" decoding="async">
+          <figcaption style="margin-top: var(--sp-3); font-weight: 600; color: var(--c-text);">KABOOM 2026 — First Place</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
 
   <!-- LOCAL ANSWER -->
   <section class="section section-alt" id="homepage-local-answer" aria-labelledby="homepage-local-answer-title">
@@ -480,7 +508,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <div class="section-head center text-center">
         <span class="eyebrow">Local audiology care</span>
         <h2 id="homepage-local-answer-title">Looking for an audiologist in Easley or Greenville?</h2>
-        <p>Elevate Audiology provides hearing testing, hearing aids, tinnitus care, and auditory processing evaluations at two Upstate South Carolina offices. <a href="/easley/">Visit the Easley office</a>, <a href="/greenville/">visit the Greenville office</a>, or <a href="/schedule/">schedule an appointment</a> with our Doctors of Audiology.</p>
+        <p>Elevate Audiology provides hearing testing, hearing aids, tinnitus care, and auditory processing evaluations at two Upstate South Carolina offices. <a href="/easley/">Visit our Easley audiologist office</a>, <a href="/greenville/">visit the Greenville office</a>, or <a href="/schedule/">schedule an appointment</a> with our Doctors of Audiology.</p>
       </div>
     </div>
   </section>
@@ -604,15 +632,15 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       </div>
       <div class="reviews-row">
         <div class="testimonial-card">
-          <blockquote>“The best just keeps getting better. Another great experience today getting a hearing exam and an adjustment to my prescription for my hearing aids. The change seems to have worked to perfection. Met one of the new doctors and staff. I was equally impressed. They were rated number one because they were loved. Find out for yourself."</blockquote>
+          <blockquote>"The best just keeps getting better. Another great experience today getting a hearing exam and an adjustment to my prescription for my hearing aids. The change seems to have worked to perfection. Met one of the new doctors and staff. I was equally impressed. They were rated number one because they were loved. Find out for yourself."</blockquote>
           <cite>— Bob K., Easley</cite>
         </div>
         <div class="testimonial-card">
-          <blockquote>"Excellent service. By the far the most attentive and professional service I’ve received and I’ve been to several audiologists. Very knowledgeable and helpful"</blockquote>
+          <blockquote>"Excellent service. By the far the most attentive and professional service I've received and I've been to several audiologists. Very knowledgeable and helpful"</blockquote>
           <cite>--Kristin S., Greenville</cite>
         </div>
         <div class="testimonial-card" style="grid-column: 1 / -1;">
-          <blockquote>"I am pleased to offer my strongest recommendation for Elevate Audiology and for Dr. Alexandra Tarvin, Au.D., Owner and Founder of the practice. I have had the unique opportunity to know Elevate Audiology both as a physician referral source and as a patient, and my experience from both perspectives has been exceptional. As an internist, I am particularly impressed by Dr. Tarvin’s thoughtful, scientific, and academically grounded approach to audiology. She brings far more than technical expertise to the care of patients with hearing loss, tinnitus, and sound sensitivity. Her clinical recommendations reflect careful evaluation, current audiologic knowledge, and an individualized understanding of each patient’s needs. In my own personal care, I found her explanations clear, her guidance practical, and her clinical judgment excellent. Dr. Tarvin’s background further reflects the depth of her commitment to the field. She earned her Doctor of Audiology degree from the University of South Florida and has contributed to audiology through published research, presentations at state and national conferences, professional leadership, and advocacy for improved access to audiology services. Her specialized work in tinnitus and sound sensitivity, along with her involvement in professional organizations, is clearly reflected in the quality of care she provides. I have also referred patients to Elevate Audiology, and the feedback I have received has been consistently outstanding. Patients have described the practice as professional, compassionate, thorough, and easy to work with. They feel heard, respected, and well guided through testing, treatment options, hearing technology, and follow-up care. Although I was personally seen at the Easley office, I would strongly recommend Elevate Audiology’s Greenville office as well. Dr. Tarvin has built an excellent team, including Dr. Katelyn Ooms, Dr. Khori Cioli, Dr. Scott Capece, audiology assistants Jaymee Morgan and Shannon Williamson, and patient care coordinators Amanda James and Eliza Young. The practice reflects strong leadership, clinical excellence, and a genuine commitment to improving patients’ quality of life. For anyone seeking high-quality audiology care in the Greenville area, I would recommend Elevate Audiology without hesitation."</blockquote>
+          <blockquote>"I am pleased to offer my strongest recommendation for Elevate Audiology and for Dr. Alexandra Tarvin, Au.D., Owner and Founder of the practice. I have had the unique opportunity to know Elevate Audiology both as a physician referral source and as a patient, and my experience from both perspectives has been exceptional. As an internist, I am particularly impressed by Dr. Tarvin's thoughtful, scientific, and academically grounded approach to audiology. She brings far more than technical expertise to the care of patients with hearing loss, tinnitus, and sound sensitivity. Her clinical recommendations reflect careful evaluation, current audiologic knowledge, and an individualized understanding of each patient's needs. In my own personal care, I found her explanations clear, her guidance practical, and her clinical judgment excellent. Dr. Tarvin's background further reflects the depth of her commitment to the field. She earned her Doctor of Audiology degree from the University of South Florida and has contributed to audiology through published research, presentations at state and national conferences, professional leadership, and advocacy for improved access to audiology services. Her specialized work in tinnitus and sound sensitivity, along with her involvement in professional organizations, is clearly reflected in the quality of care she provides. I have also referred patients to Elevate Audiology, and the feedback I have received has been consistently outstanding. Patients have described the practice as professional, compassionate, thorough, and easy to work with. They feel heard, respected, and well guided through testing, treatment options, hearing technology, and follow-up care. Although I was personally seen at the Easley office, I would strongly recommend Elevate Audiology's Greenville office as well. Dr. Tarvin has built an excellent team, including Dr. Katelyn Ooms, Dr. Khori Cioli, Dr. Scott Capece, audiology assistants Jaymee Morgan and Shannon Williamson, and patient care coordinators Amanda James and Eliza Young. The practice reflects strong leadership, clinical excellence, and a genuine commitment to improving patients' quality of life. For anyone seeking high-quality audiology care in the Greenville area, I would recommend Elevate Audiology without hesitation."</blockquote>
           <cite>— Steven E. Freeman, MD, PhD</cite>
         </div>
       </div>
@@ -636,7 +664,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       </div>
       <div class="home-locations-grid">
         <article class="location-card">
-          <picture class="office-photo"><source srcset="/images/offices/office-storefront.webp" type="image/webp"><img src="/images/offices/office-storefront.jpg" alt="Elevate Audiology Easley office storefront" loading="lazy" width="1200" height="800" decoding="async"></picture>
+          <picture class="office-photo"><source srcset="/images/offices/easley-2026.webp" type="image/webp"><img src="/images/offices/easley-2026.jpg" alt="Elevate Audiology Easley office exterior" loading="lazy" width="1200" height="800" decoding="async"></picture>
           <iframe loading="lazy" title="Easley office map"
             src="https://www.google.com/maps?q=424+Rock+Springs+Road+Easley+SC+29642&output=embed"></iframe>
           <div class="body">
@@ -651,7 +679,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           </div>
         </article>
         <article class="location-card">
-          <picture class="office-photo"><source srcset="/images/offices/office-interior.webp" type="image/webp"><img src="/images/offices/office-interior.jpg" alt="Elevate Audiology Greenville office interior" loading="lazy" width="1200" height="800" decoding="async"></picture>
+          <picture class="office-photo"><source srcset="/images/offices/greenville-exterior-2026.webp" type="image/webp"><img src="/images/offices/greenville-exterior-2026.jpg" alt="Elevate Audiology Greenville office exterior sign" loading="lazy" width="1200" height="800" decoding="async"></picture>
           <iframe loading="lazy" title="Greenville office map"
             src="https://www.google.com/maps?q=2086+Woodruff+Rd+Suite+B+Greenville+SC+29607&output=embed"></iframe>
           <div class="body">
@@ -758,7 +786,56 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 }
   </script>
 
+
+
+  <!-- FEATURED ARTICLES (internal linking to boost indexing) -->
+  <section class="section" aria-label="Featured articles" style="padding-block: var(--sp-7);">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">From our blog</span>
+        <h2>Featured articles</h2>
+        <p>Read the latest from our Doctors of Audiology on tinnitus, hearing loss, cognitive health, and balance.</p>
+      </div>
+      <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: var(--sp-5); margin-top: var(--sp-5);">
+        <article style="padding: var(--sp-5); background: var(--c-surface, #fff); border-radius: 12px; border: 1px solid rgba(0,0,0,0.08);">
+          <h3 style="margin-top:0;"><a href="/blog/hearing-loss-cognitive-decline/" style="color: var(--c-primary, #4a0055); text-decoration: none;">The link between hearing loss and cognitive decline</a></h3>
+          <p>Untreated hearing loss is one of the largest modifiable risk factors for cognitive decline in adults. Here is what the research shows and what you can do about it.</p>
+          <p><a href="/blog/hearing-loss-cognitive-decline/" style="font-weight: 600;">Read the article</a></p>
+        </article>
+        <article style="padding: var(--sp-5); background: var(--c-surface, #fff); border-radius: 12px; border: 1px solid rgba(0,0,0,0.08);">
+          <h3 style="margin-top:0;"><a href="/blog/balance-hearing-whats-the-connection/" style="color: var(--c-primary, #4a0055); text-decoration: none;">Balance and hearing: what is the connection?</a></h3>
+          <p>The inner ear plays a central role in both hearing and balance. Learn how our Doctors of Audiology evaluate dizziness and balance concerns alongside your hearing.</p>
+          <p><a href="/blog/balance-hearing-whats-the-connection/" style="font-weight: 600;">Read the article</a></p>
+        </article>
+        <article style="padding: var(--sp-5); background: var(--c-surface, #fff); border-radius: 12px; border: 1px solid rgba(0,0,0,0.08);">
+          <h3 style="margin-top:0;"><a href="/blog/can-brain-fog-be-connected-to-tinnitus/" style="color: var(--c-primary, #4a0055); text-decoration: none;">Can brain fog be connected to tinnitus?</a></h3>
+          <p>Many patients with tinnitus also describe brain fog and difficulty focusing. Here is what we know about the connection and how tinnitus treatment can help.</p>
+          <p><a href="/blog/can-brain-fog-be-connected-to-tinnitus/" style="font-weight: 600;">Read the article</a></p>
+        </article>
+      </div>
+      <div style="text-align:center; margin-top: var(--sp-5);">
+        <a href="/blog/" style="font-weight: 600;">View all articles</a>
+      </div>
+    </div>
+  </section>
 </main>
+
+<!-- AFFILIATIONS -->
+<section class="affiliations" aria-label="Affiliations and awards">
+  <div class="container">
+    <div class="affiliations-row">
+      <img src="/images/affiliations/ada-logo.png" alt="Academy of Doctors of Audiology" width="143" height="79" loading="lazy" decoding="async">
+      <img src="/images/affiliations/easley-chamber.jpg" alt="Easley Chamber of Commerce member" width="223" height="140" loading="lazy" decoding="async">
+      <img src="/images/affiliations/hearingup.jfif" alt="HearingUp Network provider" width="1200" height="421" loading="lazy" decoding="async">
+      <img src="/images/affiliations/ata-logo.png" alt="American Tinnitus Association member" width="186" height="121" loading="lazy" decoding="async">
+      <img src="/images/affiliations/investor-icon-2026.png" alt="2026 Investor Icon — Easley" width="2305" height="1170" loading="lazy" decoding="async">
+      <img src="/images/awards/best-of-sc-2026.jpg" alt="Voted Best of South Carolina 2026" class="award-logo" width="1000" height="294" loading="lazy" decoding="async">
+      <img src="/images/offices/bosc-best-2025.png" alt="Voted Best of South Carolina 2025" class="award-logo" width="342" height="101" loading="lazy" decoding="async">
+      <img src="/images/awards/kaboom-2026.png" alt="Kidding Around Greenville KABOOM 2026 First Place winner" class="award-logo" width="400" height="400" loading="lazy" decoding="async">
+    </div>
+  </div>
+</section>
+
 
 <!-- FOOTER -->
 <footer class="site-footer" style="color:#FFFFFF">
@@ -802,7 +879,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </div>
 </footer>
 
-<script src="/js/site.js"></script>
+<script src="/js/site.js" defer></script>
 <script>
   // Simple YT facade logic
   document.querySelectorAll('.yt-facade').forEach(el => {
@@ -812,6 +889,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     });
   });
 </script>
-  <script src="https://widgets.leadconnectorhq.com/loader.js" data-resources-url="https://widgets.leadconnectorhq.com/chat-widget/loader.js" data-widget-id="675c85501f70dc5e18fac08b"></script>
+  <script async src="https://widgets.leadconnectorhq.com/loader.js" data-resources-url="https://widgets.leadconnectorhq.com/chat-widget/loader.js" data-widget-id="675c85501f70dc5e18fac08b"></script>
 </body>
 </html>

@@ -100,7 +100,7 @@ def cloudfront_invalidate(paths: list[str]) -> str:
     proc = subprocess.run(
         ["aws", "cloudfront", "create-invalidation",
          "--distribution-id", DISTRIBUTION_ID,
-         "--paths", "/*",
+         "--paths", *paths,
          "--query", "Invalidation.Id", "--output", "text"],
         capture_output=True, text=True,
     )
@@ -190,7 +190,16 @@ def main():
         return
 
     if deployed:
-        inv_id = cloudfront_invalidate(deployed)
+        # Invalidate only the changed paths (SOP: never "/*"). For dir/index.html also
+        # invalidate the pretty URL "/dir/" that visitors actually request.
+        inv_paths = []
+        for f in deployed:
+            inv_paths.append("/" + f)
+            if f == "index.html":
+                inv_paths.append("/")
+            elif f.endswith("/index.html"):
+                inv_paths.append("/" + f[: -len("index.html")])
+        inv_id = cloudfront_invalidate(sorted(set(inv_paths)))
         print(f"\nCloudFront invalidation: {inv_id}")
     else:
         print("\nNothing deployed — skipping CloudFront invalidation.")
