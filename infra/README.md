@@ -66,7 +66,6 @@ Also held, for the same reason:
 |---|---|
 | `/lowcountry-listening-lab/` | 129 clicks — more than any other dead URL. Purpose unknown. |
 | `/sonic-innovations-hearing-aids/` | 7,528 impressions, and `/manufacturers/` never mentions Sonic — redirecting there would be a soft 404. |
-| `/turn-around-your-hearing-experience/` | Campaign page? No obvious equivalent. |
 | `/giftofhearing/` | Charity programme? |
 | `/medicalmonitoring/` | Ototoxicity monitoring? No current page covers it. |
 

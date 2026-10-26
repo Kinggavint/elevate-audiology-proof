@@ -82,6 +82,7 @@ function handler(event) {
     "/the-risks-of-untreated-hearing-loss/": "/blog/the-risks-of-untreated-hearing-loss-2/",
     "/things-people-with-hearing-loss-wish-you-knew/": "/blog/things-people-with-hearing-loss-wish-you-knew-2/",
     "/tinnitus-treatment/": "/tinnitus/",
+    "/turn-around-your-hearing-experience/": "/hearing-evaluation/",
     "/tinnitus-assessment/": "/tinnitus/",
     "/tinnitus-management/": "/tinnitus/",
     "/tinnitus/faq/": "/tinnitus/",
