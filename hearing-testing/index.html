@@ -309,6 +309,48 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     content: '✓'; position: absolute; left: 0; top: 0;
     color: var(--c-accent-2); font-weight: 700;
   }
+  /* FAQ accordion, copied from /tinnitus/ */
+  .faq-list { max-width: 880px; }
+  .faq-item {
+    border: 1px solid var(--c-border);
+    border-radius: var(--radius-md);
+    margin-bottom: var(--sp-3);
+    background: var(--c-white);
+    transition: border-color .15s var(--ease), box-shadow .15s var(--ease);
+  }
+  .faq-item[open] { border-color: var(--c-purple-500); box-shadow: 0 4px 14px rgba(43,23,71,0.06); }
+  .faq-item summary {
+    list-style: none;
+    cursor: pointer;
+    padding: var(--sp-5) var(--sp-6);
+    font-weight: 600;
+    color: var(--c-purple-900);
+    font-size: var(--text-base);
+    display: flex; align-items: center; justify-content: space-between;
+    gap: var(--sp-4);
+  }
+  .faq-item summary::-webkit-details-marker { display: none; }
+  .faq-item summary::after {
+    content: '+';
+    font-family: var(--font-display);
+    font-weight: 400;
+    color: var(--c-accent-2);
+    font-size: 1.5rem;
+    line-height: 1;
+    transition: transform .2s var(--ease);
+  }
+  .faq-item[open] summary::after { content: '–'; transform: rotate(0); }
+  .faq-item .faq-body {
+    padding: 0 var(--sp-6) var(--sp-6);
+    color: var(--c-text-soft);
+  }
+  .faq-item .faq-body p { margin-bottom: var(--sp-3); }
+  .faq-item .faq-body p:last-child { margin-bottom: 0; }
+  .faq-item .faq-body ul { margin-block: var(--sp-3); padding-left: 1.25rem; }
+  .faq-item .faq-body ul li { margin-bottom: 0.4rem; }
+  .faq-item .faq-body .meta { font-size: var(--text-xs); color: var(--c-text-muted); margin-top: var(--sp-3); }
+
+  /* stat band for Lenire */
 </style>
 <link href="https://elevateaudiology.com/hearing-testing/" rel="canonical"/>
 <script type="application/ld+json">
@@ -384,7 +426,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   }
 }
     </script>
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "@id": "https://elevateaudiology.com/hearing-testing/#faq", "mainEntity": [{"@type": "Question", "name": "How long does a hearing test take?", "acceptedAnswer": {"@type": "Answer", "text": "Most hearing tests take about 45 to 60 minutes. We start with your history, check your ears, then run a hearing exam in a quiet booth."}}, {"@type": "Question", "name": "Do I need a referral for a hearing test?", "acceptedAnswer": {"@type": "Answer", "text": "No. You can schedule directly with our clinic. If you have insurance questions, our team can help you understand your options."}}, {"@type": "Question", "name": "What happens during a hearing test?", "acceptedAnswer": {"@type": "Answer", "text": "We look at your ears, ask about symptoms, then measure how well you hear tones and speech. We explain results in plain language and talk through next steps."}}, {"@type": "Question", "name": "Is a hearing test painful?", "acceptedAnswer": {"@type": "Answer", "text": "No. A hearing test is safe and non-invasive. You will listen to sounds and respond when you hear them."}}, {"@type": "Question", "name": "Should I remove earwax before a hearing test?", "acceptedAnswer": {"@type": "Answer", "text": "If you think wax may be a problem, let us know. We can check for wax first, because buildup can affect results."}}, {"@type": "Question", "name": "What if my hearing test shows hearing loss?", "acceptedAnswer": {"@type": "Answer", "text": "We will review the results and discuss options such as hearing aids, medical referral when needed, and tinnitus support. You will leave with a clear plan."}}, {"@type": "Question", "name": "How often should I have a hearing test after age 50?", "acceptedAnswer": {"@type": "Answer", "text": "For adults over 50, a hearing test every 3 years is a useful routine baseline. Schedule sooner if you notice a change in hearing, ringing, or understanding speech."}}, {"@type": "Question", "name": "When should I start routine hearing screenings?", "acceptedAnswer": {"@type": "Answer", "text": "Age 50 is a useful time to establish a hearing-test baseline. If you have no symptoms, repeat testing about every 3 years. Schedule sooner if you notice a hearing change, ringing, or trouble understanding speech."}}, {"@type": "Question", "name": "What should I bring to a hearing test?", "acceptedAnswer": {"@type": "Answer", "text": "Bring any prior hearing test results, a list of current medications, and notes about situations where hearing is difficult. If you use hearing aids, bring them and their chargers. A spouse, adult child, or friend can join you if helpful. We will review your concerns, check your ears, complete the testing, and explain your results in plain language."}}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "@id": "https://elevateaudiology.com/hearing-testing/#faq", "mainEntity": [{"@type": "Question", "name": "How long does a hearing test take?", "acceptedAnswer": {"@type": "Answer", "text": "Most hearing tests take about 45 to 60 minutes. We start with your history, check your ears, then run a hearing exam in a quiet booth."}}, {"@type": "Question", "name": "Do I need a referral for a hearing test?", "acceptedAnswer": {"@type": "Answer", "text": "No. You can schedule directly with our clinic. If you have insurance questions, our team can help you understand your options."}}, {"@type": "Question", "name": "What happens during a hearing test?", "acceptedAnswer": {"@type": "Answer", "text": "We look at your ears, ask about symptoms, then measure how well you hear tones and speech. We explain results in plain language and talk through next steps."}}, {"@type": "Question", "name": "Is a hearing test painful?", "acceptedAnswer": {"@type": "Answer", "text": "No. A hearing test is safe and non-invasive. You will listen to sounds and respond when you hear them."}}, {"@type": "Question", "name": "Should I remove earwax before a hearing test?", "acceptedAnswer": {"@type": "Answer", "text": "If you think wax may be a problem, let us know. We can check for wax first, because buildup can affect results."}}, {"@type": "Question", "name": "What if my hearing test shows hearing loss?", "acceptedAnswer": {"@type": "Answer", "text": "We will review the results and discuss options such as hearing aids, medical referral when needed, and tinnitus support. You will leave with a clear plan."}}, {"@type": "Question", "name": "How often should I have a hearing test after age 50?", "acceptedAnswer": {"@type": "Answer", "text": "For adults over 50, a hearing test every 3 years is a useful routine baseline. Schedule sooner if you notice a change in hearing, ringing, or understanding speech."}}, {"@type": "Question", "name": "What should I bring to a hearing test?", "acceptedAnswer": {"@type": "Answer", "text": "Bring any prior hearing test results, a list of current medications, and notes about situations where hearing is difficult. If you use hearing aids, bring them and their chargers. A spouse, adult child, or friend can join you if helpful. We will review your concerns, check your ears, complete the testing, and explain your results in plain language."}}]}</script>
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -488,6 +530,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <div class="hero-actions">
 <a class="btn btn-on-dark" href="/schedule/">Schedule the Pathway</a>
 <a class="btn btn-outline" href="#components" style="color:#fff;border-color:rgba(255,255,255,.5);">See What's Included</a>
+<a class="btn btn-outline" href="#faq" style="color:#fff;border-color:rgba(255,255,255,.5);">Read the Hearing Test FAQ</a>
 </div>
 </div>
 </section>
@@ -673,7 +716,66 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 </div>
 </section>
 <section class="section section-alt" id="hearing-testing-related-care" aria-labelledby="hearing-testing-related-care-title"><div class="container"><div class="section-head center text-center"><span class="eyebrow">Continue your care plan</span><h2 id="hearing-testing-related-care-title">Explore related care</h2><p>After a hearing test, these pages explain common next steps and local care options.</p></div><div class="checklist" style="max-width: 800px; margin-inline: auto;"><ul class="feature-list"><li><a href="/hearing-aids/">Learn about hearing aids</a></li><li><a href="/tinnitus/">Explore tinnitus care</a></li></ul><ul class="feature-list"><li><a href="/earwax-removal/">Read about earwax removal</a></li><li><a href="/easley/">Visit the Easley office page</a> or <a href="/greenville/">Greenville office page</a></li></ul></div></div></section>
-<section class="section section--faq" id="hearing-testing-faq"><h2>Hearing Test FAQs</h2><p>Here are quick answers to common hearing test questions. If you want, we can also help you schedule an evaluation.</p><div class="faq-item"><h3>How long does a hearing test take?</h3><p>Most hearing tests take about 45 to 60 minutes. We start with your history, check your ears, then run a hearing exam in a quiet booth.</p></div><div class="faq-item"><h3>Do I need a referral for a hearing test?</h3><p>No. You can schedule directly with our clinic. If you have insurance questions, our team can help you understand your options.</p></div><div class="faq-item"><h3>What happens during a hearing test?</h3><p>We look at your ears, ask about symptoms, then measure how well you hear tones and speech. We explain results in plain language and talk through next steps.</p></div><div class="faq-item"><h3>Is a hearing test painful?</h3><p>No. A hearing test is safe and non-invasive. You will listen to sounds and respond when you hear them.</p></div><div class="faq-item"><h3>Should I remove earwax before a hearing test?</h3><p>If you think wax may be a problem, let us know. We can check for wax first, because buildup can affect results.</p></div><div class="faq-item"><h3>What if my hearing test shows hearing loss?</h3><p>We will review the results and discuss options such as hearing aids, medical referral when needed, and tinnitus support. You will leave with a clear plan.</p></div><div class="faq-item"><h3>How often should I have a hearing test after age 50?</h3><p>For adults over 50, a hearing test every 3 years is a useful routine baseline. Schedule sooner if you notice a change in hearing, ringing, or understanding speech.</p></div><div class="faq-item"><h3>When should I start routine hearing screenings?</h3><p>Age 50 is a useful time to establish a hearing-test baseline. If you have no symptoms, repeat testing about every 3 years. Schedule sooner if you notice a hearing change, ringing, or trouble understanding speech.</p></div><div class="faq-item"><h3>What should I bring to a hearing test?</h3><p>Bring any prior hearing test results, a list of current medications, and notes about situations where hearing is difficult. If you use hearing aids, bring them and their chargers. A spouse, adult child, or friend can join you if helpful. We will review your concerns, check your ears, complete the testing, and explain your results in plain language.</p></div></section><footer class="site-footer">
+<section class="section" id="faq">
+<span id="hearing-testing-faq"></span>
+<div class="container">
+<div class="section-head">
+<span class="eyebrow">Frequently Asked Questions</span>
+<h2>Hearing Test FAQs</h2>
+<p>Here are quick answers to common hearing test questions. If you want, we can also help you schedule an evaluation.</p>
+</div>
+<div class="faq-list">
+<details class="faq-item">
+<summary>How long does a hearing test take?</summary>
+<div class="faq-body">
+<p>Most hearing tests take about 45 to 60 minutes. We start with your history, check your ears, then run a hearing exam in a quiet booth.</p>
+</div>
+</details>
+<details class="faq-item">
+<summary>Do I need a referral for a hearing test?</summary>
+<div class="faq-body">
+<p>No. You can schedule directly with our clinic. If you have insurance questions, our team can help you understand your options.</p>
+</div>
+</details>
+<details class="faq-item">
+<summary>What happens during a hearing test?</summary>
+<div class="faq-body">
+<p>We look at your ears, ask about symptoms, then measure how well you hear tones and speech. We explain results in plain language and talk through next steps.</p>
+</div>
+</details>
+<details class="faq-item">
+<summary>Is a hearing test painful?</summary>
+<div class="faq-body">
+<p>No. A hearing test is safe and non-invasive. You will listen to sounds and respond when you hear them.</p>
+</div>
+</details>
+<details class="faq-item">
+<summary>Should I remove earwax before a hearing test?</summary>
+<div class="faq-body">
+<p>If you think wax may be a problem, let us know. We can check for wax first, because buildup can affect results.</p>
+</div>
+</details>
+<details class="faq-item">
+<summary>What if my hearing test shows hearing loss?</summary>
+<div class="faq-body">
+<p>We will review the results and discuss options such as hearing aids, medical referral when needed, and tinnitus support. You will leave with a clear plan.</p>
+</div>
+</details>
+<details class="faq-item">
+<summary>How often should I have a hearing test after age 50?</summary>
+<div class="faq-body">
+<p>For adults over 50, a hearing test every 3 years is a useful routine baseline. Schedule sooner if you notice a change in hearing, ringing, or understanding speech.</p>
+</div>
+</details>
+<details class="faq-item">
+<summary>What should I bring to a hearing test?</summary>
+<div class="faq-body">
+<p>Bring any prior hearing test results, a list of current medications, and notes about situations where hearing is difficult. If you use hearing aids, bring them and their chargers. A spouse, adult child, or friend can join you if helpful. We will review your concerns, check your ears, complete the testing, and explain your results in plain language.</p>
+</div>
+</details>
+</div>
+</div>
+</section><footer class="site-footer">
 <div class="container-wide">
 <div class="footer-grid">
 <div>
