@@ -16,7 +16,7 @@ function handler(event) {
     "/about-us/evidence-based-practices/": "/about-us/",
     "/about-us/location/": "/contact/",
     "/about-us/our-team/": "/our-team/",
-    "/about-us/philanthropy/": "/about-us/",
+    "/about-us/philanthropy/": "/about-us/giving-back/",
     "/about-us/reviews/": "/reviews/",
     "/about-us/what-is-an-audiologist/": "/what-is-an-audiologist/",
     "/accessories/": "/batteries/",
@@ -82,7 +82,7 @@ function handler(event) {
     "/the-risks-of-untreated-hearing-loss/": "/blog/the-risks-of-untreated-hearing-loss-2/",
     "/things-people-with-hearing-loss-wish-you-knew/": "/blog/things-people-with-hearing-loss-wish-you-knew-2/",
     "/tinnitus-treatment/": "/tinnitus/",
-    "/turn-around-your-hearing-experience/": "/hearing-evaluation/",
+    "/turn-around-your-hearing-experience/": "/hearing-loss/",
     "/tinnitus-assessment/": "/tinnitus/",
     "/tinnitus-management/": "/tinnitus/",
     "/tinnitus/faq/": "/tinnitus/",
@@ -96,7 +96,7 @@ function handler(event) {
     "/x-about-us/evidence-based-practices/": "/about-us/",
     "/x-about-us/hearing-up-network/": "/about-us/hearing-up-network/",
     "/x-about-us/location/": "/contact/",
-    "/x-about-us/philanthropy/": "/about-us/",
+    "/x-about-us/philanthropy/": "/about-us/giving-back/",
     "/x-about-us/reviews/": "/reviews/",
     "/x-about-us/what-is-an-audiologist/": "/what-is-an-audiologist/"
   };
