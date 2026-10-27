@@ -12,7 +12,7 @@ function handler(event) {
   var manualMap = {
     "/about/": "/about-us/",
     "/about-us/advocacy/": "/about-us/",
-    "/about-us/best-practice-pro-network/": "/about-us/",
+    "/about-us/best-practice-pro-network/": "/about-us/hearing-up-network/",
     "/about-us/evidence-based-practices/": "/about-us/",
     "/about-us/location/": "/contact/",
     "/about-us/our-team/": "/our-team/",
@@ -124,9 +124,17 @@ function handler(event) {
     }
   }
 
-  // Category/tag/product/bio/author taxonomies from old WP → homepage
+  // Old WooCommerce store pages → Batteries & Supplies (client decision 2026-10-27)
+  if (uri.indexOf('/product/') === 0 || uri.indexOf('/product-category/') === 0) {
+    return {
+      statusCode: 301,
+      statusDescription: 'Moved Permanently',
+      headers: { location: { value: '/batteries/' } }
+    };
+  }
+
+  // Category/tag/bio/author taxonomies from old WP → homepage
   if (uri.indexOf('/category/') === 0 || uri.indexOf('/tag/') === 0 ||
-      uri.indexOf('/product/') === 0 || uri.indexOf('/product-category/') === 0 ||
       uri.indexOf('/author/') === 0 || uri.indexOf('/bio/') === 0) {
     return {
       statusCode: 301,
