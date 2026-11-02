@@ -62,6 +62,7 @@ function handler(event) {
     "/how-treating-hearing-loss-improves-your-relationships/": "/blog/how-treating-hearing-loss-improves-your-relationships-2/",
     "/hyperacusis/": "/sound-sensitivity/",
     "/lenire-tinnitus/": "/lenire/",
+    "/lowcountry-listening-lab/": "/our-team/",
     "/locations/easley/": "/easley/",
     "/location/elevate-audiology/": "/contact/",
     "/location/greenville-office/": "/greenville/",
